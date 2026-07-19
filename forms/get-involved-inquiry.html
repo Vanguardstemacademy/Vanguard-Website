@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Get Involved | Vanguard STEM Academy</title>
+<meta name="description" content="Join Vanguard STEM Academy — sponsor, mentor, hire, volunteer, or partner with us.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b2251;--navy-2:#123063;--navy-deep:#06163a;
+  --gold:#C9A341;--gold-2:#D4AF37;--gold-light:#E4C874;--gold-deep:#A9842E;
+  --cream:#F8F6F1;--cream-2:#FBF3E2;--burgundy:#6E1E2C;--burgundy-2:#8a2a3a;
+  --ink:#1c2530;--muted:#5b6675;--line:#e6e0d3;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Source Sans 3',system-ui,sans-serif;
+  --gold-grad:linear-gradient(135deg,#E4C874 0%,#C9A341 42%,#A9842E 100%);
+  --shadow-sm:0 4px 18px rgba(2,25,52,.08);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:#fff;line-height:1.55;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2{font-family:var(--serif);margin:0;color:var(--navy)}
+a{color:var(--burgundy);text-decoration:none}
+a:hover{color:var(--gold-deep)}
+:focus-visible{outline:3px solid var(--gold-2);outline-offset:2px;border-radius:2px}
+
+/* ---- brand banner ---- */
+.brandbar{background:linear-gradient(110deg,#06163a,#0b2251 55%,#123063);border-bottom:3px solid var(--gold);padding:.9rem clamp(20px,4vw,44px);display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.brandbar .bb-left{display:flex;align-items:center;gap:.9rem;text-decoration:none;transition:opacity .2s}
+.brandbar .bb-left:hover{opacity:.85}
+.brandbar img{height:52px;width:auto;display:block}
+.brandbar .bb-name{font-family:var(--serif);font-weight:800;color:#fff;font-size:1.35rem;letter-spacing:.02em;line-height:1.1}
+.brandbar .bb-name small{display:block;font-family:var(--sans);font-weight:700;font-size:.66rem;letter-spacing:.42em;color:var(--gold-light);text-transform:uppercase;margin-top:.25rem}
+.brandbar .bb-tag{font-family:var(--serif);font-style:italic;color:#fff;font-size:1.02rem;line-height:1.4;text-align:right;padding-left:1.5rem;border-left:2px solid var(--gold)}
+@media(max-width:640px){.brandbar .bb-tag{display:none}}
+
+/* ---- page head ---- */
+.page-head{text-align:center;padding:2.2rem 20px .6rem}
+.page-head h1{font-size:clamp(2.2rem,5vw,3.4rem);font-weight:900;letter-spacing:.04em}
+.page-head .rule{width:120px;height:3px;background:var(--gold-grad);margin:.9rem auto 1rem;border-radius:2px}
+.page-head p{margin:0;font-size:1.12rem;color:var(--ink)}
+
+.wrap{max-width:1180px;margin:0 auto;padding:1.4rem clamp(16px,3vw,32px) 0}
+
+/* ---- value strip ---- */
+.vstrip{background:var(--cream-2);border:1px solid var(--gold);border-radius:12px;display:grid;grid-template-columns:repeat(5,1fr);padding:1.3rem .5rem;margin-bottom:1.6rem}
+.vstrip .vs{display:flex;flex-direction:column;align-items:center;gap:.55rem;text-align:center;padding:0 .8rem}
+.vstrip .vs + .vs{border-left:1px solid var(--gold)}
+.vstrip svg{width:34px;height:34px;stroke:var(--navy);fill:none;stroke-width:1.5}
+.vstrip .vs-t{font-weight:700;color:var(--navy);font-size:.92rem;line-height:1.3}
+@media(max-width:800px){.vstrip{grid-template-columns:repeat(2,1fr);gap:1rem 0}.vstrip .vs:nth-child(odd){border-left:none}.vstrip .vs:nth-child(5){grid-column:1/-1;border-left:none}}
+
+/* ---- section bars ---- */
+.sec{margin-bottom:1.6rem}
+.sec-bar{background:var(--navy);color:#fff;border-radius:6px;padding:.7rem 1.1rem;display:flex;align-items:center;gap:.8rem;font-family:var(--serif);font-weight:700;font-size:1.08rem;letter-spacing:.04em;border-left:6px solid var(--gold);text-transform:uppercase}
+.sec-bar .num{color:var(--gold-light)}
+.sec-body{padding:1.3rem .2rem 0}
+
+/* ---- fields ---- */
+label{display:block;font-weight:700;color:var(--navy);font-size:.9rem;margin-bottom:.4rem}
+label .req{color:#c0392b}
+label .opt{font-weight:400;color:var(--muted)}
+input[type=text],input[type=email],input[type=tel],input[type=url],select,textarea{
+  width:100%;font-family:var(--sans);font-size:.95rem;color:var(--ink);
+  background:#fff;border:1.5px solid #c9d2de;border-radius:8px;padding:.7rem .9rem;
+  transition:border-color .2s,box-shadow .2s;appearance:none;
+}
+textarea{resize:vertical;min-height:140px;line-height:1.5}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold-deep);box-shadow:0 0 0 3px rgba(201,163,65,.22)}
+::placeholder{color:#9aa5b3}
+.selwrap{position:relative}
+.selwrap::after{content:"";position:absolute;right:14px;top:50%;width:9px;height:9px;border-right:2px solid var(--navy);border-bottom:2px solid var(--navy);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1.1rem 1.6rem}
+@media(max-width:700px){.grid2{grid-template-columns:1fr}}
+.field{min-width:0}
+
+/* ---- interest / together panel ---- */
+.involve-grid{display:grid;grid-template-columns:1fr 1.1fr;gap:1.8rem;align-items:start}
+@media(max-width:820px){.involve-grid{grid-template-columns:1fr}}
+.together{background:var(--cream-2);border:1px solid var(--gold);border-radius:10px;padding:1.4rem 1.5rem;display:flex;gap:1.1rem}
+.together svg{width:44px;height:44px;stroke:var(--gold-deep);fill:none;stroke-width:1.5;flex:none;margin-top:.2rem}
+.together h2{font-size:1.25rem;margin-bottom:.5rem}
+.together p{margin:0;color:var(--ink);font-size:.93rem}
+
+/* ---- checkboxes ---- */
+.checks{display:grid;grid-template-columns:1fr 1fr;gap:.7rem 1.4rem}
+@media(max-width:520px){.checks{grid-template-columns:1fr}}
+.check{display:flex;align-items:center;gap:.6rem;font-size:.92rem;color:var(--ink);cursor:pointer;font-weight:400}
+.check input{position:absolute;opacity:0;width:0;height:0}
+.check .box{width:19px;height:19px;border:1.8px solid var(--gold-deep);border-radius:4px;flex:none;display:grid;place-items:center;background:#fff;transition:.15s}
+.check .box svg{width:12px;height:12px;stroke:#fff;stroke-width:3;fill:none;opacity:0}
+.check input:checked + .box{background:var(--navy);border-color:var(--navy)}
+.check input:checked + .box svg{opacity:1}
+.check input:focus-visible + .box{outline:3px solid var(--gold-2);outline-offset:2px}
+
+/* ---- upload ---- */
+.upload-row{display:grid;grid-template-columns:1.6fr 1fr;gap:1.4rem;align-items:center}
+@media(max-width:760px){.upload-row{grid-template-columns:1fr}}
+.upload-note{background:var(--cream-2);border:1px solid var(--gold);border-radius:10px;padding:1rem 1.2rem;display:flex;gap:.9rem;align-items:center;font-size:.9rem}
+.upload-note svg{width:30px;height:30px;stroke:var(--burgundy);fill:none;stroke-width:1.7;flex:none}
+.upload-cta{text-align:center}
+.upload-btn{display:inline-flex;align-items:center;justify-content:center;gap:.6rem;background:var(--burgundy);color:#fff;font-weight:700;font-size:.92rem;letter-spacing:.03em;border:none;border-radius:8px;padding:.85rem 2rem;cursor:pointer;transition:.25s;width:100%;max-width:320px}
+.upload-btn:hover{background:var(--burgundy-2);box-shadow:var(--shadow-sm)}
+.upload-btn svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.8}
+.upload-hint{font-size:.76rem;color:var(--muted);margin-top:.45rem}
+.file-name{font-size:.82rem;color:var(--navy);font-weight:600;margin-top:.4rem;display:none}
+
+/* ---- agreement ---- */
+.agree-grid{display:grid;grid-template-columns:1fr 1.3fr;gap:1.4rem}
+@media(max-width:760px){.agree-grid{grid-template-columns:1fr}}
+.agree{border:1px solid var(--line);border-radius:10px;padding:1rem 1.2rem;display:flex;gap:.7rem;align-items:flex-start;font-size:.9rem;font-weight:600;color:var(--ink)}
+.agree .check{align-items:flex-start;font-weight:600}
+.agree .box{margin-top:.15rem}
+
+/* ---- submit ---- */
+.submit-row{text-align:center;padding:1.6rem 0 2.2rem}
+.submit-btn{display:inline-flex;align-items:center;gap:.7rem;background:var(--burgundy);color:#fff;font-family:var(--sans);font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;border:1.5px solid var(--gold);border-radius:10px;padding:1rem 2.6rem;cursor:pointer;transition:.25s}
+.submit-btn:hover{background:var(--burgundy-2);box-shadow:0 12px 30px rgba(110,30,44,.35)}
+.submit-btn svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.8}
+
+/* ---- secure bar ---- */
+.secure{background:var(--cream);border-top:1px solid var(--line);text-align:center;padding:1rem 20px;font-size:.86rem;color:var(--ink);display:flex;align-items:center;justify-content:center;gap:.55rem}
+.secure svg{width:17px;height:17px;stroke:var(--navy);fill:none;stroke-width:1.8}
+
+/* success */
+.success{display:none;max-width:640px;margin:3rem auto;text-align:center;padding:2.5rem 2rem;border:1px solid var(--gold);border-radius:14px;background:var(--cream-2)}
+.success svg{width:54px;height:54px;stroke:var(--navy);fill:none;stroke-width:1.6;margin-bottom:1rem}
+.success h2{font-size:1.7rem;margin-bottom:.6rem}
+.success p{color:var(--muted);margin:0}
+</style>
+</head>
+<body>
+
+<header class="brandbar">
+  <a class="bb-left" href="/home" aria-label="Vanguard STEM Academy home">
+    <img src="assets/images/footer-badge.png" alt="Vanguard STEM Academy crest">
+    <div class="bb-name">Vanguard STEM<small>&mdash; Academy &mdash;</small></div>
+  </a>
+  <div class="bb-tag">Building Today&rsquo;s Talent for<br>Tomorrow&rsquo;s Opportunities</div>
+</header>
+
+<div class="page-head">
+  <h1>GET INVOLVED</h1>
+  <div class="rule"></div>
+  <p>Join us in creating life-changing opportunities for the next generation.</p>
+</div>
+
+<main class="wrap">
+  <div class="vstrip" role="list">
+    <div class="vs" role="listitem"><svg viewBox="0 0 24 24"><path d="M12 3L2 8l10 5 10-5-10-5z"/><path d="M6 10.5V15c0 1.7 2.7 3 6 3s6-1.3 6-3v-4.5"/></svg><span class="vs-t">Empower<br>Students</span></div>
+    <div class="vs" role="listitem"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><circle cx="16" cy="9" r="2.4"/><path d="M3 19c0-3 2.7-5 6-5s6 2 6 5M14.5 14.3c2.6.3 4.5 2 4.5 4.7"/></svg><span class="vs-t">Strengthen<br>Communities</span></div>
+    <div class="vs" role="listitem"><svg viewBox="0 0 24 24"><path d="M12 2v2M4.9 4.9l1.4 1.4M19.1 4.9l-1.4 1.4M2 12h2M20 12h2"/><path d="M9 16a5 5 0 116 0c-.8.6-1 1.4-1 2h-4c0-.6-.2-1.4-1-2z"/><path d="M10 20h4M11 22h2"/></svg><span class="vs-t">Advance<br>Innovation</span></div>
+    <div class="vs" role="listitem"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M9 8V6a3 3 0 016 0v2M3 13h18"/></svg><span class="vs-t">Build a Stronger<br>Workforce</span></div>
+    <div class="vs" role="listitem"><svg viewBox="0 0 24 24"><path d="M12 20s-7.5-4.9-9.3-9C1.2 7.6 3.3 4.5 6.6 4.5c2 0 3.6 1.1 4.4 2.7h2c.8-1.6 2.4-2.7 4.4-2.7 3.3 0 5.4 3.1 3.9 6.5-1.8 4.1-9.3 9-9.3 9z"/></svg><span class="vs-t">Create a Lasting<br>Impact</span></div>
+  </div>
+
+  <form id="involveForm" novalidate>
+
+    <section class="sec">
+      <div class="sec-bar"><span class="num">1.</span> How Would You Like to Get Involved?</div>
+      <div class="sec-body involve-grid">
+        <div class="field">
+          <label for="interest">I&rsquo;m interested in: <span class="req">*</span></label>
+          <div class="selwrap">
+            <select id="interest" name="interest" required>
+              <option value="" selected disabled>Select an option</option>
+              <option>Sponsor a Student</option>
+              <option>Become a Mentor</option>
+              <option>Host an Internship</option>
+              <option>Hire Vanguard Graduates</option>
+              <option>Speak at an Event</option>
+              <option>Donate Equipment</option>
+              <option>Corporate Giving / Partnership</option>
+              <option>Volunteer</option>
+              <option>Join the Board of Advisors</option>
+              <option>Join Our Team (Employment)</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+        <div class="together">
+          <svg viewBox="0 0 24 24"><path d="M8 12l-4-2 4-5 4 2 4-2 4 5-4 2"/><path d="M4 10v6l4 4 4-3 4 3 4-4v-6"/><path d="M12 7v10"/></svg>
+          <div>
+            <h2>Together, We Go Further</h2>
+            <p>Whether you give your time, expertise, resources, or partnership, your support helps us expand opportunities and transform lives through STEM education, innovation and workforce development.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec-bar"><span class="num">2.</span> Contact Information</div>
+      <div class="sec-body grid2">
+        <div class="field"><label for="fname">First Name <span class="req">*</span></label><input type="text" id="fname" name="fname" placeholder="Enter first name" required autocomplete="given-name"></div>
+        <div class="field"><label for="lname">Last Name <span class="req">*</span></label><input type="text" id="lname" name="lname" placeholder="Enter last name" required autocomplete="family-name"></div>
+        <div class="field"><label for="email">Email Address <span class="req">*</span></label><input type="email" id="email" name="email" placeholder="Enter email address" required autocomplete="email"></div>
+        <div class="field"><label for="phone">Phone Number <span class="req">*</span></label><input type="tel" id="phone" name="phone" placeholder="Enter phone number" required autocomplete="tel"></div>
+        <div class="field"><label for="company">Company / Organization <span class="opt">(Optional)</span></label><input type="text" id="company" name="company" placeholder="Enter company or organization" autocomplete="organization"></div>
+        <div class="field"><label for="title">Job Title <span class="opt">(Optional)</span></label><input type="text" id="title" name="title" placeholder="Enter job title" autocomplete="organization-title"></div>
+        <div class="field"><label for="city">City <span class="req">*</span></label><input type="text" id="city" name="city" placeholder="Enter city" required autocomplete="address-level2"></div>
+        <div class="field"><label for="state">State <span class="req">*</span></label>
+          <div class="selwrap"><select id="state" name="state" required>
+            <option value="" selected disabled>Select state</option>
+            <option>AL</option><option>AK</option><option>AZ</option><option>AR</option><option>CA</option><option>CO</option><option>CT</option><option>DE</option><option>FL</option><option>GA</option><option>HI</option><option>ID</option><option>IL</option><option>IN</option><option>IA</option><option>KS</option><option>KY</option><option>LA</option><option>ME</option><option>MD</option><option>MA</option><option>MI</option><option>MN</option><option>MS</option><option>MO</option><option>MT</option><option>NE</option><option>NV</option><option>NH</option><option>NJ</option><option>NM</option><option>NY</option><option>NC</option><option>ND</option><option>OH</option><option>OK</option><option>OR</option><option>PA</option><option>RI</option><option>SC</option><option>SD</option><option>TN</option><option>TX</option><option>UT</option><option>VT</option><option>VA</option><option>WA</option><option>WV</option><option>WI</option><option>WY</option><option>Other / Outside U.S.</option>
+          </select></div>
+        </div>
+        <div class="field" style="grid-column:1/-1"><label for="linkedin">LinkedIn Profile <span class="opt">(Optional)</span></label><input type="url" id="linkedin" name="linkedin" placeholder="Enter LinkedIn profile URL"></div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec-bar"><span class="num">3.</span> Professional Background</div>
+      <div class="sec-body grid2" style="grid-template-columns:1.15fr 1fr">
+        <div class="field">
+          <label for="about">Tell us about yourself. <span class="req">*</span></label>
+          <textarea id="about" name="about" placeholder="Describe your experience, background, skills, and how you would like to contribute to Vanguard STEM Academy." required></textarea>
+        </div>
+        <div class="field">
+          <label>Areas of Expertise <span class="opt">(select all that apply)</span></label>
+          <div class="checks">
+            <label class="check"><input type="checkbox" name="expertise" value="Engineering"><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span>Engineering</label>
+            <label class="check"><input type="checkbox" name="expertise" value="Project Management"><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span>Project Management</label>
+            <label class="check"><input type="checkbox" name="expertise" value="Artificial Intelligence"><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span>Artificial Intelligence</label>
+            <label class="check"><input type="checkbox" name="expertise" value="Public Speaking"><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span>Public Speaking</label>
+            <label class="check"><input type="checkbox" name="expertise" value="Business Intelligence"><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span>Business Intelligence</label>
+            <label class="check"><input type="checkbox" name="expertise" value="Marketing"><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span>Marketing</label>
+            <label class="check"><input type="checkbox" name="expertise" value="Education"><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span>Education</label>
+            <label class="check"><input type="checkbox" name="expertise" value="Healthcare"><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span>Healthcare</label>
+            <label class="check"><input type="checkbox" name="expertise" value="Finance"><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span>Finance</label>
+            <label class="check"><input type="checkbox" name="expertise" value="Entrepreneurship"><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span>Entrepreneurship</label>
+            <label class="check"><input type="checkbox" name="expertise" value="Technology"><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span>Technology</label>
+            <label class="check"><input type="checkbox" name="expertise" value="Other"><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span>Other</label>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec-bar"><span class="num">4.</span> Additional Information</div>
+      <div class="sec-body">
+        <div class="grid2">
+          <div class="field">
+            <label for="initiative">Which Vanguard initiative interests you most?</label>
+            <div class="selwrap"><select id="initiative" name="initiative">
+              <option value="" selected disabled>Select an option</option>
+              <option>STEM Consulting Program</option>
+              <option>AI &amp; Emerging Technology</option>
+              <option>Engineering &amp; Infrastructure Projects</option>
+              <option>Workforce Development</option>
+              <option>Executive Fireside Chat</option>
+              <option>Not sure yet</option>
+            </select></div>
+          </div>
+          <div class="field">
+            <label for="availability">Availability <span class="req">*</span></label>
+            <div class="selwrap"><select id="availability" name="availability" required>
+              <option value="" selected disabled>Select availability</option>
+              <option>Weekdays</option>
+              <option>Evenings</option>
+              <option>Weekends</option>
+              <option>Flexible</option>
+              <option>One-time event only</option>
+            </select></div>
+          </div>
+        </div>
+        <div class="field" style="margin-top:1.1rem">
+          <label for="anything">Is there anything else you would like us to know?</label>
+          <textarea id="anything" name="anything" style="min-height:70px" placeholder="Share any additional information, ideas, or questions."></textarea>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec-bar"><span class="num">5.</span> Resume / Supporting Documents <span style="text-transform:none;font-family:var(--sans);font-weight:600;font-size:.86rem">(If applicable)</span></div>
+      <div class="sec-body upload-row">
+        <div class="upload-note">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16.5v.5"/></svg>
+          <div>Please upload your resume or CV if you are applying to:<br><strong>Join Our Team, Board of Advisors, Become a Mentor, or Speak at an Event.</strong></div>
+        </div>
+        <div class="upload-cta">
+          <input type="file" id="resume" name="resume" accept=".pdf,.doc,.docx" style="display:none">
+          <button type="button" class="upload-btn" onclick="document.getElementById('resume').click()">
+            <svg viewBox="0 0 24 24"><path d="M12 16V5M7.5 9.5L12 5l4.5 4.5"/><path d="M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>
+            Upload Resume / CV
+          </button>
+          <div class="upload-hint">(PDF, DOC, DOCX &ndash; Max 10MB)</div>
+          <div class="file-name" id="fileName"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="sec">
+      <div class="sec-bar"><span class="num">6.</span> Agreement</div>
+      <div class="sec-body agree-grid">
+        <div class="agree">
+          <label class="check"><input type="checkbox" id="accurate" required><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span><span>I certify that the information provided is accurate. <span class="req">*</span></span></label>
+        </div>
+        <div class="agree">
+          <label class="check"><input type="checkbox" id="consent" required><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span><span>I understand Vanguard STEM Academy will contact me regarding opportunities that align with my background and interests. <span class="req">*</span></span></label>
+        </div>
+      </div>
+    </section>
+
+    <div class="submit-row">
+      <button type="submit" class="submit-btn">
+        <svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2L15 22l-4-9-9-4z"/></svg>
+        Submit Interest
+      </button>
+    </div>
+  </form>
+
+  <div class="success" id="successBox" role="status">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>
+    <h2>Thank You for Your Interest!</h2>
+    <p>Your submission has been received. A member of the Vanguard STEM Academy team will contact you soon regarding opportunities that align with your background and interests.</p>
+  </div>
+</main>
+
+<div class="secure">
+  <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4.5"/></svg>
+  Your information is secure and will only be used for Vanguard STEM Academy opportunities.
+</div>
+
+<script>
+var VANGUARD_FORM_ENDPOINT='https://script.google.com/a/macros/vstemacad.org/s/AKfycbzl8v21P2ecIc_Sd_P1CpfDqcGrB4ZU2-fgEZvLflk8XYhKbdxWjQKTvvBGmr6Y19te/exec';
+function vanguardSubmitForm(formType,formEl,extraFields){
+  var fd=new FormData(formEl),fields={};
+  fd.forEach(function(value,key){
+    if(value instanceof File)value=value.name;
+    if(fields[key]!==undefined){fields[key]=(Array.isArray(fields[key])?fields[key]:[fields[key]]).concat(value)}
+    else{fields[key]=value}
+  });
+  Object.keys(fields).forEach(function(k){if(Array.isArray(fields[k]))fields[k]=fields[k].join(', ')});
+  if(extraFields)Object.assign(fields,extraFields);
+  return fetch(VANGUARD_FORM_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:formType,fields:fields})}).catch(function(err){console.error('Vanguard form submit failed',err)});
+}
+(function(){
+  var q=new URLSearchParams(location.search);
+  var interest=q.get('interest');
+  if(interest){
+    var sel=document.getElementById('interest');
+    for(var i=0;i<sel.options.length;i++){
+      if(sel.options[i].value===interest||sel.options[i].text===interest){sel.selectedIndex=i;break}
+    }
+  }
+})();
+document.getElementById('resume').addEventListener('change',function(){
+  var f=this.files[0],el=document.getElementById('fileName');
+  if(!f){el.style.display='none';return}
+  if(f.size>10*1024*1024){alert('File exceeds the 10MB limit. Please choose a smaller file.');this.value='';el.style.display='none';return}
+  el.textContent='\u2713 '+f.name;el.style.display='block';
+});
+document.getElementById('involveForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!this.checkValidity()){this.reportValidity();return}
+  vanguardSubmitForm('get-involved',this);
+  this.style.display='none';
+  document.querySelector('.vstrip').style.display='none';
+  document.getElementById('successBox').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+});
+</script>
+</body>
+</html>

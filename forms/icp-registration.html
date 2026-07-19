@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ICP Registration | Vanguard STEM Academy</title>
+<meta name="description" content="Register for your Vanguard STEM Academy Individual Coaching Program package.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;0,900&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b2251;--navy-2:#123063;--navy-deep:#06163a;
+  --gold:#C9A341;--gold-2:#D4AF37;--gold-light:#E4C874;--gold-deep:#A9842E;
+  --cream:#F8F6F1;--cream-2:#FBF3E2;--burgundy:#6E1E2C;
+  --ink:#1c2530;--muted:#5b6675;--line:#e6e0d3;
+  --serif:'Playfair Display',Georgia,serif;--sans:'Source Sans 3',system-ui,sans-serif;
+  --gold-grad:linear-gradient(135deg,#E4C874 0%,#C9A341 42%,#A9842E 100%);
+  --shadow-sm:0 4px 18px rgba(2,25,52,.08);
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:var(--sans);color:var(--ink);background:var(--cream);line-height:1.55;font-size:16px;-webkit-font-smoothing:antialiased}
+h1,h2{margin:0;color:var(--navy)}
+a{color:var(--burgundy);text-decoration:none}
+a:hover{color:var(--gold-deep)}
+:focus-visible{outline:3px solid var(--gold-2);outline-offset:2px;border-radius:2px}
+
+.brandbar{background:linear-gradient(110deg,#06163a,#0b2251 55%,#123063);border-bottom:3px solid var(--gold);padding:.9rem clamp(20px,4vw,44px);display:flex;align-items:center;justify-content:space-between;gap:1.5rem}
+.brandbar .bb-left{display:flex;align-items:center;gap:.9rem;text-decoration:none;transition:opacity .2s}
+.brandbar .bb-left:hover{opacity:.85}
+.brandbar img{height:52px;width:auto;display:block}
+.brandbar .bb-name{font-family:var(--serif);font-weight:800;color:#fff;font-size:1.35rem;letter-spacing:.02em;line-height:1.1}
+.brandbar .bb-name small{display:block;font-family:var(--sans);font-weight:700;font-size:.66rem;letter-spacing:.42em;color:var(--gold-light);text-transform:uppercase;margin-top:.25rem}
+.brandbar .bb-tag{font-weight:800;color:var(--gold-2);font-size:.92rem;letter-spacing:.14em;text-transform:uppercase;text-align:right}
+@media(max-width:640px){.brandbar .bb-tag{display:none}}
+
+.page-head{text-align:center;padding:2.2rem 20px .4rem}
+.page-head h1{font-family:var(--serif);font-size:clamp(2rem,4.6vw,3rem);font-weight:900;letter-spacing:.04em}
+.page-head .rule{width:90px;height:3px;background:var(--gold-grad);margin:.8rem auto .9rem;border-radius:2px}
+.page-head p{margin:0;font-size:1.05rem;color:var(--ink)}
+
+.wrap{max-width:960px;margin:0 auto;padding:1.4rem clamp(16px,3vw,32px) 0}
+
+/* package banner */
+.pkg{background:var(--cream-2);border:1.5px solid var(--gold);border-radius:12px;padding:1.4rem 1.7rem;display:flex;gap:1.4rem;align-items:center;margin-bottom:1.6rem;box-shadow:var(--shadow-sm)}
+.pkg .pk-ic{width:78px;height:78px;border-radius:50%;background:var(--gold-grad);display:grid;place-items:center;flex:none}
+.pkg .pk-ic svg{width:40px;height:40px;fill:var(--navy);stroke:none}
+.pkg .pk-eyebrow{font-weight:800;color:var(--gold-deep);font-size:.78rem;letter-spacing:.18em;text-transform:uppercase}
+.pkg h2{font-family:var(--serif);font-size:clamp(1.35rem,3vw,1.9rem);font-weight:800;letter-spacing:.03em;margin:.15rem 0 .7rem}
+.pkg .pk-meta{display:flex;flex-wrap:wrap;align-items:center;gap:.9rem 1.4rem;font-size:.98rem;color:var(--ink)}
+.pkg .pk-meta .m{display:flex;align-items:center;gap:.5rem}
+.pkg .pk-meta svg{width:21px;height:21px;stroke:var(--gold-deep);fill:none;stroke-width:1.7}
+.pkg .pk-meta .sep{width:1px;height:22px;background:var(--gold)}
+.pkg .pk-meta .price{font-weight:800;color:var(--navy);font-size:1.1rem}
+@media(max-width:600px){.pkg{flex-direction:column;text-align:center}.pkg .pk-meta{justify-content:center}.pkg .pk-meta .sep{display:none}}
+
+/* cards */
+.cards2{display:grid;grid-template-columns:1fr 1fr;gap:1.4rem;margin-bottom:1.4rem}
+@media(max-width:760px){.cards2{grid-template-columns:1fr}}
+.card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1.4rem 1.5rem;box-shadow:var(--shadow-sm)}
+.card h2{font-size:1rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding-bottom:.55rem;margin-bottom:1.1rem;position:relative}
+.card h2::after{content:"";position:absolute;left:0;bottom:0;width:44px;height:2.5px;background:var(--gold-grad);border-radius:2px}
+.card h2 small{display:block;font-weight:600;font-size:.8rem;letter-spacing:0;text-transform:none;color:var(--muted);margin-top:.2rem}
+
+label{display:block;font-weight:700;color:var(--navy);font-size:.88rem;margin-bottom:.4rem}
+label .req{color:#c0392b}
+label .opt{font-weight:400;color:var(--muted)}
+input[type=text],input[type=email],input[type=tel],select,textarea{
+  width:100%;font-family:var(--sans);font-size:.95rem;color:var(--ink);
+  background:#fff;border:1.5px solid #c9d2de;border-radius:8px;padding:.7rem .9rem;
+  transition:border-color .2s,box-shadow .2s;appearance:none;
+}
+textarea{resize:vertical;min-height:120px;line-height:1.5}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--gold-deep);box-shadow:0 0 0 3px rgba(201,163,65,.22)}
+::placeholder{color:#9aa5b3;font-style:italic}
+.selwrap{position:relative}
+.selwrap::after{content:"";position:absolute;right:14px;top:50%;width:9px;height:9px;border-right:2px solid var(--navy);border-bottom:2px solid var(--navy);transform:translateY(-70%) rotate(45deg);pointer-events:none}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.2rem}
+@media(max-width:520px){.grid2{grid-template-columns:1fr}}
+.field{min-width:0}
+.field + .field{margin-top:1rem}
+.grid2 .field + .field{margin-top:0}
+
+.minor-note{background:var(--cream-2);border:1px solid var(--gold);border-radius:10px;padding:.9rem 1.1rem;display:flex;gap:.8rem;align-items:flex-start;font-size:.88rem;margin-top:1.1rem}
+.minor-note svg{width:26px;height:26px;stroke:var(--gold-deep);fill:none;stroke-width:1.7;flex:none}
+
+/* checkboxes */
+.checks{display:flex;flex-direction:column;gap:.65rem}
+.check{display:flex;align-items:center;gap:.6rem;font-size:.93rem;color:var(--ink);cursor:pointer;font-weight:400}
+.check input{position:absolute;opacity:0;width:0;height:0}
+.check .box{width:19px;height:19px;border:1.8px solid var(--gold-deep);border-radius:4px;flex:none;display:grid;place-items:center;background:#fff;transition:.15s}
+.check .box svg{width:12px;height:12px;stroke:#fff;stroke-width:3;fill:none;opacity:0}
+.check input:checked + .box{background:var(--navy);border-color:var(--navy)}
+.check input:checked + .box svg{opacity:1}
+.check input:focus-visible + .box{outline:3px solid var(--gold-2);outline-offset:2px}
+
+.goals-card{margin-bottom:1.4rem}
+.charwrap{position:relative}
+.charcount{position:absolute;right:12px;bottom:10px;font-size:.72rem;color:var(--muted)}
+
+.notice{background:#eef3fb;border:1px solid #c7d6ee;border-radius:12px;padding:1.2rem 1.4rem;display:flex;gap:.9rem;align-items:flex-start;margin-bottom:1.5rem;font-size:.88rem}
+.notice svg{width:26px;height:26px;stroke:var(--navy);fill:none;stroke-width:1.7;flex:none;margin-top:.1rem}
+.notice .nt{font-weight:800;color:var(--navy);font-size:.95rem;margin-bottom:.35rem}
+.notice p{margin:.15rem 0;color:var(--ink)}
+
+.submit-btn{display:flex;align-items:center;justify-content:center;gap:.7rem;width:100%;background:var(--navy);color:#fff;font-family:var(--sans);font-weight:800;font-size:1.02rem;letter-spacing:.12em;text-transform:uppercase;border:none;border-radius:12px;padding:1.05rem;cursor:pointer;transition:.25s}
+.submit-btn:hover{background:var(--navy-2);box-shadow:0 12px 30px rgba(11,34,81,.35)}
+.submit-btn svg{width:18px;height:18px;stroke:#fff;fill:none;stroke-width:1.8}
+
+.secure{text-align:center;padding:1.1rem 20px 2.2rem;font-size:.86rem;color:var(--ink);display:flex;align-items:center;justify-content:center;gap:.55rem}
+.secure svg{width:17px;height:17px;stroke:var(--navy);fill:none;stroke-width:1.8}
+
+.success{display:none;max-width:640px;margin:3rem auto;text-align:center;padding:2.5rem 2rem;border:1px solid var(--gold);border-radius:14px;background:var(--cream-2)}
+.success svg{width:54px;height:54px;stroke:var(--navy);fill:none;stroke-width:1.6;margin-bottom:1rem}
+.success h2{font-family:var(--serif);font-size:1.7rem;margin-bottom:.6rem}
+.success p{color:var(--muted);margin:0}
+</style>
+</head>
+<body>
+
+<header class="brandbar">
+  <a class="bb-left" href="/home" aria-label="Vanguard STEM Academy home">
+    <img src="assets/images/footer-badge.png" alt="Vanguard STEM Academy crest">
+    <div class="bb-name">Vanguard STEM<small>&mdash; Academy &mdash;</small></div>
+  </a>
+  <div class="bb-tag">Individual Coaching Program (ICP)</div>
+</header>
+
+<div class="page-head">
+  <h1>ICP REGISTRATION</h1>
+  <div class="rule"></div>
+  <p>Complete the form below to register for your coaching package.</p>
+</div>
+
+<main class="wrap">
+  <div class="pkg" id="pkgBanner">
+    <div class="pk-ic"><svg viewBox="0 0 24 24"><path d="M12 3L1 8.2l11 5.2 9-4.25V15h2V8.2L12 3zM5 12.9v3.6c0 1.9 3.1 3.5 7 3.5s7-1.6 7-3.5v-3.6l-7 3.3-7-3.3z"/></svg></div>
+    <div>
+      <div class="pk-eyebrow">Package Selected</div>
+      <h2 id="pkgName">ACHIEVEMENT PACKAGE</h2>
+      <div class="pk-meta">
+        <span class="m"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4"/></svg><span id="pkgWeeks">8 Weeks</span></span>
+        <span class="sep"></span>
+        <span class="m"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4a3 3 0 010 8M18 14c2.4.8 4 2.6 4 6"/></svg><span id="pkgSessions">8 Private 60-Minute Sessions</span></span>
+        <span class="sep"></span>
+        <span class="m"><svg viewBox="0 0 24 24"><path d="M20.6 13.4L11 3H4v7l9.6 10.4a2 2 0 002.8 0l4.2-4.2a2 2 0 000-2.8z"/><circle cx="7.5" cy="6.5" r="1.3"/></svg><span class="price" id="pkgPrice">$1,590</span></span>
+      </div>
+    </div>
+  </div>
+
+  <form id="icpForm" novalidate>
+    <div class="cards2">
+      <section class="card">
+        <h2>Student Information</h2>
+        <div class="grid2">
+          <div class="field"><label for="sfname">Student First Name <span class="req">*</span></label><input type="text" id="sfname" name="sfname" placeholder="Enter first name" required autocomplete="given-name"></div>
+          <div class="field"><label for="slname">Student Last Name <span class="req">*</span></label><input type="text" id="slname" name="slname" placeholder="Enter last name" required autocomplete="family-name"></div>
+        </div>
+        <div class="minor-note">
+          <svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 19c0-3 2.7-5 6-5s6 2 6 5M17 8h5M19.5 5.5v5"/></svg>
+          <span>If the student is under 18 years of age, a parent or guardian must complete this registration and serve as the primary contact.</span>
+        </div>
+      </section>
+      <section class="card">
+        <h2>Parent / Guardian Information<small>(If applicable)</small></h2>
+        <div class="field"><label for="pname">Parent / Guardian Full Name</label><input type="text" id="pname" name="pname" placeholder="Enter full name" autocomplete="name"></div>
+      </section>
+    </div>
+
+    <div class="cards2">
+      <section class="card">
+        <h2>Contact Information</h2>
+        <div class="field"><label for="email">Email Address <span class="req">*</span></label><input type="email" id="email" name="email" placeholder="Enter email address" required autocomplete="email"></div>
+        <div class="field"><label for="phone">Phone Number <span class="req">*</span></label><input type="tel" id="phone" name="phone" placeholder="Enter phone number" required autocomplete="tel"></div>
+      </section>
+      <section class="card">
+        <h2>Academic Information</h2>
+        <div class="field"><label for="grade">Current Grade / Education Level <span class="req">*</span></label><input type="text" id="grade" name="grade" placeholder="e.g., Grade 10, College Sophomore, Adult Learner" required></div>
+        <div class="field">
+          <label for="help">What would you like help with? <span class="req">*</span></label>
+          <div class="selwrap">
+            <select id="help" name="help" required>
+              <option value="" selected disabled>Select an option</option>
+              <option>Mathematics</option>
+              <option>Science</option>
+              <option>Business Intelligence &amp; Data Analytics</option>
+              <option>Resume Development</option>
+              <option>Interview Preparation</option>
+              <option>College Readiness</option>
+              <option>Study Skills</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="cards2">
+      <section class="card">
+        <h2>Preferred Days &amp; Times</h2>
+        <label style="font-weight:600;color:var(--muted);margin-bottom:.7rem">Select all that apply</label>
+        <div class="checks">
+          <label class="check"><input type="checkbox" name="times" value="Weekday Morning"><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span>Weekday Morning</label>
+          <label class="check"><input type="checkbox" name="times" value="Weekday Afternoon"><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span>Weekday Afternoon</label>
+          <label class="check"><input type="checkbox" name="times" value="Weekday Evening"><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span>Weekday Evening</label>
+          <label class="check"><input type="checkbox" name="times" value="Saturday"><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span>Saturday</label>
+          <label class="check"><input type="checkbox" name="times" value="Sunday"><span class="box"><svg viewBox="0 0 24 24"><path d="M5 13l4 4 10-10"/></svg></span>Sunday</label>
+        </div>
+      </section>
+      <section class="card goals-card" style="margin-bottom:0">
+        <h2>Tell Us About Your Goals</h2>
+        <div class="field">
+          <label for="goals">How can we best support you?</label>
+          <div class="charwrap">
+            <textarea id="goals" name="goals" maxlength="1000" placeholder="Please tell us what subjects or skills you need help with, any challenges you're currently facing, and what you hope to accomplish through coaching."></textarea>
+            <span class="charcount" id="charCount">0/1000</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="hear">How did you hear about Vanguard STEM Academy? <span class="opt">(Optional)</span></label>
+          <div class="selwrap">
+            <select id="hear" name="hear">
+              <option value="" selected disabled>Select an option</option>
+              <option>Social Media</option>
+              <option>Friend or Family</option>
+              <option>School or Teacher</option>
+              <option>Community Event</option>
+              <option>Online Search</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div class="notice">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v.5M12 11v5"/></svg>
+      <div>
+        <div class="nt">Before You Continue</div>
+        <p>After submitting this registration, you will be directed to our secure payment page to complete your purchase.</p>
+        <p>Your request will be reviewed, and a Vanguard team member will contact you to schedule your coaching sessions.</p>
+        <p>If we determine that another Vanguard service is a better fit for your needs, we will contact you to discuss the appropriate next steps.</p>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn">
+      <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+      Continue to Payment
+    </button>
+  </form>
+
+  <div class="success" id="successBox" role="status">
+    <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M7.5 12.5l3 3 6-6.5"/></svg>
+    <h2>Registration Received!</h2>
+    <p>Thank you for registering. You will now be directed to our secure payment page, and a Vanguard team member will contact you to schedule your coaching sessions.</p>
+  </div>
+</main>
+
+<div class="secure">
+  <svg viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M9 12l2 2 4-4.5"/></svg>
+  Your information is secure and will only be used for coaching registration and communication.
+</div>
+
+<script>
+var VANGUARD_FORM_ENDPOINT='https://script.google.com/a/macros/vstemacad.org/s/AKfycbzl8v21P2ecIc_Sd_P1CpfDqcGrB4ZU2-fgEZvLflk8XYhKbdxWjQKTvvBGmr6Y19te/exec';
+function vanguardSubmitForm(formType,formEl,extraFields){
+  var fd=new FormData(formEl),fields={};
+  fd.forEach(function(value,key){
+    if(value instanceof File)value=value.name;
+    if(fields[key]!==undefined){fields[key]=(Array.isArray(fields[key])?fields[key]:[fields[key]]).concat(value)}
+    else{fields[key]=value}
+  });
+  Object.keys(fields).forEach(function(k){if(Array.isArray(fields[k]))fields[k]=fields[k].join(', ')});
+  if(extraFields)Object.assign(fields,extraFields);
+  return fetch(VANGUARD_FORM_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:formType,fields:fields})}).catch(function(err){console.error('Vanguard form submit failed',err)});
+}
+// Package can be passed via URL: icp-registration.html?pkg=Achievement%20Package&weeks=8&sessions=8%20Private%2060-Minute%20Sessions&price=%241%2C590
+var PACKAGE_PAYMENT_LINKS={
+  'Foundation Package':'https://buy.stripe.com/fZudR80Jvfde5tIe5I5kk01',
+  'Achievement Package':'https://buy.stripe.com/eVqcN4fEp4yA7BQ4v85kk02',
+  'Excellence Package':'https://buy.stripe.com/4gM6oG4ZLaWY2hwd1E5kk03',
+  'Mastery Package':'https://buy.stripe.com/aFaeVcbo93uw1ds4v85kk04'
+};
+var currentPkg=null;
+(function(){
+  var q=new URLSearchParams(location.search);
+  if(q.get('pkg')){currentPkg=q.get('pkg');document.getElementById('pkgName').textContent=currentPkg.toUpperCase();}
+  if(q.get('weeks'))document.getElementById('pkgWeeks').textContent=q.get('weeks');
+  if(q.get('sessions'))document.getElementById('pkgSessions').textContent=q.get('sessions');
+  if(q.get('price'))document.getElementById('pkgPrice').textContent=q.get('price');
+})();
+var goals=document.getElementById('goals');
+goals.addEventListener('input',function(){document.getElementById('charCount').textContent=this.value.length+'/1000'});
+document.getElementById('icpForm').addEventListener('submit',function(e){
+  e.preventDefault();
+  if(!this.checkValidity()){this.reportValidity();return}
+  vanguardSubmitForm('icp-registration',this,{
+    package:document.getElementById('pkgName').textContent,
+    packageWeeks:document.getElementById('pkgWeeks').textContent,
+    packageSessions:document.getElementById('pkgSessions').textContent,
+    packagePrice:document.getElementById('pkgPrice').textContent
+  });
+  this.style.display='none';
+  document.getElementById('pkgBanner').style.display='none';
+  document.getElementById('successBox').style.display='block';
+  window.scrollTo({top:0,behavior:'smooth'});
+  var payLink=currentPkg&&PACKAGE_PAYMENT_LINKS[currentPkg];
+  if(payLink)setTimeout(function(){window.location.href=payLink},1800);
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vanguard STEM Academy — Mobile Navigation (Redesigned Dropdowns)</title>
+<meta name="description" content="Redesigned mobile navigation drawer with rich dropdown sections, icons, and descriptions for Vanguard STEM Academy.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#0b2251;
+  --navy-deep:#06163a;
+  --gold:#C9A341;
+  --gold-light:#E4C874;
+  --gold-deep:#A9842E;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Source Sans 3',system-ui,-apple-system,sans-serif;
+  --gold-grad:linear-gradient(135deg,#E4C874 0%,#C9A341 42%,#A9842E 100%);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:var(--sans);
+  background:#e9edf3 radial-gradient(1200px 600px at 50% -10%,#f4f1e8,#dfe4ec);
+  min-height:100vh;display:flex;justify-content:center;align-items:flex-start;
+  padding:34px 16px 60px;-webkit-font-smoothing:antialiased;
+}
+
+/* ============ PANEL SHELL ============ */
+.mobile-panel{
+  width:min(94vw,430px);
+  background:linear-gradient(168deg,#0e2549,#091c3a 55%,#081831);
+  border-radius:22px;
+  box-shadow:0 40px 90px rgba(4,17,40,.5),0 0 0 1px rgba(201,163,65,.28);
+  padding:1.6rem 1.35rem 1.85rem;
+  position:relative;overflow:hidden;
+}
+.mobile-panel::before{
+  content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(520px 260px at 88% -8%,rgba(201,163,65,.14),transparent 60%);
+}
+
+/* head */
+.mp-head{display:flex;justify-content:space-between;align-items:center;gap:.8rem;
+  padding-bottom:1.1rem;margin-bottom:.4rem;border-bottom:1px solid rgba(201,163,65,.5);position:relative}
+.mp-brand{display:flex;align-items:center;gap:.7rem;min-width:0}
+.mp-crest{width:52px;height:52px;flex:none;border-radius:50%;background:var(--navy-deep);
+  display:grid;place-items:center;position:relative;box-shadow:inset 0 0 0 1px rgba(201,163,65,.55)}
+.mp-crest::after{content:"";position:absolute;inset:4px;border-radius:50%;border:1px solid rgba(201,163,65,.7)}
+.mp-crest svg{width:26px;height:26px;stroke:var(--gold-light);fill:none;stroke-width:1.5;position:relative;z-index:1}
+.mp-brand .t1{font-family:var(--serif);font-weight:800;font-size:1.35rem;letter-spacing:.05em;color:#fff;line-height:1.02}
+.mp-brand .t2{font-family:var(--serif);font-weight:700;font-size:.82rem;letter-spacing:.16em;color:var(--gold-light);line-height:1.35;text-transform:uppercase}
+.mp-close{width:44px;height:44px;flex:none;border:1.5px solid rgba(201,163,65,.6);background:none;
+  border-radius:50%;color:var(--gold-light);cursor:pointer;display:grid;place-items:center;transition:.3s var(--ease)}
+.mp-close svg{width:19px;height:19px;stroke:currentColor;stroke-width:2.2;fill:none;stroke-linecap:round}
+.mp-close:hover{background:rgba(201,163,65,.16);transform:rotate(90deg)}
+
+/* ============ NAV LIST ============ */
+.mp-links{list-style:none;margin:.35rem 0 0;padding:0;position:relative}
+.mp-links>li{border-bottom:1px solid rgba(255,255,255,.09)}
+.mp-links>li>a,.mp-links>li>button{
+  width:100%;display:flex;align-items:center;gap:.95rem;
+  padding:.95rem .2rem;color:#f2f6fb;font-family:var(--sans);font-weight:600;
+  font-size:1.04rem;background:none;border:none;cursor:pointer;text-align:left;
+  text-decoration:none;transition:color .25s;min-height:48px;
+}
+.mp-links>li>a:hover,.mp-links>li>button:hover,
+.mp-links>li>button[aria-expanded="true"]{color:var(--gold-light)}
+.mp-ic{width:26px;height:26px;flex:none;stroke:var(--gold);fill:none;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.mp-links>li>button[aria-expanded="true"] .mp-ic{stroke:var(--gold-light)}
+.caret{width:14px;height:14px;margin-left:auto;stroke:var(--gold);stroke-width:2.4;fill:none;
+  stroke-linecap:round;stroke-linejoin:round;transition:transform .35s var(--ease);flex:none}
+.mp-links>li>button[aria-expanded="true"] .caret{transform:rotate(180deg);stroke:var(--gold-light)}
+
+/* ============ SUBMENU (rich card) ============ */
+.sub{max-height:0;overflow:hidden;transition:max-height .42s var(--ease),opacity .3s;opacity:.4}
+.sub.open{opacity:1}
+.sub-card{
+  margin:.15rem .1rem 1.15rem;border:1px solid rgba(201,163,65,.42);border-radius:14px;
+  background:rgba(4,15,36,.5);overflow:hidden;
+}
+.sub-item{
+  display:flex;gap:.9rem;padding:.95rem 1rem;text-decoration:none;
+  border-left:2px solid transparent;transition:background .25s,border-color .25s,padding-left .25s;
+}
+.sub-item:not(:last-child){border-bottom:1px solid rgba(255,255,255,.07)}
+.sub-item:hover{background:rgba(201,163,65,.12);border-left-color:var(--gold);padding-left:1.25rem}
+.si-ic{width:26px;height:26px;flex:none;margin-top:2px;stroke:var(--gold-light);fill:none;stroke-width:1.55;stroke-linecap:round;stroke-linejoin:round}
+.si-tx{min-width:0}
+.si-tx strong{display:block;font-family:var(--sans);font-weight:700;font-size:.96rem;color:#fff;line-height:1.28;letter-spacing:.005em}
+.sub-item:hover .si-tx strong{color:var(--gold-light)}
+.si-tx span{display:block;margin-top:.2rem;font-size:.8rem;color:#9fb0c6;line-height:1.4}
+
+/* ============ FOOTER CTAS ============ */
+.mp-util{margin-top:1.5rem;display:flex;flex-direction:column;gap:.85rem}
+.mp-btn{display:flex;align-items:center;justify-content:center;gap:.65rem;width:100%;min-height:54px;
+  border-radius:12px;font-family:var(--sans);font-weight:800;font-size:.86rem;letter-spacing:.16em;
+  text-transform:uppercase;text-decoration:none;cursor:pointer;transition:.3s var(--ease)}
+.mp-btn svg{width:18px;height:18px;flex:none;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.mp-btn.portal{background:#fff;color:var(--navy);border:2px solid var(--gold);box-shadow:0 0 0 3px rgba(201,163,65,.26)}
+.mp-btn.portal:hover{background:#fdf6e3}
+.mp-btn.apply{background:var(--gold-grad);color:var(--navy);border:none;box-shadow:0 10px 22px rgba(169,132,46,.35)}
+.mp-btn.apply:hover{filter:brightness(1.06)}
+
+/* label chip under panel (build reference only) */
+.build-note{max-width:min(94vw,430px);margin:20px auto 0;text-align:center;
+  font-family:'Oswald',sans-serif;font-weight:600;letter-spacing:.16em;text-transform:uppercase;
+  font-size:.7rem;color:#6b7688}
+.build-note b{display:block;color:#0b2251;font-size:.82rem;margin-bottom:.35rem;letter-spacing:.18em}
+</style>
+</head>
+<body>
+
+<aside class="mobile-panel" aria-label="Mobile menu">
+  <div class="mp-head">
+    <div class="mp-brand">
+      <span class="mp-crest"><svg viewBox="0 0 24 24"><path d="M12 3l2.1 4.4 4.9.6-3.6 3.3 1 4.8L12 13.9 7.6 16l1-4.8L5 7.9l4.9-.6z"/></svg></span>
+      <div>
+        <div class="t1">Vanguard</div>
+        <div class="t2">STEM Academy</div>
+      </div>
+    </div>
+    <button class="mp-close" aria-label="Close menu"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  </div>
+
+  <ul class="mp-links">
+
+    <!-- ============ HOME ============ -->
+    <li>
+      <button class="msub" aria-expanded="true">
+        <svg class="mp-ic" viewBox="0 0 24 24"><path d="M4 11l8-7 8 7"/><path d="M6 9.5V20h12V9.5"/></svg>
+        Home
+        <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="sub open">
+        <div class="sub-card">
+          <a class="sub-item" href="/#pathway">
+            <svg class="si-ic" viewBox="0 0 24 24"><circle cx="6" cy="6" r="2.4"/><circle cx="6" cy="18" r="2.4"/><circle cx="18" cy="12" r="2.4"/><path d="M8.2 6.6c3 .3 4.4 1.9 4.4 5.4M8.2 17.4c3-.3 4.4-1.9 4.4-5.4"/></svg>
+            <span class="si-tx"><strong>Choose Your Pathway</strong><span>Find the program that best matches your academic, professional, or career goals.</span></span>
+          </a>
+          <a class="sub-item" href="/programs">
+            <svg class="si-ic" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg>
+            <span class="si-tx"><strong>Our Core Programs</strong><span>Explore Vanguard&rsquo;s primary programs for students, professionals, and organizations.</span></span>
+          </a>
+          <a class="sub-item" href="/programs/mentorship">
+            <svg class="si-ic" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M6 11a6 6 0 0012 0M12 17v4M9 21h6"/></svg>
+            <span class="si-tx"><strong>Executive Fireside Chat Series</strong><span>Connect with leaders from technology, engineering, finance, education, government, and business.</span></span>
+          </a>
+        </div>
+      </div>
+    </li>
+
+    <!-- ============ THE LEADERSHIP TEAM ============ -->
+    <li>
+      <a href="/the-leadership-team">
+        <svg class="mp-ic" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4a3 3 0 010 8M18 14c2.4.8 4 2.6 4 6"/></svg>
+        The Leadership Team
+      </a>
+    </li>
+
+    <!-- ============ PROGRAMS ============ -->
+    <li>
+      <button class="msub" aria-expanded="false">
+        <svg class="mp-ic" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg>
+        Programs
+        <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="sub">
+        <div class="sub-card">
+          <a class="sub-item" href="/programs/coaching">
+            <svg class="si-ic" viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.4"/><path d="M5 20c0-3.6 3-6.2 7-6.2s7 2.6 7 6.2"/></svg>
+            <span class="si-tx"><strong>Individual Coaching Program</strong><span>Personalized academic and professional coaching for students and working professionals.</span></span>
+          </a>
+          <a class="sub-item" href="/the-academy">
+            <svg class="si-ic" viewBox="0 0 24 24"><path d="M9 3h6v3a3 3 0 01-6 0z"/><path d="M9 6H6.5A2.5 2.5 0 009 10.5M15 6h2.5A2.5 2.5 0 0115 10.5"/><path d="M10 10.5c0 1.5.8 2.6 2 3.2 1.2-.6 2-1.7 2-3.2M12 14v3M8.5 21h7l-1-4h-5z"/></svg>
+            <span class="si-tx"><strong>Youth STEM Academy</strong><span>Project-based STEM, leadership, career-readiness, and professional-development experiences for students.</span></span>
+          </a>
+          <a class="sub-item" href="/programs/bi">
+            <svg class="si-ic" viewBox="0 0 24 24"><path d="M4 20V4M4 20h16M8 20v-6M12 20V9M16 20v-9M20 20v-4"/></svg>
+            <span class="si-tx"><strong>Business Intelligence Academy</strong><span>Develop practical skills in data analytics, dashboards, business intelligence, and strategic decision-making.</span></span>
+          </a>
+          <a class="sub-item" href="/programs/mentorship">
+            <svg class="si-ic" viewBox="0 0 24 24"><circle cx="12" cy="7" r="3"/><path d="M6 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><path d="M18 5.5l1.5-1.5M18 8.5l2 .5"/></svg>
+            <span class="si-tx"><strong>Executive Fireside Chat Program</strong><span>Receive guidance, career insight, and leadership development from experienced professionals.</span></span>
+          </a>
+          <a class="sub-item" href="/programs/workforce">
+            <svg class="si-ic" viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M3 12h18"/></svg>
+            <span class="si-tx"><strong>Corporate &amp; Workforce Training</strong><span>Customized training in communication, leadership, conflict resolution, career readiness, and workplace performance.</span></span>
+          </a>
+          <a class="sub-item" href="/programs/ai">
+            <svg class="si-ic" viewBox="0 0 24 24"><rect x="7" y="8" width="10" height="9" rx="2"/><path d="M12 8V5M9 5h6M9.5 3.8v1.2M14.5 3.8v1.2M7 12H4M20 12h-3M10 12v1.5M14 12v1.5M9.5 20l.5-3M14.5 20l-.5-3"/></svg>
+            <span class="si-tx"><strong>AI Innovation Academy</strong><span>Explore artificial intelligence, emerging technologies, problem-solving, and applied innovation.</span></span>
+          </a>
+          <a class="sub-item" href="/programs/future">
+            <svg class="si-ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 9h18M8 3v4M16 3v4M8 13h3M8 17h6"/></svg>
+            <span class="si-tx"><strong>Future Vanguard Academies &amp; Cohorts</strong><span>Preview upcoming learning pathways, including international consulting, strategy, leadership, engineering design, and specialized academies.</span></span>
+          </a>
+        </div>
+      </div>
+    </li>
+
+    <!-- ============ THE ACADEMY ============ -->
+    <li>
+      <button class="msub" aria-expanded="false">
+        <svg class="mp-ic" viewBox="0 0 24 24"><path d="M3 21h18M5 21V10h14v11M12 3L3 8h18z"/></svg>
+        The Academy
+        <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="sub">
+        <div class="sub-card">
+          <a class="sub-item" href="/the-academy/overview">
+            <svg class="si-ic" viewBox="0 0 24 24"><path d="M3 21h18M4 21V9l8-5 8 5v12M8 21v-6h8v6"/><path d="M4 9h16"/></svg>
+            <span class="si-tx"><strong>Academy Overview</strong><span>Learn how Vanguard combines project-based learning, executive engagement, leadership, and career preparation.</span></span>
+          </a>
+          <a class="sub-item" href="/the-academy/experiences">
+            <svg class="si-ic" viewBox="0 0 24 24"><path d="M4 5h16v11H4z"/><path d="M4 16l5-4 3 2 4-4 4 3M9 20h6"/><circle cx="9" cy="9" r="1.3"/></svg>
+            <span class="si-tx"><strong>Signature Experiences</strong><span>Explore real student projects, real-world consulting challenges, and meaningful community impact.</span></span>
+          </a>
+          <a class="sub-item" href="/the-academy/cohorts">
+            <svg class="si-ic" viewBox="0 0 24 24"><circle cx="8" cy="9" r="2.4"/><circle cx="16" cy="9" r="2.4"/><path d="M3 19c0-2.5 2.2-4.3 5-4.3s5 1.8 5 4.3M13 18.5c.3-2.2 2.3-3.8 4.8-3.8 2.6 0 4.2 1.6 4.2 4"/></svg>
+            <span class="si-tx"><strong>Our Cohorts, Our Future Leaders</strong><span>View cohort experiences, student collaboration, presentations, and program highlights.</span></span>
+          </a>
+          <a class="sub-item" href="/the-academy/stevens">
+            <svg class="si-ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 3a14 14 0 000 18M12 3a14 14 0 010 18M3 12h18"/></svg>
+            <span class="si-tx"><strong>From Vanguard to Stevens</strong><span>Learn how qualifying students continue their development through summer experiences at Stevens Institute of Technology.</span></span>
+          </a>
+          <a class="sub-item" href="/our-impact/recognition">
+            <svg class="si-ic" viewBox="0 0 24 24"><circle cx="12" cy="9" r="5"/><path d="M9 13.5L7.5 21l4.5-2.5L16.5 21 15 13.5"/></svg>
+            <span class="si-tx"><strong>Achievements &amp; Recognition</strong><span>Explore municipal recognition, academy honors, international engagement, and major student accomplishments.</span></span>
+          </a>
+          <a class="sub-item" href="/get-involved/partners">
+            <svg class="si-ic" viewBox="0 0 24 24"><path d="M8 13l2.5 2.5a2 2 0 002.8 0l.7-.7 3 3M8 13l-3-3a2 2 0 010-2.8l1.2-1.2a2 2 0 012.8 0L14 9l3-3 4 4-5 5"/></svg>
+            <span class="si-tx"><strong>Trusted by Industry Leaders &amp; Partners</strong><span>View the universities, companies, community organizations, and global leaders supporting Vanguard students.</span></span>
+          </a>
+          <a class="sub-item" href="/the-academy/journey">
+            <svg class="si-ic" viewBox="0 0 24 24"><path d="M9 4L3 6v14l6-2 6 2 6-2V4l-6 2-6-2z"/><path d="M9 4v14M15 6v14"/></svg>
+            <span class="si-tx"><strong>The Vanguard Student Journey</strong><span>Follow the experience from application and team formation through projects, executive presentations, graduation, and future opportunities.</span></span>
+          </a>
+        </div>
+      </div>
+    </li>
+
+    <!-- ============ APPLY ============ -->
+    <li>
+      <a href="/apply">
+        <svg class="mp-ic" viewBox="0 0 24 24"><path d="M7 3h8l4 4v14H7z"/><path d="M15 3v4h4M10 12h6M10 16h6"/></svg>
+        Apply to the Academy
+      </a>
+    </li>
+
+    <!-- ============ OUR IMPACT ============ -->
+    <li>
+      <button class="msub" aria-expanded="false">
+        <svg class="mp-ic" viewBox="0 0 24 24"><path d="M12 3l2.4 5 5.6.7-4 3.9 1 5.4L12 21l-5-3 1-5.4L4 8.7l5.6-.7z"/></svg>
+        Our Impact
+        <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="sub">
+        <div class="sub-card">
+          <a class="sub-item" href="/our-impact/video">
+            <svg class="si-ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="M10 9l5 3-5 3z"/></svg>
+            <span class="si-tx"><strong>Our Impact in Motion</strong><span>Watch Vanguard&rsquo;s featured impact video and see the work, experiences, and outcomes in action.</span></span>
+          </a>
+          <a class="sub-item" href="/our-impact/invitations">
+            <svg class="si-ic" viewBox="0 0 24 24"><circle cx="12" cy="8" r="5"/><path d="M8.5 12L7 21l5-2.5L17 21l-1.5-9"/><path d="M12 6.2l.9 1.8 1.9.3-1.4 1.3.3 1.9-1.7-.9-1.7.9.3-1.9-1.4-1.3 1.9-.3z"/></svg>
+            <span class="si-tx"><strong>Strategic Recognitions &amp; Invitations</strong><span>Explore Vanguard&rsquo;s government, royal, university, industry, conference, and leadership engagements.</span></span>
+          </a>
+          <a class="sub-item" href="/our-impact/network">
+            <svg class="si-ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a15 15 0 010 18M12 3a15 15 0 000 18"/></svg>
+            <span class="si-tx"><strong>Global Leadership Network</strong><span>View the executives, institutions, organizations, and global partners connected to Vanguard.</span></span>
+          </a>
+          <a class="sub-item" href="/our-impact/milestones">
+            <svg class="si-ic" viewBox="0 0 24 24"><path d="M8 21V4h9l-1.5 3.5L17 11H8"/><path d="M8 21c-1.5 0-2.5-1-2.5-2.5S6.5 16 8 16M6 13c-1.3 0-2.2-.9-2.2-2.2S4.7 8.6 6 8.6"/></svg>
+            <span class="si-tx"><strong>Recognitions &amp; Milestones</strong><span>Explore municipal recognition, academy honors, international attendance, and student projects advancing toward major proposals.</span></span>
+          </a>
+          <a class="sub-item" href="/our-impact/graduation">
+            <svg class="si-ic" viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5M22 10v5"/></svg>
+            <span class="si-tx"><strong>Graduation Highlights</strong><span>View photos and memorable moments from Vanguard&rsquo;s graduation celebrations.</span></span>
+          </a>
+          <a class="sub-item" href="/our-impact/stories">
+            <svg class="si-ic" viewBox="0 0 24 24"><path d="M12 20s-6.5-4-6.5-9A3.7 3.7 0 0112 8.5 3.7 3.7 0 0118.5 11c0 5-6.5 9-6.5 9z"/></svg>
+            <span class="si-tx"><strong>Student Success Stories</strong><span>Meet Vanguard students and alumni whose academic, professional, and career paths were transformed.</span></span>
+          </a>
+          <a class="sub-item" href="/our-impact/testimonials">
+            <svg class="si-ic" viewBox="0 0 24 24"><path d="M4 5h16v11H9l-4 4v-4H4z"/><path d="M8 9h8M8 12h5"/></svg>
+            <span class="si-tx"><strong>Video Testimonials</strong><span>Hear directly from students, parents, partners, guest speakers, and industry leaders.</span></span>
+          </a>
+        </div>
+      </div>
+    </li>
+
+    <!-- ============ GET INVOLVED ============ -->
+    <li>
+      <button class="msub" aria-expanded="false">
+        <svg class="mp-ic" viewBox="0 0 24 24"><path d="M12 18.4s-5.6-3.5-5.6-7.2A3.2 3.2 0 0112 8.9a3.2 3.2 0 015.6 2.3c0 3.7-5.6 7.2-5.6 7.2z"/><path d="M4.5 21c1.4-1.3 3.2-1.9 5.2-1.9h4.6c2 0 3.8.6 5.2 1.9"/></svg>
+        Get Involved
+        <svg class="caret" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+      </button>
+      <div class="sub">
+        <div class="sub-card">
+          <a class="sub-item" href="/get-involved/partner">
+            <svg class="si-ic" viewBox="0 0 24 24"><path d="M8 13l2.5 2.5a2 2 0 002.8 0l.7-.7 3 3M8 13l-3-3a2 2 0 010-2.8l1.2-1.2a2 2 0 012.8 0L14 9l3-3 4 4-5 5"/></svg>
+            <span class="si-tx"><strong>Partner With Us</strong><span>Collaborate with Vanguard as a corporate, community, or academic partner.</span></span>
+          </a>
+          <a class="sub-item" href="/get-involved/sponsor">
+            <svg class="si-ic" viewBox="0 0 24 24"><path d="M12 20s-6.5-4-6.5-9A3.7 3.7 0 0112 8.5 3.7 3.7 0 0118.5 11c0 5-6.5 9-6.5 9z"/></svg>
+            <span class="si-tx"><strong>Sponsor a Student</strong><span>Fund a scholarship and directly power a young innovator&rsquo;s journey.</span></span>
+          </a>
+          <a class="sub-item" href="/get-involved/volunteer">
+            <svg class="si-ic" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6M16 4a3 3 0 010 8"/></svg>
+            <span class="si-tx"><strong>Volunteer &amp; Mentor</strong><span>Share your expertise as a mentor, guest speaker, or program volunteer.</span></span>
+          </a>
+          <a class="sub-item" href="mailto:info@vstemacad.org">
+            <svg class="si-ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <span class="si-tx"><strong>Contact Us</strong><span>Reach the Vanguard team with questions, ideas, or opportunities.</span></span>
+          </a>
+        </div>
+      </div>
+    </li>
+
+  </ul>
+
+  <div class="mp-util">
+    <a href="/portal" class="mp-btn portal"><svg viewBox="0 0 24 24"><rect x="5" y="11" width="14" height="9" rx="2"/><path d="M8 11V8a4 4 0 018 0v3"/></svg>Login / Portal</a>
+    <a href="/apply" class="mp-btn apply"><svg viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19l-4 1z"/><path d="M13.5 7.5l3 3"/></svg>Apply to the Academy</a>
+  </div>
+</aside>
+
+<div class="build-note"><b>Mobile Nav — Redesigned Dropdowns</b>Tap any section to expand. Hand this file to Claude Code for integration.</div>
+
+<script>
+document.querySelectorAll('.msub').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var sub = btn.parentElement.querySelector('.sub');
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    // close all others
+    document.querySelectorAll('.msub').forEach(function(other){
+      if(other !== btn){
+        other.setAttribute('aria-expanded','false');
+        var s = other.parentElement.querySelector('.sub');
+        s.classList.remove('open');
+        s.style.maxHeight = null;
+      }
+    });
+    if(open){
+      btn.setAttribute('aria-expanded','false');
+      sub.classList.remove('open');
+      sub.style.maxHeight = null;
+    } else {
+      btn.setAttribute('aria-expanded','true');
+      sub.classList.add('open');
+      sub.style.maxHeight = sub.scrollHeight + 'px';
+    }
+  });
+});
+// initialise the default-open Home section to its natural height
+window.addEventListener('load', function(){
+  var openBtn = document.querySelector('.msub[aria-expanded="true"]');
+  if(openBtn){
+    var s = openBtn.parentElement.querySelector('.sub');
+    s.style.maxHeight = s.scrollHeight + 'px';
+  }
+});
+</script>
+</body>
+</html>

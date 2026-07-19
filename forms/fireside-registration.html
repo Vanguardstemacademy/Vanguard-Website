@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Register for an Executive Fireside Chat | Vanguard STEM Academy</title>
+<meta name="description" content="Register your interest in an upcoming Vanguard Executive Fireside Chat. Event details and confirmation will be sent by email.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   VANGUARD STEM ACADEMY — SHARED DESIGN SYSTEM
+   ============================================================ */
+:root{
+  --navy:#0b2251;
+  --navy-2:#123063;
+  --navy-deep:#06163a;
+  --gold:#C9A341;
+  --gold-2:#D4AF37;
+  --gold-light:#E4C874;
+  --gold-deep:#A9842E;
+  --cream:#F8F6F1;
+  --burgundy:#6E1E2C;
+  --burgundy-2:#8a2a3a;
+  --burgundy-deep:#4a121d;
+  --ink:#1c2530;
+  --muted:#5b6675;
+  --line:#e6e0d3;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Source Sans 3',system-ui,-apple-system,sans-serif;
+  --gold-grad:linear-gradient(135deg,#E4C874 0%,#C9A341 42%,#A9842E 100%);
+  --gold-sheen:linear-gradient(120deg,#A9842E 0%,#E9D089 25%,#C9A341 50%,#F0DA97 72%,#A9842E 100%);
+  --shadow-sm:0 4px 18px rgba(2,25,52,.08);
+  --shadow-md:0 14px 40px rgba(2,25,52,.14);
+  --shadow-lg:0 26px 70px rgba(2,25,52,.22);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  margin:0;font-family:var(--sans);color:var(--ink);
+  background:var(--cream);line-height:1.55;font-size:15px;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.12;margin:0;color:var(--navy)}
+p{margin:0 0 1rem}
+a{color:var(--burgundy);text-decoration:none;transition:color .25s}
+a:hover{color:var(--gold-deep)}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--gold-2);outline-offset:3px;border-radius:2px}
+
+/* ============================================================
+   PAGE LAYOUT
+   ============================================================ */
+.reg-page{display:flex;flex-direction:column;min-height:100vh}
+.reg-shell{flex:1;display:flex;align-items:center;justify-content:center;padding:clamp(1rem,3vw,2.6rem)}
+.reg-card{
+  width:100%;max-width:1120px;background:#fff;border-radius:26px;overflow:hidden;
+  box-shadow:var(--shadow-lg);display:grid;grid-template-columns:minmax(300px,380px) 1fr;
+  border:1px solid var(--line);
+}
+
+/* ---------- LEFT PANEL ---------- */
+.reg-left{
+  position:relative;isolation:isolate;overflow:hidden;color:#fff;
+  padding:clamp(2rem,3vw,3rem) clamp(1.8rem,2.6vw,2.6rem);
+  display:flex;flex-direction:column;justify-content:space-between;gap:2rem;
+  background:linear-gradient(165deg,#4a121d 0%,#6E1E2C 46%,#3a0e17 100%);
+}
+.reg-left-photo{position:absolute;inset:0;z-index:0}
+.reg-left-photo image-slot{width:100%;height:100%}
+.reg-left-scrim{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(180deg,#6E1E2C 0%,rgba(110,30,44,.94) 30%,rgba(74,18,29,.62) 62%,rgba(58,14,23,.82) 100%)}
+.reg-left::after{content:"";position:absolute;top:-14%;right:-2px;bottom:-14%;width:120px;border-radius:50%;border-right:4px solid rgba(201,163,65,.7);filter:drop-shadow(0 0 14px rgba(201,163,65,.45));pointer-events:none;z-index:1}
+.reg-left::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(120deg,rgba(255,255,255,.028) 0 2px,transparent 2px 26px);pointer-events:none;z-index:1}
+.reg-left>*{position:relative;z-index:2}
+.reg-left h2{
+  font-family:var(--serif);font-weight:800;line-height:1.04;
+  font-size:clamp(2.3rem,3.4vw,3.1rem);letter-spacing:.01em;color:#fff;
+  text-transform:uppercase;
+}
+.reg-left h2 span{display:block}
+.reg-left h2 .g{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
+.reg-tagline{font-weight:800;font-size:.74rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-light);margin-top:1.1rem;line-height:1.5}
+.reg-orn{display:flex;align-items:center;gap:.9rem;margin:1.2rem 0}
+.reg-orn::before,.reg-orn::after{content:"";flex:1;height:1.5px;background:var(--gold-grad);opacity:.85}
+.reg-orn svg{width:15px;height:15px;fill:var(--gold-2)}
+.reg-left p.desc{color:#eddfe1;font-size:.95rem;line-height:1.6;margin:0}
+.reg-crest{display:flex;flex-direction:column;align-items:center;gap:.5rem;margin-top:auto}
+.reg-crest img{width:78px;filter:drop-shadow(0 10px 22px rgba(0,0,0,.5))}
+.reg-crest .cn{font-family:var(--serif);font-weight:800;font-size:1rem;letter-spacing:.26em;color:#fff;line-height:1}
+.reg-crest .cs{font-weight:700;font-size:.58rem;letter-spacing:.4em;color:var(--gold-light)}
+
+/* ---------- RIGHT FORM ---------- */
+.reg-right{position:relative;padding:clamp(1.8rem,3vw,3rem) clamp(1.8rem,3vw,3.2rem)}
+.reg-hero-photo{position:absolute;top:0;right:0;width:min(46%,340px);height:clamp(150px,15vw,210px);z-index:0;-webkit-mask-image:linear-gradient(255deg,#000 52%,transparent),linear-gradient(180deg,#000 58%,transparent);-webkit-mask-composite:source-in;mask-image:linear-gradient(255deg,#000 52%,transparent),linear-gradient(180deg,#000 58%,transparent);mask-composite:intersect}
+.reg-hero-photo image-slot{width:100%;height:100%}
+.reg-right>*{position:relative;z-index:1}
+.reg-head{position:relative;z-index:1;text-align:center}
+.reg-head .pre{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(1.4rem,2.2vw,1.75rem);color:var(--ink)}
+.reg-head h1{font-family:var(--serif);font-weight:800;font-size:clamp(1.9rem,3vw,2.6rem);color:var(--navy);line-height:1.08;margin-top:.1rem}
+.reg-head-orn{display:flex;align-items:center;gap:.9rem;margin:1rem auto 1.1rem;max-width:360px}
+.reg-head-orn::before,.reg-head-orn::after{content:"";flex:1;height:1.5px;background:var(--gold-grad)}
+.reg-head-orn svg{width:14px;height:14px;fill:var(--gold-2)}
+.reg-intro{text-align:center;color:var(--muted);font-size:.95rem;line-height:1.6;max-width:52ch;margin:0 auto 1.8rem}
+
+/* ---------- FIELDS ---------- */
+.reg-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem 1.4rem}
+.f-full{grid-column:1 / -1}
+.form-field{display:flex;flex-direction:column;gap:.4rem}
+.form-field>label{font-size:.9rem;font-weight:700;color:var(--ink);letter-spacing:.01em}
+.form-field>label .req{color:var(--burgundy);font-weight:800;margin-left:.15rem}
+.in-wrap{position:relative}
+.in-wrap>.ic{position:absolute;left:1rem;top:50%;transform:translateY(-50%);width:18px;height:18px;stroke:var(--muted);fill:none;stroke-width:1.7;pointer-events:none;stroke-linecap:round;stroke-linejoin:round}
+.reg-input,.reg-select,.reg-textarea{
+  width:100%;font-family:var(--sans);font-size:.98rem;color:var(--ink);
+  border:1.5px solid var(--line);border-radius:12px;background:var(--cream);
+  outline:none;transition:.25s var(--ease);
+}
+.reg-input{padding:.8rem 1rem .8rem 2.9rem}
+.reg-select{padding:.8rem 2.6rem .8rem 1rem;appearance:none;-webkit-appearance:none;cursor:pointer;color:var(--muted)}
+.reg-select.chosen{color:var(--ink)}
+.reg-textarea{padding:.8rem 1rem;resize:vertical;min-height:92px;line-height:1.55}
+.reg-input::placeholder,.reg-textarea::placeholder{color:#9aa3af}
+.reg-input:focus,.reg-select:focus,.reg-textarea:focus{border-color:var(--gold);background:#fff;box-shadow:0 0 0 3px rgba(201,163,65,.18)}
+.sel-wrap{position:relative}
+.sel-wrap::after{content:"";position:absolute;right:1.05rem;top:50%;width:9px;height:9px;border-right:2px solid var(--muted);border-bottom:2px solid var(--muted);transform:translateY(-70%) rotate(45deg);pointer-events:none;transition:.25s}
+.sel-wrap:focus-within::after{border-color:var(--gold-deep)}
+
+/* ---------- CONSENT ---------- */
+.reg-consent{grid-column:1 / -1;border:1.5px solid var(--line);border-radius:14px;background:var(--cream);padding:1.1rem 1.2rem;display:flex;flex-direction:column;gap:.85rem;margin-top:.4rem}
+.consent-row{display:flex;gap:.75rem;align-items:flex-start;font-size:.9rem;color:var(--ink);line-height:1.5;cursor:pointer}
+.consent-row input{flex:none;margin-top:.15rem;width:18px;height:18px;accent-color:var(--burgundy);cursor:pointer}
+.consent-row .req{color:var(--burgundy);font-weight:800}
+
+/* ---------- SUBMIT ---------- */
+.reg-submit{
+  grid-column:1 / -1;width:100%;margin-top:.8rem;display:inline-flex;align-items:center;justify-content:center;gap:.7rem;
+  font-family:var(--sans);font-weight:800;font-size:.92rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:1.05rem 1.5rem;border-radius:13px;border:1.5px solid var(--gold);cursor:pointer;color:#fff;
+  background:linear-gradient(135deg,#6E1E2C,#8a2a3a);transition:.3s var(--ease);
+}
+.reg-submit svg{width:17px;height:17px;stroke:var(--gold-light);fill:none;stroke-width:1.9}
+.reg-submit:hover{box-shadow:0 0 0 1px var(--gold),0 16px 34px rgba(110,30,44,.4);filter:brightness(1.08)}
+.reg-secure{grid-column:1 / -1;display:flex;align-items:center;justify-content:center;gap:.5rem;margin-top:1rem;color:var(--muted);font-size:.85rem}
+.reg-secure svg{width:15px;height:15px;stroke:var(--gold-deep);fill:none;stroke-width:1.8}
+.reg-secure a{font-weight:700;color:var(--burgundy)}
+
+/* honeypot — hidden from humans */
+.hp-field{position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden}
+
+/* ---------- CONFIRMATION ---------- */
+.reg-success{display:none;text-align:center;padding:2rem .5rem 1rem;animation:fadeUp .5s var(--ease)}
+.reg-success.show{display:block}
+@keyframes fadeUp{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+.reg-success .badge{width:78px;height:78px;border-radius:50%;margin:0 auto 1.3rem;display:grid;place-items:center;background:var(--gold-grad);box-shadow:0 12px 30px rgba(201,163,65,.4)}
+.reg-success .badge svg{width:38px;height:38px;stroke:var(--navy);fill:none;stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round}
+.reg-success h2{font-size:clamp(1.6rem,2.4vw,2.1rem);margin-bottom:.4rem}
+.reg-success .ev-name{display:inline-block;font-family:var(--serif);font-style:italic;font-weight:600;color:var(--burgundy);font-size:1.05rem;margin:.2rem 0 1rem}
+.reg-success p{color:var(--muted);font-size:.98rem;line-height:1.65;max-width:48ch;margin:0 auto 1.4rem}
+.reg-success .home{display:inline-flex;align-items:center;gap:.5rem;font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--burgundy)}
+.reg-success .home svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.4}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-width:920px){
+  .reg-card{grid-template-columns:1fr}
+  .reg-left{flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:1.2rem}
+  .reg-left::after{display:none}
+  .reg-left h2{font-size:2rem}
+  .reg-left .reg-orn,.reg-left p.desc{display:none}
+  .reg-crest{flex-direction:row;margin-top:0}
+  .reg-crest img{width:56px}
+  .reg-tagline{margin-top:0}
+}
+@media(max-width:560px){
+  .reg-grid{grid-template-columns:1fr}
+  .reg-right{padding:1.6rem 1.3rem 2rem}
+}
+
+/* ============================================================
+   SITE FOOTER + FLOATING PILL / BACK TO TOP
+   ============================================================ */
+.container{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,44px)}
+.footer{background:#0b2251;color:#c6d2e2;border-top:3px solid;border-image:var(--gold-grad) 1;padding-top:3rem;position:relative;overflow:hidden}
+.footer::before,.footer::after{content:"";position:absolute;top:0;bottom:0;width:clamp(110px,17vw,240px);background-repeat:no-repeat;background-position:center;background-size:contain;pointer-events:none;z-index:0}
+.footer::before{left:0;background-image:url('assets/images/left-laurel.png')}
+.footer::after{right:0;background-image:url('assets/images/right-laurel.png')}
+.footer-inner{max-width:940px;margin:0 auto;position:relative;z-index:1}
+.footer-badge{display:flex;justify-content:center;margin-bottom:.4rem}
+.footer-badge img{width:clamp(108px,14vw,146px);height:auto;filter:drop-shadow(0 12px 26px rgba(0,0,0,.45))}
+.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;padding:2rem 0;border-top:1px solid rgba(201,163,65,.22);text-align:center;margin-top:1.4rem}
+.footer-cols>div{display:flex;flex-direction:column;align-items:center}
+.footer h5{color:#fff;font-family:var(--serif);font-weight:700;font-size:1.05rem;letter-spacing:.02em;margin:0 0 1.1rem}
+.footer ul{list-style:none;margin:0;padding:0}
+.footer ul li{margin-bottom:.7rem}
+.footer ul a{color:var(--gold-light);font-size:.92rem;text-decoration:underline}
+.footer ul a:hover{color:#fff}
+.footer ul a{transition:.25s;display:inline-flex;align-items:center;gap:.5rem}
+.faddr{color:#dbe2ee;font-size:.92rem;line-height:1.7;margin:0;font-weight:700}
+.fsocial{display:flex;gap:.7rem;justify-content:center}
+.fsocial a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(201,163,65,.45);display:grid;place-items:center;transition:.3s}
+.fsocial a:hover{background:var(--gold-grad);border-color:transparent}
+.fsocial a svg{width:18px;height:18px;fill:var(--gold-light);transition:.3s}
+.fsocial a:hover svg{fill:var(--navy)}
+.footer-bottom-row{display:flex;justify-content:space-between;align-items:center;padding:1.6rem 0 2rem;font-size:.85rem;color:#c6d2e2;flex-wrap:wrap;gap:1rem}
+.apply-pill{position:fixed;bottom:26px;right:26px;z-index:50;background:var(--gold-grad);color:var(--navy);font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;padding:1rem 1.6rem;border-radius:50px;box-shadow:0 12px 34px rgba(201,163,65,.5);display:inline-flex;align-items:center;gap:.6rem;opacity:0;visibility:hidden;transform:translateY(20px);transition:.4s var(--ease);border:1px solid var(--gold-deep)}
+.apply-pill.show{opacity:1;visibility:visible;transform:translateY(0)}
+.apply-pill:hover{color:var(--navy);filter:brightness(1.07);transform:translateY(-3px)}
+.apply-pill svg{width:16px;height:16px;stroke:var(--navy);fill:none;stroke-width:2.4}
+.to-top{position:fixed;bottom:26px;left:26px;z-index:50;width:50px;height:50px;border-radius:50%;background:var(--navy);border:1.5px solid var(--gold);color:var(--gold-light);cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(20px);transition:.4s var(--ease)}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{background:var(--gold-grad);color:var(--navy)}
+.to-top svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.4}
+
+/* nav overrides live in assets/css/nav.css */
+</style>
+<link rel="stylesheet" href="assets/css/nav.css">
+</head>
+<body>
+
+<vanguard-nav></vanguard-nav>
+
+<main class="reg-page" id="main">
+<div class="reg-shell">
+  <div class="reg-card" data-screen-label="Fireside Registration">
+
+    <!-- LEFT PANEL -->
+    <aside class="reg-left">
+      <div class="reg-left-photo"><image-slot id="fireside-audience" shape="rect" placeholder="Drop your audience / microphone photo"></image-slot></div>
+      <div class="reg-left-scrim" aria-hidden="true"></div>
+      <div>
+        <h2><span>Executive</span><span>Fireside</span><span class="g">Chats</span></h2>
+        <p class="reg-tagline">Executive Validation &amp;<br>Student Exposure</p>
+      </div>
+      <div>
+        <div class="reg-orn" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 0l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></svg></div>
+        <p class="desc">Vanguard connects students and professionals directly with executives from leading organizations through exclusive Fireside Chats designed to provide insight into leadership, innovation, workforce readiness, and emerging technologies.</p>
+      </div>
+      <a href="/home" class="reg-crest" aria-label="Vanguard STEM Academy home">
+        <img src="assets/images/footer-badge.png" alt="Vanguard STEM Academy crest">
+        <span class="cn">VANGUARD</span>
+        <span class="cs">STEM ACADEMY</span>
+      </a>
+    </aside>
+
+    <!-- RIGHT FORM -->
+    <section class="reg-right">
+      <div class="reg-hero-photo"><image-slot id="fireside-speakers" shape="rect" placeholder="Drop your fireside-chat speakers photo"></image-slot></div>
+      <div class="reg-head">
+        <div class="pre">Register for an</div>
+        <h1>Executive Fireside Chat</h1>
+        <div class="reg-head-orn" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 0l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></svg></div>
+      </div>
+      <p class="reg-intro">Complete the form below to register your interest in an upcoming Vanguard Executive Fireside Chat. Event details and confirmation will be sent by email.</p>
+
+      <form id="regForm" class="reg-grid" novalidate>
+
+        <!-- honeypot spam trap -->
+        <div class="hp-field" aria-hidden="true">
+          <label for="company_website">Do not fill this in</label>
+          <input type="text" id="company_website" name="company_website" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="form-field">
+          <label for="firstName">First Name<span class="req">*</span></label>
+          <div class="in-wrap">
+            <svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <input class="reg-input" type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="lastName">Last Name<span class="req">*</span></label>
+          <div class="in-wrap">
+            <svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg>
+            <input class="reg-input" type="text" id="lastName" name="lastName" required placeholder="Enter your last name">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email Address<span class="req">*</span></label>
+          <div class="in-wrap">
+            <svg class="ic" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <input class="reg-input" type="email" id="email" name="email" required placeholder="you@example.com">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="phone">Phone Number<span class="req">*</span></label>
+          <div class="in-wrap">
+            <svg class="ic" viewBox="0 0 24 24"><path d="M4 4h4l2 5-3 2c1 2 3 4 5 5l2-3 5 2v4c0 1-1 2-2 2C10 21 3 14 3 6c0-1 1-2 2-2z"/></svg>
+            <input class="reg-input" type="tel" id="phone" name="phone" required placeholder="(123) 456-7890">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="ageGroup">Age Group<span class="req">*</span></label>
+          <div class="sel-wrap">
+            <select class="reg-select" id="ageGroup" name="ageGroup" required>
+              <option value="" disabled selected>Select your age group</option>
+              <option>Under 18</option>
+              <option>18–24</option>
+              <option>25–34</option>
+              <option>35–44</option>
+              <option>45 or older</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="role">Current Role<span class="req">*</span></label>
+          <div class="sel-wrap">
+            <select class="reg-select" id="role" name="role" required>
+              <option value="" disabled selected>Select your current role</option>
+              <option>High School Student</option>
+              <option>College or Graduate Student</option>
+              <option>Early-Career Professional</option>
+              <option>Experienced Professional</option>
+              <option>Executive or Business Leader</option>
+              <option>Entrepreneur</option>
+              <option>Educator</option>
+              <option>Parent or Guardian</option>
+              <option>Community or Government Leader</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field f-full">
+          <label for="org">School, Organization, or Employer<span class="req">*</span></label>
+          <div class="in-wrap">
+            <svg class="ic" viewBox="0 0 24 24"><path d="M3 21h18M5 21V10h14v11M12 3L3 8h18z"/></svg>
+            <input class="reg-input" type="text" id="org" name="org" required placeholder="Enter your school, organization, or employer">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="event">Which upcoming Fireside Chat are you interested in?<span class="req">*</span></label>
+          <div class="sel-wrap">
+            <select class="reg-select" id="event" name="event" required>
+              <option value="" disabled selected>Select an event or choose general interest</option>
+              <option>Executive Leadership Forum</option>
+              <option>AI &amp; The Future of Work</option>
+              <option>Women in Leadership</option>
+              <option>Entrepreneurship &amp; Innovation</option>
+              <option>General Interest (Notify Me of Future Events)</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="participate">How would you like to participate?<span class="req">*</span></label>
+          <div class="sel-wrap">
+            <select class="reg-select" id="participate" name="participate" required>
+              <option value="" disabled selected>Select participation preference</option>
+              <option>Attend in person</option>
+              <option>Attend virtually</option>
+              <option>Either format</option>
+              <option>Interested in speaking or serving as a panelist</option>
+              <option>Interested in sponsoring or partnering</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-field f-full">
+          <label for="topics">What leadership, career, or industry topics interest you most?</label>
+          <textarea class="reg-textarea" id="topics" name="topics" placeholder="Share the topics you are most interested in..."></textarea>
+        </div>
+
+        <div class="form-field f-full">
+          <label for="goals">What do you hope to gain from this experience?</label>
+          <textarea class="reg-textarea" id="goals" name="goals" placeholder="Tell us what you hope to learn or achieve..."></textarea>
+        </div>
+
+        <div class="form-field f-full">
+          <label for="hearAbout">How did you hear about Vanguard STEM Academy?</label>
+          <div class="sel-wrap">
+            <select class="reg-select" id="hearAbout" name="hearAbout">
+              <option value="" disabled selected>Select an option</option>
+              <option>Website</option>
+              <option>Social media</option>
+              <option>School or university</option>
+              <option>Employer</option>
+              <option>Community organization</option>
+              <option>Referral</option>
+              <option>Previous Vanguard program</option>
+              <option>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="reg-consent">
+          <label class="consent-row">
+            <input type="checkbox" name="consentComms" required>
+            <span>I agree to receive event-related communications from Vanguard STEM Academy. <span class="req">*</span></span>
+          </label>
+          <label class="consent-row">
+            <input type="checkbox" name="consentTerms" required>
+            <span>I understand that submitting this form does not guarantee admission or seating, and participation is subject to availability. <span class="req">*</span></span>
+          </label>
+          <label class="consent-row">
+            <input type="checkbox" name="consentOptional">
+            <span>Optional: I would like to receive information about future Vanguard programs, events, and opportunities.</span>
+          </label>
+          <label class="consent-row">
+            <input type="checkbox" name="consentPrivacy" required>
+            <span>I have read and agree to the <a href="/legal">Privacy Policy</a>. <span class="req">*</span></span>
+          </label>
+        </div>
+
+        <button type="submit" class="reg-submit"><svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg>Submit Registration</button>
+
+        <div class="reg-secure">
+          <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+          Your information is secure and will not be shared.
+        </div>
+      </form>
+
+      <!-- CONFIRMATION -->
+      <div class="reg-success" id="regSuccess">
+        <div class="badge"><svg viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg></div>
+        <h2>Thank You for Registering</h2>
+        <div class="ev-name" id="confirmEvent"></div>
+        <p>Thank you for your interest in Vanguard&rsquo;s Executive Fireside Chats. Your form has been received. Our team will contact you with availability, event details, and next steps. A confirmation has been sent to your email.</p>
+        <a href="/home" class="home"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg>Return to Home</a>
+      </div>
+    </section>
+
+  </div>
+</div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner container">
+    <div class="footer-badge">
+      <a href="/home" aria-label="Vanguard STEM Academy home"><img src="assets/images/footer-badge.png" alt="Vanguard STEM Academy crest"></a>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h5>Compliance Policies</h5>
+        <ul>
+          <li><a href="/legal">Privacy</a></li>
+          <li><a href="/legal">Copyright Infringement</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Address</h5>
+        <p class="faddr">Vanguard STEM Academy<br>99 Wall Street Suite 3329<br>New York, NY 10005</p>
+      </div>
+      <div>
+        <h5>Contact Us</h5>
+        <ul>
+          <li><a href="/home">General Information</a></li>
+          <li><a href="mailto:admissions@vstemacad.org">Admissions</a></li>
+          <li><a href="mailto:careers@vstemacad.org">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom-row">
+      <div class="footer-copy" style="display:flex;flex-direction:column;gap:.35rem;max-width:64ch">
+        <span style="font-family:var(--serif);font-weight:600;font-size:1rem;letter-spacing:.01em;color:#e7edf6">&copy; 2016&ndash;2026 Vanguard STEM Academy. All Rights Reserved.</span>
+        <span style="font-family:var(--sans);font-weight:400;font-size:.8rem;line-height:1.5;color:#9fb0c6">Unauthorized reproduction or distribution of any content, curriculum, or intellectual property is strictly prohibited.</span>
+      </div>
+      <div class="fsocial">
+        <a href="https://www.instagram.com/vstemacad/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="7" r="1.4"/></svg></a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V8c0-.6.4-1 1-1z"/></svg></a>
+        <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M3 3l7.5 9.5L3.5 21H6l6-6.7L17 21h4l-8-10 7-8h-2.5L13 8.5 8 3z"/></svg></a>
+        <a href="https://www.youtube.com/channel/UCQhTJAYMKgtvEDZnjvGesVw/featured" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 9l5 3-5 3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING PILL + BACK TO TOP ============ -->
+<a href="/apply" class="apply-pill" id="applyPill"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Apply to the Academy</a>
+<button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script src="assets/js/nav-component.js"></script>
+<script>
+var VANGUARD_FORM_ENDPOINT='https://script.google.com/a/macros/vstemacad.org/s/AKfycbzl8v21P2ecIc_Sd_P1CpfDqcGrB4ZU2-fgEZvLflk8XYhKbdxWjQKTvvBGmr6Y19te/exec';
+function vanguardSubmitForm(formType,formEl,extraFields){
+  var fd=new FormData(formEl),fields={};
+  fd.forEach(function(value,key){
+    if(value instanceof File)value=value.name;
+    if(fields[key]!==undefined){fields[key]=(Array.isArray(fields[key])?fields[key]:[fields[key]]).concat(value)}
+    else{fields[key]=value}
+  });
+  Object.keys(fields).forEach(function(k){if(Array.isArray(fields[k]))fields[k]=fields[k].join(', ')});
+  if(extraFields)Object.assign(fields,extraFields);
+  return fetch(VANGUARD_FORM_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:formType,fields:fields})}).catch(function(err){console.error('Vanguard form submit failed',err)});
+}
+
+/* Selects: darken text once a real choice is made */
+document.querySelectorAll('.reg-select').forEach(sel=>{
+  const sync=()=>sel.classList.toggle('chosen', !!sel.value);
+  sel.addEventListener('change',sync); sync();
+});
+
+/* Submit */
+document.getElementById('regForm').addEventListener('submit',function(e){
+  e.preventDefault();
+
+  /* spam trap — bots fill hidden fields */
+  if(this.company_website.value.trim()!==''){ return; }
+
+  /* native validation for required fields + checkboxes */
+  if(!this.checkValidity()){ this.reportValidity(); return; }
+
+  const event=this.event.value;
+  const label=(event==='General Interest (Notify Me of Future Events)')
+    ? 'General interest in future events'
+    : event;
+
+  vanguardSubmitForm('fireside-registration',this,{event:label});
+
+  document.getElementById('confirmEvent').textContent=label;
+
+  this.style.display='none';
+  document.querySelector('.reg-secure')?.remove();
+  const ok=document.getElementById('regSuccess');
+  ok.classList.add('show');
+  ok.scrollTop=0;
+});
+</script>
+</body>
+</html>

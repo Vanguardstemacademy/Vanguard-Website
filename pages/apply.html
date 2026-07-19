@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Apply to the Academy | Vanguard STEM Academy</title>
+<meta name="description" content="Apply to the Vanguard Youth STEM Academy — a selective, project-based experience for students in grades 8-12. Start your application or schedule an information call.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   VANGUARD STEM ACADEMY — SHARED DESIGN SYSTEM
+   ============================================================ */
+:root{
+  --navy:#0b2251;
+  --navy-2:#123063;
+  --navy-deep:#06163a;
+  --navy-panel:#0f2a57;
+  --navy-soft:#123063;
+  --gold:#C9A341;
+  --gold-2:#D4AF37;
+  --gold-light:#E4C874;
+  --gold-deep:#A9842E;
+  --white:#FFFFFF;
+  --cream:#F8F6F1;
+  --cream-2:#F1ECE1;
+  --burgundy:#6E1E2C;
+  --burgundy-2:#8a2a3a;
+  --ink:#1c2530;
+  --muted:#5b6675;
+  --line:#e6e0d3;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Source Sans 3',system-ui,-apple-system,sans-serif;
+  --gold-grad:linear-gradient(135deg,#E4C874 0%,#C9A341 42%,#A9842E 100%);
+  --gold-sheen:linear-gradient(120deg,#A9842E 0%,#E9D089 25%,#C9A341 50%,#F0DA97 72%,#A9842E 100%);
+  --shadow-sm:0 4px 18px rgba(2,25,52,.08);
+  --shadow-md:0 14px 40px rgba(2,25,52,.14);
+  --shadow-lg:0 26px 70px rgba(2,25,52,.22);
+  --ease:cubic-bezier(.22,.61,.36,1);
+  --maxw:1240px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;font-family:var(--sans);color:var(--ink);
+  background:var(--cream);line-height:1.6;font-size:17px;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.12;margin:0;color:var(--navy)}
+p{margin:0 0 1rem}
+a{color:var(--burgundy);text-decoration:none;transition:color .25s}
+a:hover{color:var(--gold-deep)}
+img{max-width:100%;display:block}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 clamp(20px,4vw,44px)}
+section{position:relative}
+:focus-visible{outline:3px solid var(--gold-2);outline-offset:3px;border-radius:2px}
+
+/* ---------- Small-caps label & ribbon ---------- */
+.eyebrow{
+  font-family:var(--sans);font-weight:700;font-size:.78rem;letter-spacing:.22em;
+  text-transform:uppercase;color:var(--gold-deep);margin:0 0 1rem;display:inline-flex;
+  align-items:center;gap:.7rem;
+}
+.eyebrow::before,.eyebrow.center::after{content:"";width:34px;height:1px;background:var(--gold-grad)}
+.eyebrow.on-navy{color:var(--gold-light)}
+.ribbon{
+  display:inline-block;background:var(--burgundy);color:#fff;font-family:var(--sans);
+  font-weight:700;letter-spacing:.18em;text-transform:uppercase;font-size:.72rem;
+  padding:.5rem 1.4rem;position:relative;box-shadow:var(--shadow-sm);
+}
+.ribbon::before,.ribbon::after{
+  content:"";position:absolute;top:0;width:14px;height:100%;background:var(--burgundy-2)
+}
+.ribbon::before{left:-14px;clip-path:polygon(0 50%,100% 0,100% 100%)}
+.ribbon::after{right:-14px;clip-path:polygon(100% 50%,0 0,0 100%)}
+
+/* ---------- Two-tone serif titles ---------- */
+.title-2 .l1{display:block;color:var(--navy)}
+.title-2 .l2{display:block;background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
+.section-title{font-size:clamp(2rem,4.4vw,3.3rem);letter-spacing:-.01em}
+.lead{font-size:1.16rem;color:var(--muted);max-width:60ch}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  font-family:var(--sans);font-weight:700;font-size:.86rem;letter-spacing:.1em;
+  text-transform:uppercase;padding:1rem 1.9rem;border-radius:10px;cursor:pointer;
+  border:1.5px solid var(--gold);transition:all .3s var(--ease);position:relative;
+  white-space:nowrap;text-align:center;
+}
+.btn-primary{background:var(--navy);color:#fff;border-color:var(--gold)}
+.btn-primary:hover{color:#fff;box-shadow:0 0 0 1px var(--gold),0 12px 30px rgba(201,163,65,.4);border-color:var(--gold-light);background:linear-gradient(var(--navy),var(--navy)) padding-box,var(--gold-grad) border-box}
+.btn-primary:hover{background:#12305f}
+.btn-secondary{background:#fff;color:var(--navy);border-color:var(--gold)}
+.btn-secondary:hover{background:var(--gold-grad);color:var(--navy);border-color:var(--gold-deep);box-shadow:0 12px 30px rgba(201,163,65,.35)}
+.btn-gold{background:var(--gold-grad);color:var(--navy);border-color:var(--gold-deep)}
+.btn-gold:hover{box-shadow:0 12px 34px rgba(201,163,65,.5);filter:brightness(1.06)}
+.btn-ghost-gold{background:transparent;color:var(--gold-light);border-color:var(--gold)}
+.btn-ghost-gold:hover{background:var(--gold-grad);color:var(--navy)}
+
+/* ---------- Gold framed card (double line) ---------- */
+.gold-frame{position:relative;background-image:linear-gradient(#fff,#fff),var(--gold-sheen);background-origin:border-box;background-clip:padding-box,border-box;border:6px solid transparent;padding:2.2rem;border-radius:20px;overflow:hidden;box-shadow:0 14px 34px rgba(180,142,42,.16),0 6px 16px rgba(6,17,42,.06)}
+
+/* ---------- Crest icon ---------- */
+.crest{
+  width:66px;height:66px;border-radius:50%;background:var(--navy);
+  display:grid;place-items:center;position:relative;flex:none;
+  box-shadow:inset 0 0 0 1px rgba(201,163,65,.5);
+}
+.crest::after{content:"";position:absolute;inset:5px;border-radius:50%;border:1px solid var(--gold)}
+.crest svg{width:30px;height:30px;stroke:var(--gold-2);fill:none;stroke-width:1.6;position:relative;z-index:1}
+.crest.lg{width:82px;height:82px}
+.crest.lg svg{width:38px;height:38px}
+
+/* ============================================================
+   UTILITY BAR
+   ============================================================ */
+/* Top utility bar + main nav styling lives in assets/css/nav.css (shared, single source of truth) */
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero{background:var(--cream);position:relative;overflow:hidden;padding:clamp(3rem,6vw,5.5rem) 0 clamp(5rem,9vw,8rem)}
+/* WELCOME BANNER */
+.welcome-hero{position:relative;min-height:min(88vh,760px);display:grid;place-items:center;text-align:center;padding:2rem clamp(1rem,4vw,2.5rem);background:#04101f url('assets/images/welcome-hero.webp') center/cover no-repeat}
+.welcome-hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,12,28,.5),rgba(4,12,28,.42) 45%,rgba(4,12,28,.66))}
+.welcome-inner{position:relative;z-index:1;max-width:1120px}
+.welcome-pre{font-family:var(--serif);font-style:italic;font-weight:500;font-size:clamp(1.3rem,3vw,2.15rem);color:#EAD08A;margin:0 0 .5rem;text-shadow:0 2px 16px rgba(0,0,0,.65)}
+.welcome-title{font-family:var(--serif);font-weight:700;text-transform:uppercase;letter-spacing:.02em;line-height:1.04;margin:0;font-size:clamp(2.1rem,7.4vw,5.6rem);color:#E7C56B;text-shadow:0 3px 22px rgba(0,0,0,.72),0 1px 3px rgba(0,0,0,.6)}
+.hero::before{content:"";position:absolute;top:-10%;right:-8%;width:520px;height:520px;border-radius:50%;background:radial-gradient(circle,rgba(201,163,65,.1),transparent 68%);pointer-events:none}
+.hero-grid{display:grid;grid-template-columns:1fr;justify-items:center;text-align:center;max-width:960px;margin:0 auto}
+.hero h1{font-size:clamp(2.4rem,5vw,4rem);letter-spacing:-.015em;margin-bottom:1.4rem}
+.hero h1 .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero .lead{margin:0 auto 2.2rem;text-align:center}
+.hero-ctas{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center}
+.hero-ctas .btn{border-radius:50px;border-width:2px;border-color:var(--gold-deep)}
+.hero-laurel{display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1.8rem;color:var(--gold-deep)}
+.hero-laurel svg{width:26px;height:36px;fill:var(--gold)}
+.hero-laurel .tl{font-family:var(--serif);font-style:italic;font-size:1.05rem;color:var(--navy)}
+
+/* Hero carousel */
+.hero-showcase{padding:0;overflow:hidden}
+.hero-carousel{position:relative;border:6px solid transparent;padding:10px;background-image:linear-gradient(#fff,#fff),var(--gold-sheen);background-origin:border-box;background-clip:padding-box,border-box;box-shadow:var(--shadow-lg);width:100%}
+.hero-showcase .hc-viewport{aspect-ratio:auto;height:90vh}
+.hc-viewport{position:relative;aspect-ratio:4/3.2;overflow:hidden}
+.hc-slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s var(--ease)}
+.hc-slide.active{opacity:1}
+.hc-slide .ph{width:100%;height:100%;animation:kenburns 9s ease-in-out infinite alternate}
+.hc-slide.active .ph{animation-play-state:running}
+@keyframes kenburns{from{transform:scale(1) translate(0,0)}to{transform:scale(1.12) translate(-2%,-1.5%)}}
+.hc-caption{position:absolute;left:0;right:0;bottom:0;padding:2.4rem 1.6rem 1.2rem;background:linear-gradient(transparent,rgba(11,34,81,.9));color:#fff;z-index:2}
+.hc-caption .cl{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold-light);font-weight:700}
+.hc-caption .ct{font-family:var(--serif);font-size:1.15rem;margin-top:.2rem}
+.hc-dots{position:absolute;bottom:1.2rem;right:1.6rem;display:flex;gap:.5rem;z-index:4}
+.hc-dots button{width:10px;height:10px;border-radius:50%;border:1px solid var(--gold);background:transparent;cursor:pointer;padding:0;transition:.3s}
+.hc-dots button.active{background:var(--gold-grad);box-shadow:0 0 8px rgba(201,163,65,.7)}
+.hc-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:44px;border-radius:50%;background:rgba(11,34,81,.62);border:1px solid var(--gold);color:var(--gold-light);cursor:pointer;z-index:4;display:grid;place-items:center;transition:.3s}
+.hc-arrow:hover{background:var(--gold-grad);color:var(--navy)}
+.hc-arrow.prev{left:1.2rem}.hc-arrow.next{right:1.2rem}
+.hc-arrow svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.4}
+
+/* Image placeholder */
+.ph{background:
+  linear-gradient(135deg,rgba(255,255,255,.04),transparent),
+  repeating-linear-gradient(45deg,rgba(255,255,255,.03) 0 2px,transparent 2px 22px),
+  linear-gradient(160deg,#173a72,#0b2251);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.7rem;
+  color:#8ea3c0;text-align:center;padding:1.5rem;position:relative}
+.ph svg{width:40px;height:40px;stroke:var(--gold);fill:none;stroke-width:1.4;opacity:.9}
+.ph .phl{font-family:var(--sans);font-size:.8rem;letter-spacing:.08em;color:#aab9cf;max-width:26ch;font-style:italic}
+
+/* ============================================================
+   IMPACT STRIP
+   ============================================================ */
+.impact-strip{background:var(--navy);color:#fff;padding:clamp(2.6rem,5vw,3.6rem) 0;position:relative}
+.impact-strip::before,.impact-strip::after{content:"";position:absolute;left:0;right:0;height:2px;background:var(--gold-grad)}
+.impact-strip::before{top:0}.impact-strip::after{bottom:0}
+.stat-row{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem;text-align:center}
+.stat-row>div{padding:0 1rem;position:relative}
+.stat-row>div:not(:last-child)::after{content:"";position:absolute;right:0;top:15%;height:70%;width:1px;background:rgba(201,163,65,.3)}
+.stat-num{font-family:var(--serif);font-size:clamp(2.2rem,4.5vw,3.2rem);font-weight:700;background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.stat-label{font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:#b9c6d8;margin-top:.6rem;font-weight:600}
+
+/* ============================================================
+   SECTION SHELLS + DIVIDERS
+   ============================================================ */
+.sec{padding:clamp(4rem,8vw,7rem) 0}
+.sec.cream{background:var(--cream)}
+.sec.white{background:#fff}
+.sec.navy{background:var(--navy);color:#fff}
+.sec-head{text-align:center;max-width:760px;margin:0 auto clamp(2.5rem,5vw,4rem)}
+.sec-head .eyebrow{justify-content:center}
+.sec-head .lead{margin:1.2rem auto 0}
+.sec.navy h2,.sec.navy h3{color:#fff}
+.sec.navy .lead{color:#b9c6d8}
+
+/* Curved divider */
+.wave{display:block;width:100%;height:auto;line-height:0}
+.wave svg{display:block;width:100%;height:clamp(50px,7vw,110px)}
+
+/* ============================================================
+   MISSION / VISION
+   ============================================================ */
+.mv-heading{font-family:var(--serif);font-style:italic;font-weight:600;text-align:center;color:var(--gold-deep);font-size:clamp(2.4rem,6vw,4.4rem);line-height:1.05;margin:0 0 clamp(1.6rem,3vw,2.6rem)}
+.mv-grid{display:flex;flex-wrap:wrap;justify-content:center;align-items:flex-start;gap:41px}
+.mv-card{position:relative;width:426px;max-width:100%;aspect-ratio:426/428;background-image:url('assets/images/card-bg.png');background-size:100% 100%;background-repeat:no-repeat}
+.mv-card .mv-fit{position:absolute;inset:10% 7%;display:flex;align-items:center;justify-content:center;overflow:hidden}
+.mv-card p{margin:0;font-family:var(--serif);font-weight:600;font-size:25.5px;line-height:1.33;letter-spacing:.01em;text-transform:uppercase;text-align:center;color:#fff;text-wrap:pretty}
+.values-row{display:flex;flex-wrap:wrap;gap:.8rem;justify-content:center;margin-top:3rem}
+.value-chip{display:flex;align-items:center;gap:.6rem;background:#fff;border:1px solid var(--gold);border-radius:50px;padding:.6rem 1.2rem .6rem .7rem;font-weight:600;font-size:.9rem;color:var(--navy);box-shadow:var(--shadow-sm);transition:.3s}
+.value-chip:hover{transform:translateY(-3px);box-shadow:0 12px 26px rgba(201,163,65,.25);border-color:var(--gold-deep)}
+.value-chip .cdot{width:34px;height:34px;border-radius:50%;background:var(--navy);display:grid;place-items:center;flex:none;box-shadow:inset 0 0 0 1px rgba(201,163,65,.5)}
+.value-chip .cdot svg{width:16px;height:16px;stroke:var(--gold-2);fill:none;stroke-width:1.7}
+
+/* ============================================================
+   WHO WE ARE + QUOTE PANEL
+   ============================================================ */
+.who-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:3.5rem;align-items:center}
+.quote-panel{background:var(--navy);border-radius:22px;padding:2.8rem;color:#fff;position:relative;overflow:hidden;box-shadow:var(--shadow-lg)}
+.quote-panel::before{content:"\201C";position:absolute;top:-1rem;left:1.4rem;font-family:var(--serif);font-size:8rem;color:rgba(201,163,65,.35);line-height:1}
+.quote-panel.burgundy{background:var(--burgundy)}
+.quote-panel.burgundy::before{color:rgba(201,163,65,.4)}
+.quote-panel p{font-family:var(--serif);font-style:italic;font-size:1.35rem;line-height:1.5;position:relative;z-index:1;color:#fff;margin:1rem 0 0}
+.quote-panel .qattr{margin-top:1.4rem;font-family:var(--sans);font-style:normal;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);font-weight:700}
+.who-list{list-style:none;padding:0;margin:1.5rem 0 0}
+.who-list li{display:flex;gap:.9rem;align-items:flex-start;margin-bottom:1rem;color:var(--muted)}
+.who-list li svg{width:22px;height:22px;stroke:var(--gold-deep);fill:none;stroke-width:2;flex:none;margin-top:3px}
+
+/* ============================================================
+   PROGRAM PATHWAYS (2 premium cards)
+   ============================================================ */
+.path-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem}
+.path-card{position:relative;border:6px solid transparent;background-image:linear-gradient(#fff,#fff),var(--gold-sheen);background-origin:border-box;background-clip:padding-box,border-box;overflow:hidden;transition:.4s var(--ease);display:flex;flex-direction:column;border-radius:20px;box-shadow:0 14px 34px rgba(180,142,42,.16),0 6px 16px rgba(6,17,42,.06)}
+.path-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-lg)}
+.path-card .pc-top{height:170px;position:relative;overflow:hidden}
+.path-card .pc-top .ph{height:100%;transition:transform .6s var(--ease)}
+.path-card:hover .pc-top .ph{transform:scale(1.07)}
+.path-card .pc-body{padding:2.2rem;display:flex;flex-direction:column;flex:1}
+.path-card .aud{font-size:.74rem;letter-spacing:.16em;text-transform:uppercase;color:var(--burgundy);font-weight:700;margin-bottom:.6rem}
+.path-card h3{font-size:1.7rem;margin-bottom:.9rem}
+.path-card p{color:var(--muted);flex:1}
+.path-card .btn{margin-top:1.4rem;align-self:flex-start}
+
+/* ============================================================
+   VANGUARD DIFFERENCE (5-step journey)
+   ============================================================ */
+.vdiff-wrap{padding:8px;max-width:none;margin:0}
+.vdiff-img{display:block;width:100%;height:auto;max-width:100%;margin:0;border-radius:6px}
+
+/* ============================================================
+   FIRESIDE CHAT PANEL
+   ============================================================ */
+.fireside{background:linear-gradient(135deg,#0b2251,#12305f);border-radius:24px;padding:clamp(2.4rem,5vw,3.6rem);color:#fff;position:relative;overflow:hidden;border:1px solid rgba(201,163,65,.35)}
+.fireside::before{content:"";position:absolute;top:-40%;right:-10%;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(201,163,65,.16),transparent 70%)}
+.fire-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:2.5rem;align-items:center;position:relative;z-index:1}
+.fireside h2{color:#fff;font-size:clamp(1.8rem,3.5vw,2.6rem);margin-bottom:1rem}
+.fireside h2 .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
+.fireside p{color:#c6d2e2}
+.logo-chips{display:flex;flex-wrap:wrap;gap:.7rem;margin:1.6rem 0 2rem}
+.logo-chip{border:1px solid rgba(201,163,65,.4);border-radius:4px;padding:.6rem 1.1rem;font-weight:700;font-size:.82rem;letter-spacing:.06em;color:#e8edf5;background:rgba(255,255,255,.04)}
+.fire-side-ph{border:1px solid var(--gold);padding:8px;background:rgba(255,255,255,.03)}
+.fire-side-ph .ph{aspect-ratio:4/3.4}
+
+/* ============================================================
+   I AM A... pathways
+   ============================================================ */
+.iam-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1.2rem}
+.iam-tile{background:#fff;border:1px solid var(--line);border-top:3px solid var(--gold);border-radius:20px;padding:1.8rem 1.3rem;text-align:center;transition:.35s var(--ease);display:flex;flex-direction:column;align-items:center;gap:.9rem;text-decoration:none}
+.iam-tile:hover{transform:translateY(-6px);border-color:var(--gold);box-shadow:var(--shadow-md);background:linear-gradient(180deg,#fff,#fdfbf5)}
+.iam-tile .crest{width:56px;height:56px}
+.iam-tile .crest svg{width:26px;height:26px}
+.iam-tile .il{font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--burgundy);font-weight:700}
+.iam-tile h4{font-size:1.05rem;color:var(--navy)}
+.iam-tile .igo{font-size:.78rem;color:var(--gold-deep);font-weight:700;letter-spacing:.06em;display:flex;align-items:center;gap:.3rem;margin-top:auto}
+.iam-tile:hover .igo{gap:.6rem}
+
+/* ============================================================
+   IMPACT SNAPSHOT + CAROUSEL
+   ============================================================ */
+.snap-grid{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:center}
+.snap-carousel{position:relative;border:6px solid transparent;padding:9px;background-image:linear-gradient(#fff,#fff),var(--gold-sheen);background-origin:border-box;background-clip:padding-box,border-box;box-shadow:var(--shadow-md)}
+.snap-viewport{position:relative;aspect-ratio:16/11;overflow:hidden}
+.snap-slide{position:absolute;inset:0;opacity:0;transition:opacity 1s var(--ease)}
+.snap-slide.active{opacity:1}
+.snap-slide .ph{height:100%}
+.snap-slide.active .ph{animation:kenburns 10s ease-in-out infinite alternate}
+.snap-dots{display:flex;gap:.5rem;justify-content:center;margin-top:.9rem}
+.snap-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--gold);background:none;cursor:pointer;padding:0}
+.snap-dots button.active{background:var(--gold-grad)}
+.snap-chips{display:flex;flex-direction:column;gap:1rem}
+.snap-chip{display:flex;gap:1rem;align-items:center;background:#fff;border:1px solid var(--line);border-left:3px solid var(--gold);border-radius:5px;padding:1.1rem 1.3rem;box-shadow:var(--shadow-sm);transition:.3s}
+.snap-chip:hover{transform:translateX(5px);border-left-color:var(--burgundy)}
+.snap-chip .crest{width:48px;height:48px}
+.snap-chip .crest svg{width:22px;height:22px}
+.snap-chip span{font-weight:600;color:var(--navy)}
+
+/* ============================================================
+   NEWS
+   ============================================================ */
+.news-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1.6rem}
+.news-card{background:#fff;border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.35s var(--ease);display:flex;flex-direction:column}
+.news-card:hover{transform:translateY(-6px);box-shadow:var(--shadow-md);border-color:var(--gold)}
+.news-card .nc-img{height:150px;position:relative;overflow:hidden}
+.news-card .nc-img .ph{height:100%;transition:transform .6s}
+.news-card:hover .nc-img .ph{transform:scale(1.08)}
+.news-card .nc-date{position:absolute;top:12px;left:12px;background:rgba(11,34,81,.88);color:var(--gold-light);font-size:.72rem;font-weight:700;letter-spacing:.06em;padding:.35rem .7rem;border-radius:3px;z-index:2}
+.news-card .nc-body{padding:1.4rem;display:flex;flex-direction:column;flex:1}
+.news-tag{align-self:flex-start;background:var(--burgundy);color:#fff;font-size:.64rem;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:.3rem .7rem;border-radius:3px;margin-bottom:.9rem}
+.news-card h4{font-size:1.12rem;line-height:1.25;margin-bottom:.8rem}
+.news-card .readmore{margin-top:auto;font-size:.78rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-deep);display:inline-flex;align-items:center;gap:.4rem}
+.news-card:hover .readmore{gap:.7rem}
+
+/* ============================================================
+   EVENTS
+   ============================================================ */
+.events-row{display:grid;grid-template-columns:repeat(3,1fr);gap:1.6rem}
+.event-card{display:flex;gap:1.3rem;background:#fff;border:1px solid var(--line);border-radius:20px;padding:1.6rem;transition:.3s;align-items:flex-start}
+.event-card:hover{border-color:var(--gold);box-shadow:var(--shadow-md);transform:translateY(-4px)}
+.event-date{flex:none;width:78px;text-align:center;border:3px solid transparent;border-radius:14px;padding:.7rem .3rem;background-image:linear-gradient(var(--navy),var(--navy)),var(--gold-sheen);background-origin:border-box;background-clip:padding-box,border-box}
+.event-date .ed-num{font-family:var(--serif);font-size:2rem;font-weight:700;background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.event-date .ed-mon{font-size:.7rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);font-weight:700;margin-top:.2rem}
+.event-info{flex:1}
+.event-info .etag{font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--burgundy);font-weight:700}
+.event-info h4{font-size:1.15rem;margin:.3rem 0 .5rem}
+.event-info p{font-size:.9rem;color:var(--muted);margin-bottom:.9rem}
+.event-info .btn{padding:.6rem 1.1rem;font-size:.72rem}
+
+/* ============================================================
+   TESTIMONIALS
+   ============================================================ */
+.testi-wrap{max-width:900px;margin:0 auto;position:relative}
+.testi-viewport{position:relative;min-height:280px}
+.testi-slide{position:absolute;inset:0;opacity:0;transition:opacity .8s var(--ease);pointer-events:none}
+.testi-slide.active{opacity:1;position:relative;pointer-events:auto}
+.testi-slide .quote-panel{text-align:center}
+.testi-slide .quote-panel::before{left:50%;transform:translateX(-50%)}
+.testi-slide .quote-panel p{font-size:clamp(1.2rem,2.4vw,1.6rem)}
+.testi-nav{display:flex;justify-content:center;gap:.6rem;margin-top:1.8rem}
+.testi-nav button{width:11px;height:11px;border-radius:50%;border:1px solid var(--gold);background:none;cursor:pointer;padding:0;transition:.3s}
+.testi-nav button.active{background:var(--gold-grad);width:32px;border-radius:6px}
+
+/* ============================================================
+   NEWSLETTER BAND
+   ============================================================ */
+.newsletter{background:var(--navy);color:#fff;padding:clamp(3rem,5vw,4rem) 0;text-align:center;position:relative;border-top:2px solid;border-image:var(--gold-grad) 1}
+.newsletter h2{color:#fff;font-size:clamp(1.8rem,3.4vw,2.5rem);margin-bottom:.6rem}
+.newsletter p{color:#b9c6d8;max-width:52ch;margin:0 auto 2rem}
+.nl-form{display:flex;gap:.7rem;max-width:520px;margin:0 auto;flex-wrap:wrap;justify-content:center}
+.nl-form input{flex:1;min-width:240px;background:rgba(255,255,255,.06);border:1px solid rgba(201,163,65,.4);border-radius:3px;padding:1rem 1.2rem;color:#fff;font-family:var(--sans);font-size:1rem;outline:none}
+.nl-form input::placeholder{color:#93a3ba}
+.nl-form input:focus{border-color:var(--gold)}
+
+/* ============================================================
+   FINAL CTA
+   ============================================================ */
+.final-cta{background:linear-gradient(160deg,#5c1522,#7a2334 60%,#5c1522);color:#fff;text-align:center;padding:clamp(4rem,8vw,6.5rem) 0;position:relative;overflow:hidden}
+.final-cta::before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(201,163,65,.12),transparent 60%)}
+.final-cta .laurel-head{display:flex;align-items:center;justify-content:center;gap:1.4rem;margin-bottom:1.4rem;position:relative;z-index:1}
+.final-cta .laurel-head svg{width:46px;height:66px;fill:var(--gold)}
+.final-cta .laurel-head svg.r{transform:scaleX(-1)}
+.final-cta h2{color:#fff;font-size:clamp(2rem,4.5vw,3.2rem);position:relative;z-index:1}
+.final-cta h2 .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
+.final-cta .cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-top:2.2rem;position:relative;z-index:1}
+
+/* ============================================================
+   FOOTER
+   ============================================================ */
+.footer{background:#0b2251;color:#c6d2e2;border-top:3px solid;border-image:var(--gold-grad) 1;padding-top:3rem;position:relative;overflow:hidden}
+.footer::before,.footer::after{content:"";position:absolute;top:0;bottom:0;width:clamp(110px,17vw,240px);background-repeat:no-repeat;background-position:center;background-size:contain;pointer-events:none;z-index:0}
+.footer::before{left:0;background-image:url('assets/images/left-laurel.png')}
+.footer::after{right:0;background-image:url('assets/images/right-laurel.png')}
+.footer-inner{max-width:940px;margin:0 auto;position:relative;z-index:1}
+.footer-badge{display:flex;justify-content:center;margin-bottom:.4rem}
+.footer-badge img{width:clamp(108px,14vw,146px);height:auto;filter:drop-shadow(0 12px 26px rgba(0,0,0,.45))}
+.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;padding:2rem 0;border-top:1px solid rgba(201,163,65,.22);text-align:center;margin-top:1.4rem}
+.footer-cols>div{display:flex;flex-direction:column;align-items:center}
+.footer h5{color:#fff;font-family:var(--serif);font-weight:700;font-size:1.05rem;letter-spacing:.02em;margin:0 0 1.1rem}
+.footer ul{list-style:none;margin:0;padding:0}
+.footer ul li{margin-bottom:.7rem}
+.footer ul a{color:var(--gold-light);font-size:.92rem;text-decoration:underline}
+.footer ul a:hover{color:#fff}
+.footer ul a{transition:.25s;display:inline-flex;align-items:center;gap:.5rem}
+.faddr{color:#dbe2ee;font-size:.92rem;line-height:1.7;margin:0;font-weight:700}
+.fsocial{display:flex;gap:.7rem;justify-content:center}
+.fsocial a{width:42px;height:42px;border-radius:50%;border:1px solid rgba(201,163,65,.45);display:grid;place-items:center;transition:.3s}
+.fsocial a:hover{background:var(--gold-grad);border-color:transparent}
+.fsocial a svg{width:18px;height:18px;fill:var(--gold-light);transition:.3s}
+.fsocial a:hover svg{fill:var(--navy)}
+.footer-bottom-row{display:flex;justify-content:space-between;align-items:center;padding:1.6rem 0 2rem;font-size:.85rem;color:#c6d2e2;flex-wrap:wrap;gap:1rem}
+
+/* ============================================================
+   FLOATING PILL + BACK TO TOP
+   ============================================================ */
+.apply-pill{position:fixed;bottom:26px;right:26px;z-index:50;background:var(--gold-grad);color:var(--navy);font-weight:700;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;padding:1rem 1.6rem;border-radius:50px;box-shadow:0 12px 34px rgba(201,163,65,.5);display:inline-flex;align-items:center;gap:.6rem;opacity:0;visibility:hidden;transform:translateY(20px);transition:.4s var(--ease);border:1px solid var(--gold-deep)}
+.apply-pill.show{opacity:1;visibility:visible;transform:translateY(0)}
+.apply-pill:hover{color:var(--navy);filter:brightness(1.07);transform:translateY(-3px)}
+.apply-pill svg{width:16px;height:16px;stroke:var(--navy);fill:none;stroke-width:2.4}
+.to-top{position:fixed;bottom:26px;left:26px;z-index:50;width:50px;height:50px;border-radius:50%;background:var(--navy);border:1.5px solid var(--gold);color:var(--gold-light);cursor:pointer;display:grid;place-items:center;opacity:0;visibility:hidden;transform:translateY(20px);transition:.4s var(--ease)}
+.to-top.show{opacity:1;visibility:visible;transform:translateY(0)}
+.to-top:hover{background:var(--gold-grad);color:var(--navy)}
+.to-top svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.4}
+
+/* ============================================================
+   SCROLL REVEAL
+   ============================================================ */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}.reveal.d4{transition-delay:.4s}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.hc-slide .ph,.snap-slide .ph{animation:none!important}}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media(max-width:1024px){
+  .navlinks{gap:0}
+  .navlinks>li>a,.navlinks>li>button{padding:.6rem .6rem;font-size:.84rem}
+  .news-grid{grid-template-columns:repeat(2,1fr)}
+  .iam-grid{grid-template-columns:repeat(3,1fr)}
+  .journey{grid-template-columns:repeat(5,1fr);gap:.5rem}
+  .events-row{grid-template-columns:1fr}
+}
+@media(max-width:1024px){
+  .desktop-only{display:none!important}
+  .hamburger{display:flex}
+  .hero-grid,.mv-grid,.who-grid,.path-grid,.fire-grid,.snap-grid{grid-template-columns:1fr}
+  .vdiff-journey{grid-template-columns:1fr;gap:2.2rem}
+  .vdiff-journey .jstep:not(:last-child)::after{content:"\27A4";top:auto;bottom:-1.7rem;right:50%;transform:translateX(50%) rotate(90deg)}
+  .who-grid,.snap-grid{gap:2.2rem}
+  .hero-carousel{max-width:none;margin:0 auto}
+  .hero-showcase{padding:0}
+  .hero-showcase .hc-viewport{height:60vh}
+  .stat-row{grid-template-columns:1fr 1fr;gap:2rem 1rem}
+  .stat-row>div:nth-child(2)::after{display:none}
+  .stat-row>div:not(:last-child)::after{top:auto;bottom:-1rem;right:auto;left:15%;width:70%;height:1px}
+  .footer-cols{grid-template-columns:1fr 1fr}
+  .journey{grid-template-columns:repeat(2,1fr);gap:2rem}
+  .journey::before{display:none}
+  .events-row{grid-template-columns:1fr}
+}
+@media(max-width:640px){
+  body{font-size:16px}
+  .utilbar .container{justify-content:center;gap:0;overflow-x:auto}
+  .utilbar a{padding:.4rem .6rem;font-size:.68rem;white-space:nowrap}
+  .hero-ctas .btn,.cta-btns .btn{flex:1;min-width:100%}
+  .news-grid,.iam-grid,.journey{grid-template-columns:1fr}
+  .footer-cols{grid-template-columns:1fr}
+  .fireside{padding:1.8rem}
+  .mv-card,.quote-panel{padding:1.8rem}
+  .apply-pill{bottom:16px;right:16px;padding:.85rem 1.2rem;font-size:.74rem}
+  .to-top{bottom:16px;left:16px;width:44px;height:44px}
+  .value-chip{font-size:.82rem}
+  .footer::before,.footer::after{width:70px;opacity:.5}
+  .footer-cols{grid-template-columns:1fr;gap:1.8rem}
+}
+
+/* ============================================================
+   MOBILE TOUCH TARGETS + READABILITY POLISH
+   ============================================================ */
+@media(max-width:640px){
+  .search-btn{width:44px;height:44px}
+  .hamburger{width:48px;height:48px}
+  .mp-close{width:48px;height:48px}
+  .utilbar a{min-height:44px;display:inline-flex;align-items:center;font-size:.72rem}
+  .filter-chip{min-height:44px;display:inline-flex;align-items:center}
+  .faq-q{min-height:44px}
+  .portal-tab{min-height:44px}
+  .fsocial a{width:44px;height:44px}
+  .hc-arrow{width:44px;height:44px}
+  .lc-toggle,.msub,.mp-links>li>a,.mp-links>li>button{min-height:44px}
+}
+
+/* ============================================================
+   SENIOR-POLISH ENHANCEMENTS — refined, institutional motion
+   ============================================================ */
+/* --- Dimensional metallic crest --- */
+.crest{
+  background:radial-gradient(circle at 32% 26%, #1c3d76 0%, #0b2251 56%, #071a40 100%);
+  box-shadow:inset 0 1px 2px rgba(255,255,255,.16), inset 0 0 0 1px rgba(201,163,65,.25), 0 8px 20px rgba(6,17,42,.38);
+  transition:transform .55s var(--ease), box-shadow .55s var(--ease);
+}
+.crest::before{
+  content:"";position:absolute;inset:-1.5px;border-radius:50%;padding:2px;
+  background:conic-gradient(from 128deg,#9a7a2c,#F4E3A6,#C9A341,#EAD08c,#9a7a2c,#F4E3A6,#9a7a2c);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;
+  transition:transform 1.3s var(--ease), filter .5s;
+  filter:saturate(1.04) drop-shadow(0 0 3px rgba(201,163,65,.25));
+}
+.crest::after{inset:6px;border:1px solid rgba(201,163,65,.42)}
+.crest svg{stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 1px 2px rgba(0,0,0,.4));transition:transform .55s var(--ease)}
+.crest:hover,.iam-tile:hover .crest,.mv-card:hover .crest,.snap-chip:hover .crest,.jstep:hover .crest,.path-card:hover .crest{transform:translateY(-2px) scale(1.06)}
+.crest:hover::before,.iam-tile:hover .crest::before,.mv-card:hover .crest::before,.snap-chip:hover .crest::before,.jstep:hover .crest::before{transform:rotate(132deg);filter:saturate(1.15) drop-shadow(0 0 6px rgba(201,163,65,.5))}
+.crest:hover svg,.iam-tile:hover .crest svg,.mv-card:hover .crest svg{transform:scale(1.09)}
+/* value-chip mini crest dot */
+.value-chip .cdot{background:radial-gradient(circle at 34% 28%,#1c3d76,#0b2251 72%);box-shadow:inset 0 0 0 1px rgba(201,163,65,.5),0 3px 8px rgba(6,17,42,.32);transition:transform .5s var(--ease)}
+.value-chip .cdot svg{stroke-linecap:round;stroke-linejoin:round}
+.value-chip:hover .cdot{transform:rotate(-8deg) scale(1.1)}
+
+/* --- Slow metallic shimmer on two-tone gold text --- */
+@keyframes goldShimmer{0%{background-position:0% 50%}100%{background-position:-200% 50%}}
+.title-2 .l2,.hero h1 .gold,.fireside h2 .gold,.final-cta h2 .gold,.stat-num,.footer-tagline .gold{
+  background-size:200% auto;animation:goldShimmer 7s linear infinite;
+}
+.stat-num{animation-duration:8s}
+
+/* --- Light sweep across buttons on hover --- */
+.btn{overflow:hidden}
+.btn>*{position:relative;z-index:1}
+.btn::after{content:"";position:absolute;top:0;left:-130%;width:55%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.4),transparent);transform:skewX(-18deg);pointer-events:none;z-index:0}
+.btn:hover::after{animation:btnSweep .85s var(--ease)}
+@keyframes btnSweep{to{left:150%}}
+.btn-gold::after{background:linear-gradient(100deg,transparent,rgba(255,255,255,.65),transparent)}
+
+/* --- Refined blur-in scroll reveal --- */
+.reveal{opacity:0;transform:translateY(30px);filter:blur(7px);transition:opacity .9s var(--ease),transform .9s var(--ease),filter .9s var(--ease)}
+.reveal.in{opacity:1;transform:none;filter:none}
+
+/* --- Gentle laurel float --- */
+@keyframes floatY{0%,100%{transform:translateY(0)}50%{transform:translateY(-5px)}}
+.hero-laurel svg{animation:floatY 5.5s ease-in-out infinite}
+
+/* --- Drifting hero glow --- */
+@keyframes heroGlow{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(-18px,14px) scale(1.06)}}
+.hero::before{animation:heroGlow 14s ease-in-out infinite}
+
+/* --- Card image frames: soft gold inner glow on hover --- */
+.path-card:hover,.news-card:hover{box-shadow:0 22px 55px rgba(6,17,42,.2),0 0 0 1px rgba(201,163,65,.35)}
+
+/* --- Nav link + cta micro-polish --- */
+.nav-cta,.search-btn{will-change:transform}
+.nav-cta:hover{transform:translateY(-1px)}
+
+@media(prefers-reduced-motion:reduce){
+  .title-2 .l2,.hero h1 .gold,.fireside h2 .gold,.final-cta h2 .gold,.stat-num,.footer-tagline .gold,.hero-laurel svg,.hero::before{animation:none}
+  .btn:hover::after{animation:none;display:none}
+  .reveal{filter:none;transform:none}
+  .crest,.crest::before,.crest svg{transition:none}
+}
+
+/* ============ HOME REDESIGN (reference match) ============ */
+.home-hero{position:relative;background:linear-gradient(135deg,#081a3c,#0d2452);overflow:hidden;min-height:540px;display:flex;align-items:center}
+.home-hero>.container{width:100%}
+.hh-media{position:absolute;top:0;right:0;bottom:0;width:66%}
+.hh-media .ph{height:100%;width:100%}
+.hh-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#081a3c 0%,rgba(8,26,60,.72) 14%,rgba(8,26,60,.15) 42%,transparent 60%);pointer-events:none}
+.hh-content{position:relative;z-index:2;max-width:520px;padding:clamp(3rem,6vw,5rem) 0}
+.hh-content h1{font-family:var(--serif);font-weight:800;font-size:clamp(2rem,3.6vw,3.1rem);line-height:1.14;color:#fff;letter-spacing:-.01em}
+.hh-content h1 span{display:block}
+.hh-content h1 .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hh-content .hh-sub{color:#c3cee2;font-size:.98rem;max-width:42ch;margin:1.2rem 0 1.8rem;line-height:1.65}
+.hh-ctas{display:flex;gap:.9rem;flex-wrap:wrap}
+.hh-ctas .btn{padding:.85rem 1.5rem;font-size:.76rem;border-radius:10px}
+.btn-outline-w{background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,.55)}
+.btn-outline-w:hover{border-color:var(--gold);color:var(--gold-light)}
+
+/* feature strip */
+.hh-strip{background:#0a2049;border-top:1px solid rgba(201,163,65,.3);border-radius:0 0 26px 26px;position:relative;z-index:2}
+.hh-strip .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:nowrap;padding-top:1.1rem;padding-bottom:1.1rem;gap:.4rem;overflow-x:auto;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.hh-strip .container::-webkit-scrollbar{display:none}
+.strip-item{display:flex;align-items:center;gap:.7rem;padding:0 .8rem;position:relative}
+.strip-item:not(:last-child)::after{content:"";position:absolute;right:-.4rem;top:50%;transform:translateY(-50%);height:26px;width:1px;background:rgba(201,163,65,.35)}
+.strip-item .si-ic{width:38px;height:38px;border-radius:50%;border:1px solid rgba(201,163,65,.55);display:grid;place-items:center;flex:none}
+.strip-item .si-ic svg{width:18px;height:18px;stroke:var(--gold-2);fill:none;stroke-width:1.7}
+.strip-item span{color:#e8edf5;font-weight:700;font-size:clamp(.58rem,.75vw,.68rem);letter-spacing:.08em;text-transform:uppercase;white-space:nowrap}
+
+/* gold ribbon banner */
+.gold-banner-row{display:flex;justify-content:center;position:relative;z-index:3}
+.gold-banner{display:inline-flex;align-items:center;gap:.8rem;background:var(--gold-grad);color:var(--navy);font-weight:800;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;padding:.62rem 2.6rem;clip-path:polygon(16px 0,calc(100% - 16px) 0,100% 50%,calc(100% - 16px) 100%,16px 100%,0 50%);box-shadow:0 8px 22px rgba(169,132,46,.35);white-space:nowrap}
+.gold-banner::before,.gold-banner::after{content:"";width:26px;height:1.5px;background:var(--navy);opacity:.6}
+.gold-banner-row.overlap{margin-bottom:-19px}
+
+/* who we are */
+.who2-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:clamp(2rem,4vw,3.5rem);align-items:center}
+.who2-img{border-radius:14px;overflow:hidden;box-shadow:var(--shadow-md)}
+.who2-img .ph{aspect-ratio:4/3.1}
+.who2-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem;margin:1.6rem 0 1.8rem}
+.who2-stat{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1rem .7rem;text-align:center;box-shadow:var(--shadow-sm)}
+.who2-stat svg{width:26px;height:26px;stroke:var(--gold-deep);fill:none;stroke-width:1.7;margin:0 auto .5rem;display:block}
+.who2-stat .ws-v{font-weight:800;color:var(--navy);font-size:.95rem;line-height:1.25}
+.who2-stat .ws-l{font-size:.72rem;color:var(--muted);margin-top:.2rem;line-height:1.35}
+
+/* vanguard difference band */
+.vdiff2{background:linear-gradient(135deg,#081a3c,#0e2856);color:#fff;padding:3.4rem 0 3rem;position:relative;border-bottom:3px solid var(--gold)}
+.vdiff2 h2{color:#fff;text-align:center;font-size:clamp(1.7rem,3.4vw,2.5rem);margin-bottom:2.6rem}
+.vdiff2-grid{display:grid;grid-template-columns:repeat(6,1fr)}
+.vd-item{text-align:center;padding:0 1rem;position:relative}
+.vd-item:not(:last-child)::after{content:"";position:absolute;right:0;top:8%;height:84%;width:1px;background:rgba(201,163,65,.3)}
+.vd-item svg{width:34px;height:34px;stroke:var(--gold-2);fill:none;stroke-width:1.5;margin:0 auto .8rem;display:block}
+.vd-item .vd-t{color:var(--gold-light);font-weight:800;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:.5rem}
+.vd-item p{color:#b9c6d8;font-size:.8rem;line-height:1.5;margin:0}
+
+/* pathway cards */
+.path2-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.6rem;margin-top:2.2rem}
+.path2-card{display:grid;grid-template-columns:1.05fr .95fr;border-radius:12px;overflow:hidden;min-height:270px;box-shadow:var(--shadow-md)}
+.path2-card.navy{background:linear-gradient(135deg,#0b2251,#123063)}
+.path2-card.burg{background:linear-gradient(135deg,#5c1522,#7a2334)}
+.path2-body{padding:1.9rem 1.7rem;display:flex;flex-direction:column;justify-content:center}
+.path2-body h3{font-family:var(--serif);font-weight:800;font-size:1.55rem;letter-spacing:.04em;text-transform:uppercase;background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:.45rem}
+.path2-body .p2-sub{color:#fff;font-weight:700;font-size:1rem;line-height:1.35;margin-bottom:.7rem}
+.path2-body p{color:#cbd5e6;font-size:.86rem;line-height:1.55;margin-bottom:1.1rem}
+.path2-card.burg .path2-body p{color:#e8cfd4}
+.path2-body .btn{align-self:flex-start;padding:.7rem 1.2rem;font-size:.7rem}
+.path2-img .ph{height:100%}
+
+/* core programs */
+.core-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:.9rem;margin-top:2.2rem}
+.core-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:1.3rem .8rem 1rem;text-align:center;display:flex;flex-direction:column;align-items:center;box-shadow:var(--shadow-sm);transition:.3s}
+.core-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:var(--gold)}
+.core-ic{width:46px;height:46px;border-radius:50%;background:var(--navy);display:grid;place-items:center;margin-bottom:.8rem;box-shadow:inset 0 0 0 1px rgba(201,163,65,.5)}
+.core-ic.burg{background:var(--burgundy)}
+.core-ic svg{width:21px;height:21px;stroke:var(--gold-2);fill:none;stroke-width:1.7}
+.core-card h4{font-family:var(--sans);font-weight:800;font-size:.76rem;letter-spacing:.05em;text-transform:uppercase;color:var(--navy);line-height:1.3;margin-bottom:.5rem}
+.core-card p{font-size:.7rem;color:var(--muted);line-height:1.45;flex:1;margin-bottom:.9rem}
+.core-btn{display:inline-block;background:var(--navy);color:#fff;font-weight:700;font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;padding:.55rem .9rem;border-radius:8px;transition:.3s;white-space:nowrap}
+.core-btn:hover{background:var(--gold-grad);color:var(--navy)}
+.core-btn.burg{background:var(--burgundy)}
+.core-btn.burg:hover{background:var(--gold-grad);color:var(--navy)}
+
+/* fireside burgundy band */
+.fire2{background:linear-gradient(150deg,#5c1522,#7a2334 55%,#5c1522);color:#fff;padding:3.6rem 0 2.6rem;position:relative;overflow:hidden;border-top:3px solid var(--gold);border-bottom:3px solid var(--gold)}
+.fire2::before,.fire2::after{content:"";position:absolute;top:50%;transform:translateY(-50%);height:min(76%,480px);aspect-ratio:329/641;background:url('assets/images/leaf-gold.png') no-repeat center/contain;pointer-events:none;opacity:.9}
+.fire2::before{left:clamp(2px,1.2vw,26px);transform:translateY(-50%) scaleX(-1)}
+.fire2::after{right:clamp(2px,1.2vw,26px)}
+@media(max-width:1240px){.fire2::before,.fire2::after{display:none}}
+.fire2-grid{display:grid;grid-template-columns:.62fr 1.38fr;gap:2.2rem;align-items:start;position:relative;z-index:1}
+.fire2-left h2{font-family:var(--serif);font-weight:800;font-size:clamp(1.5rem,2.6vw,2.1rem);text-transform:uppercase;letter-spacing:.02em;background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1.15;margin-bottom:.9rem}
+.fire2-left .f2-tag{color:#fff;font-weight:800;font-size:.78rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem}
+.fire2-left p{color:#ecd3d8;font-size:.88rem;line-height:1.65}
+.fire2-left .f2-btns{display:flex;gap:.6rem;flex-wrap:nowrap;margin-top:1.2rem}
+.fire2-left .btn{padding:.7rem .95rem;font-size:.62rem;white-space:nowrap;flex:none}
+.fire2-panel{background:linear-gradient(135deg,#0b2251,#0d2857);border:1px solid rgba(201,163,65,.4);border-radius:14px;padding:1.4rem 1.4rem 1.2rem;box-shadow:var(--shadow-lg)}
+.fire2-quote{display:flex;gap:.9rem;align-items:flex-start;margin-bottom:1.2rem}
+.fire2-quote .qm{font-family:var(--serif);font-size:3rem;line-height:.8;background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;flex:none}
+.fire2-quote p{color:#fff;font-weight:600;font-size:.95rem;line-height:1.5;margin:0}
+.fire2-quote p .hl{color:var(--gold-light);font-weight:800}
+.exec-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.7rem}
+.exec-card{background:#08183a;border:1px solid rgba(201,163,65,.35);border-radius:8px;overflow:hidden;text-align:center;display:flex;flex-direction:column}
+.exec-card .ph{aspect-ratio:1/1.05;padding:.6rem}
+.exec-card .ph svg{width:26px;height:26px}
+.exec-card .ph .phl{font-size:.6rem}
+.exec-info{padding:.6rem .4rem .5rem}
+.exec-info .en{color:var(--gold-light);font-weight:800;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase}
+.exec-info .er{color:#a9b8cd;font-size:.58rem;line-height:1.35;margin-top:.25rem;min-height:2.2em}
+.exec-org{background:#fff;color:#1c2530;font-weight:800;font-size:.58rem;letter-spacing:.04em;padding:.45rem .25rem;margin-top:auto;display:flex;align-items:center;justify-content:center;gap:.3rem;white-space:nowrap;overflow:hidden}
+.exec-org .msq{width:11px;height:11px;flex:none;background:conic-gradient(#7FBA00 0 25%,#FFB900 0 50%,#00A4EF 0 75%,#F25022 0);outline:1px solid #fff;outline-offset:-5px}
+.exec-org.ms{color:#5e5e5e}
+.exec-org.gg2 i{font-style:normal;font-weight:700;font-size:.72rem;text-transform:none;letter-spacing:-.01em}
+.exec-org.amex{background:#016FD0;color:#fff;letter-spacing:.02em;font-size:.52rem}
+.exec-org.actx{color:#c8102e}
+.exec-org.naacpx{color:#0b2251;font-family:var(--serif);font-size:.7rem;letter-spacing:.08em}
+.exec-org.vsa{color:var(--gold-deep)}
+.gained{background:#fff;border-radius:12px;margin-top:1.6rem;padding:1.6rem 1.4rem 1.1rem;position:relative;z-index:1;box-shadow:var(--shadow-lg)}
+.gained .g-head{position:absolute;top:-14px;left:50%;transform:translateX(-50%);background:var(--navy);color:var(--gold-light);font-weight:800;font-size:.66rem;letter-spacing:.18em;text-transform:uppercase;padding:.45rem 1.6rem;border-radius:4px;border:1px solid var(--gold);white-space:nowrap}
+.gained-grid{display:grid;grid-template-columns:repeat(6,1fr)}
+.gained-item{text-align:center;padding:.4rem .6rem;position:relative}
+.gained-item:not(:last-child)::after{content:"";position:absolute;right:0;top:15%;height:70%;width:1px;background:var(--line)}
+.gained-item svg{width:24px;height:24px;stroke:var(--burgundy);fill:none;stroke-width:1.7;margin:0 auto .45rem;display:block}
+.gained-item span{font-weight:800;font-size:.62rem;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);line-height:1.4;display:block}
+
+/* impact numbers */
+.num2-row{display:grid;grid-template-columns:repeat(5,1fr) 1.35fr;gap:1.2rem;align-items:center;margin-top:2.2rem}
+.num2{text-align:center;padding:0 .4rem;position:relative}
+.num2 svg{width:30px;height:30px;stroke:var(--burgundy);fill:none;stroke-width:1.6;margin:0 auto .6rem;display:block}
+.num2 .nv{font-family:var(--serif);font-weight:800;font-size:clamp(1.6rem,2.6vw,2.3rem);color:var(--navy);line-height:1.05}
+.num2 .nv.txt{font-size:clamp(1.05rem,1.7vw,1.35rem);line-height:1.25}
+.num2 .nl{font-weight:700;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin-top:.45rem}
+.num2-photo{border-radius:10px;overflow:hidden;box-shadow:var(--shadow-md)}
+.num2-photo .ph{aspect-ratio:16/9.5}
+
+/* testimonial band */
+.testi2{background:linear-gradient(135deg,#081a3c,#0d2452);color:#fff;padding:2.2rem 0;border-top:3px solid var(--gold)}
+.testi2-grid{display:grid;grid-template-columns:.55fr 1fr .55fr;gap:1.8rem;align-items:center}
+.testi2-img{border-radius:10px;overflow:hidden;border:1px solid rgba(201,163,65,.35)}
+.testi2-img .ph{aspect-ratio:16/10}
+.testi2-quote{text-align:center;position:relative;padding:0 1rem}
+.testi2-quote .qm{font-family:var(--serif);font-size:2.6rem;line-height:.8;background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;display:block}
+.testi2-quote .qm.close{transform:rotate(180deg);margin-left:auto;width:fit-content}
+.t2-slide{display:none}
+.t2-slide.active{display:block}
+.t2-slide p{font-family:var(--serif);font-size:clamp(1.05rem,1.9vw,1.35rem);color:#fff;line-height:1.5;margin:.4rem 0 .7rem}
+.t2-slide .t2-attr{color:#b9c6d8;font-size:.86rem}
+.t2-dots{display:flex;gap:.5rem;justify-content:center;margin-top:.9rem}
+.t2-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--gold);background:none;cursor:pointer;padding:0}
+.t2-dots button.active{background:var(--gold-grad)}
+
+/* partners */
+.partners{background:#fff;padding:2.4rem 0 2.8rem;border-bottom:1px solid var(--line)}
+.partners .p-label{text-align:center;font-weight:800;font-size:.68rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:1.6rem}
+.partners-row{display:flex;justify-content:center;align-items:center;gap:clamp(1.4rem,4vw,3.4rem);flex-wrap:wrap}
+.p-logo{font-weight:800;font-size:1.2rem;letter-spacing:.05em;color:#5b6675;transition:.3s;font-family:var(--sans);text-transform:uppercase;white-space:nowrap;text-align:center;opacity:.92}
+.p-logo small{display:block;font-size:.54rem;letter-spacing:.16em;font-weight:600;color:#8a93a3;text-align:center;margin-top:.15rem}
+.p-logo:hover{opacity:1;transform:translateY(-2px)}
+.p-logo.stevens{color:#9d1535;font-family:var(--serif)}
+.p-logo.glogo i{font-style:normal;font-family:var(--sans);text-transform:none;font-size:1.5rem;font-weight:700;letter-spacing:-.02em}
+.gb{color:#4285F4}.gr{color:#EA4335}.gy{color:#FBBC05}.gg{color:#34A853}
+.p-logo.naacp{color:#0b2251;font-family:var(--serif);letter-spacing:.1em}
+.p-logo.peblink{color:#2a6fdb}
+.p-logo.siemens{color:#009999;letter-spacing:.18em}
+.p-logo.act{color:#c8102e;font-family:var(--serif)}
+.p-logo.ushart{color:#1c2530}
+
+@media(max-width:1024px){
+  .home-hero{min-height:460px}
+  .hh-media{width:100%;opacity:.3}
+  .hh-media::after{background:linear-gradient(90deg,#081a3c 8%,rgba(8,26,60,.62))}
+  .hh-content{max-width:640px}
+  .who2-grid,.path2-grid,.fire2-grid{grid-template-columns:1fr}
+  .fire2-left{text-align:center}
+  .fire2-left .f2-btns{justify-content:center}
+  .vdiff2-grid,.gained-grid{grid-template-columns:repeat(3,1fr);gap:1.6rem .4rem}
+  .vd-item:nth-child(3)::after,.gained-item:nth-child(3)::after{display:none}
+  .core-grid{grid-template-columns:repeat(3,1fr)}
+  .exec-grid{grid-template-columns:repeat(3,1fr)}
+  .num2-row{grid-template-columns:repeat(3,1fr);gap:1.8rem 1rem}
+  .num2-photo{grid-column:1/-1}
+  .testi2-grid{grid-template-columns:1fr;gap:1.2rem}
+  .testi2-img{display:none}
+  .gold-banner{font-size:.66rem;padding:.55rem 1.3rem;letter-spacing:.12em}
+  .partners-row{gap:1.6rem 2rem}
+}
+@media(max-width:640px){
+  .home-hero{min-height:0}
+  .hh-content{padding:3rem 0 2.6rem}
+  .hh-content h1{font-size:2.1rem}
+  .hh-content .hh-sub{font-size:.9rem}
+  .hh-ctas .btn{flex:1;min-width:100%;padding:.9rem 1rem}
+  .vdiff2-grid,.gained-grid,.exec-grid{grid-template-columns:repeat(2,1fr)}
+  .core-grid{grid-template-columns:repeat(2,1fr);gap:.7rem}
+  .core-card{padding:1.1rem .6rem .9rem}
+  .num2-row{grid-template-columns:repeat(2,1fr)}
+  .num2:nth-child(5){grid-column:1/-1}
+  .who2-stats{grid-template-columns:repeat(2,1fr)}
+  .path2-card{grid-template-columns:1fr;min-height:0}
+  .path2-img{order:-1}
+  .path2-img .ph{aspect-ratio:16/7;height:auto}
+  .vd-item::after,.gained-item::after{display:none}
+  .vdiff2-grid{gap:1.8rem .6rem}
+  .vd-item{padding:0 .3rem}
+  .gold-banner{font-size:.56rem;padding:.5rem 1rem;letter-spacing:.08em;max-width:92vw;white-space:normal;text-align:center;line-height:1.4}
+  .gold-banner::before,.gold-banner::after{display:none}
+  .gold-banner-row.overlap{margin-bottom:-16px}
+  .fire2{padding:3rem 0 2.2rem}
+  .fire2-panel{padding:1.1rem 1rem 1rem}
+  .fire2-quote p{font-size:.86rem}
+  .fire2-left .f2-btns{flex-wrap:wrap}
+  .fire2-left .btn{flex:1;min-width:100%}
+  .gained{padding:1.8rem 1rem 1rem}
+  .gained-grid{gap:1.2rem .4rem}
+  .g-head{font-size:.56rem;padding:.45rem 1rem;max-width:88%;text-align:center;white-space:normal;line-height:1.4}
+  .testi2-quote .qm{font-size:2rem}
+  .t2-slide p{font-size:1rem}
+  .num2 .nv.txt{font-size:1rem}
+  .partners-row{gap:1.2rem 1.8rem}
+  .p-logo{font-size:1rem}
+  .p-logo.glogo i{font-size:1.25rem}
+  .who2-stat .ws-v{font-size:.85rem}
+  .hh-strip .container{justify-content:flex-start;padding-left:1rem;padding-right:1rem}
+  .strip-item .si-ic{width:32px;height:32px}
+  .strip-item .si-ic svg{width:15px;height:15px}
+}
+
+
+/* ============ APPLY PAGE ============ */
+.crumb{font-size:.72rem;color:var(--muted);padding:1.1rem 0 0;display:flex;gap:.45rem;align-items:center;flex-wrap:wrap}
+.crumb a{color:var(--muted);font-weight:600}
+.crumb a:hover{color:var(--gold-deep)}
+.crumb .sep{color:var(--gold)}
+.crumb .cur{color:var(--burgundy);font-weight:700}
+.apply-hero{background:#fff;padding:.6rem 0 clamp(2rem,4vw,3rem)}
+.ah-grid{display:grid;grid-template-columns:.95fr 1.05fr;gap:clamp(1.8rem,3.6vw,3rem);align-items:center}
+.ah-grid .eyebrow.center2{justify-content:flex-start}
+.ah-grid h1{font-family:var(--serif);font-weight:800;text-transform:uppercase;line-height:1.08;font-size:clamp(30px,3.6vw,54px);letter-spacing:.01em}
+.ah-grid h1 .n{color:var(--navy);display:block}
+.ah-grid h1 .b{color:var(--burgundy);display:block}
+.ah-orn{display:flex;align-items:center;gap:.7rem;margin:1rem 0 1.1rem;color:var(--gold-deep)}
+.ah-orn::before,.ah-orn::after{content:"";height:1.5px;width:86px;background:var(--gold-grad)}
+.ah-grid .ah-sub{color:var(--muted);font-size:.92rem;max-width:46ch;line-height:1.65;margin-bottom:1.5rem}
+.ah-ctas{display:flex;gap:.8rem;flex-wrap:wrap}
+.ah-ctas .btn{padding:.85rem 1.3rem;font-size:.7rem}
+.ah-img{border:3px solid var(--gold);border-radius:22px 22px 22px 130px;overflow:hidden;box-shadow:var(--shadow-md)}
+.ah-img .ph{aspect-ratio:16/10.5}
+.facts4{background:linear-gradient(135deg,#081a3c,#0d2452);border:none;border-top:3px solid var(--gold);border-bottom:3px solid var(--gold);border-radius:0;box-shadow:var(--shadow-sm);display:grid;grid-template-columns:repeat(4,1fr);padding:1.4rem .6rem;width:100vw;position:relative;left:50%;margin-left:-50vw!important;margin-right:-50vw!important}
+.f4-item{display:flex;gap:.8rem;align-items:flex-start;padding:0 1rem;position:relative}
+.f4-item:not(:last-child)::after{content:"";position:absolute;right:0;top:10%;height:80%;width:1px;background:var(--gold)}
+.f4-item .f4-ic{flex:none;width:46px;height:46px;border-radius:50%;background:transparent;border:1.5px solid var(--gold);display:grid;place-items:center}
+.f4-item .f4-ic svg{width:21px;height:21px;stroke:var(--gold-2);fill:none;stroke-width:1.7}
+.f4-item .f4-t{font-weight:800;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase;color:var(--gold-light);margin-bottom:.25rem}
+.f4-item p{font-size:.72rem;color:#fff;font-weight:600;line-height:1.5;margin:0}
+.process-card{background:linear-gradient(160deg,#5c1522,#7a2334);border:1px solid var(--gold);border-radius:14px;box-shadow:var(--shadow-sm);padding:1.6rem clamp(1rem,2.4vw,2rem)}
+.process-card h2{text-align:center;font-family:var(--serif);font-size:clamp(19px,2vw,26px);color:var(--gold-light);display:flex;align-items:center;justify-content:center;gap:1rem;margin-bottom:1.5rem}
+.process-card h2::before,.process-card h2::after{content:"";width:40px;height:2px;background:var(--gold-grad)}
+.proc-grid{display:grid;grid-template-columns:1fr auto 1fr auto 1fr;gap:.8rem;align-items:start}
+.proc-step{display:flex;gap:.9rem;align-items:flex-start}
+.proc-step .pn{flex:none;width:32px;height:32px;border-radius:50%;background:#000;color:#fff;font-weight:800;font-size:.85rem;display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(201,163,65,.5)}
+.proc-step svg.pi{width:34px;height:34px;stroke:var(--gold-light);fill:none;stroke-width:1.5;flex:none;margin-top:-2px}
+.proc-step .pt{font-weight:800;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase;color:#fff;margin-bottom:.3rem}
+.proc-step p{font-size:.74rem;color:#fff;line-height:1.5;margin:0}
+.proc-chev{color:var(--gold-light);font-size:1.2rem;align-self:center;font-weight:800}
+.app-shell{display:grid;grid-template-columns:230px 1fr 280px;gap:1.2rem;align-items:start}
+.app-side{background:linear-gradient(170deg,#123063,#0b2251);border-radius:14px;padding:1.2rem .9rem 1.4rem;color:#fff;position:relative;overflow:hidden;border:1.5px solid var(--gold)}
+.app-side .as-h{font-weight:800;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-light);margin-bottom:1rem;padding:0 .3rem}
+.step-item{display:flex;gap:.6rem;align-items:center;padding:.6rem .6rem;border-radius:8px;cursor:pointer;margin-bottom:.3rem;transition:.25s;border:1px solid transparent}
+.step-item .sn{flex:none;width:24px;height:24px;border-radius:50%;border:1.5px solid var(--gold);background:#000;color:var(--gold-light);font-size:.66rem;font-weight:800;display:grid;place-items:center}
+.step-item span.sl{font-size:.72rem;font-weight:700;color:#dce6f5;line-height:1.3}
+.step-item:hover{background:rgba(255,255,255,.08)}
+.step-item.active{background:linear-gradient(135deg,#7a2334,#5c1522);border-color:var(--gold)}
+.step-item.active .sn{background:#000;border-color:#fff;color:#fff}
+.step-item.active span.sl{color:#fff}
+.step-item.done .sn{background:var(--gold-grad);color:var(--navy);border-color:var(--gold)}
+.app-side .as-crest{display:flex;justify-content:center;margin-top:1.2rem}
+.app-side .as-crest .crest-badge{width:76px;height:76px;border-radius:50%;background:#fff;display:flex;align-items:center;justify-content:center;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.5);border:2px solid var(--gold-light)}
+.app-side .as-crest img{width:82%;height:auto;display:block}
+.app-form{background:#fff;border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow-sm);padding:clamp(1.2rem,2.4vw,1.8rem)}
+.af-top{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;margin-bottom:.4rem}
+.af-top h2{font-family:var(--serif);font-size:clamp(17px,1.7vw,22px);color:var(--burgundy);letter-spacing:.04em;text-transform:uppercase}
+.af-top .af-step{font-weight:800;font-size:.66rem;letter-spacing:.12em;color:var(--burgundy)}
+.af-dots{display:flex;align-items:center;margin:.4rem 0 1.4rem}
+.af-dots i{width:11px;height:11px;border-radius:50%;border:1.5px solid var(--gold);background:#fff;flex:none}
+.af-dots i.on{background:linear-gradient(135deg,#7a2334,#5c1522);border-color:var(--burgundy)}
+.af-dots b{height:1.5px;flex:1;background:var(--line)}
+.fgrid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem 1rem}
+.fgrid[hidden]{display:none}
+.fgrid .full{grid-column:1/-1}
+.fld label{display:block;font-weight:700;font-size:.74rem;color:var(--navy);margin-bottom:.35rem}
+.fld label em{color:var(--burgundy);font-style:normal}
+.fld input,.fld select,.fld textarea{width:100%;border:1px solid var(--line);border-radius:8px;padding:.65rem .8rem;font-family:var(--sans);font-size:.84rem;color:var(--ink);background:#fff;outline:none;transition:border .25s;box-sizing:border-box}
+.fld input:focus,.fld select:focus,.fld textarea:focus{border-color:var(--gold)}
+.fld input::placeholder,.fld textarea::placeholder{color:#a7aeba}
+.fld textarea{min-height:96px;resize:vertical}
+.chkrow{display:flex;gap:.5rem .9rem;flex-wrap:wrap}
+.chk{display:flex;gap:.45rem;align-items:center;border:1px solid var(--line);border-radius:8px;padding:.5rem .7rem;font-size:.76rem;font-weight:600;color:var(--navy);cursor:pointer;transition:.25s}
+.chk:hover{border-color:var(--gold)}
+.chk input{accent-color:#A9842E}
+.af-actions{display:flex;justify-content:space-between;gap:.8rem;margin-top:1.4rem;flex-wrap:wrap}
+.af-actions .btn{padding:.75rem 1.4rem;font-size:.68rem}
+.btn-back{background:#fff;color:var(--muted);border-color:var(--line)}
+.btn-back:hover{border-color:var(--gold);color:var(--navy)}
+.fstep{display:none}
+.fstep.on{display:block}
+.af-done{text-align:center;padding:2rem 1rem}
+.af-done .ad-ic{width:64px;height:64px;border-radius:50%;background:var(--gold-grad);display:grid;place-items:center;margin:0 auto 1rem}
+.af-done .ad-ic svg{width:30px;height:30px;stroke:var(--navy);fill:none;stroke-width:2.4}
+.af-done h3{font-family:var(--serif);color:var(--navy);font-size:1.3rem;margin-bottom:.5rem}
+.af-done p{color:var(--muted);font-size:.86rem}
+.app-rail>div{border-radius:14px;padding:1.2rem;margin-bottom:1rem}
+.rail-paper{background:linear-gradient(160deg,#5c1522,#7a2334);border:1.5px solid var(--gold);box-shadow:var(--shadow-sm)}
+.rail-paper .rp-h{display:flex;gap:.7rem;align-items:center;font-weight:800;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-light);margin-bottom:.9rem}
+.rail-ic{flex:none;width:40px;height:40px;border-radius:50%;border:1.5px solid var(--gold);background:#000;display:grid;place-items:center}
+.rail-ic svg{width:19px;height:19px;stroke:var(--gold-light);fill:none;stroke-width:1.7}
+.rail-paper p{font-size:.74rem;color:#fff;font-weight:600;line-height:1.5;margin:0 0 .8rem}
+.rail-btn{display:flex;gap:.5rem;align-items:center;justify-content:center;width:100%;border:1.5px solid var(--gold);border-radius:8px;background:var(--gold-grad);color:var(--navy);font-weight:800;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:.6rem .5rem;transition:.3s;box-sizing:border-box}
+.rail-btn:hover{filter:brightness(1.08)}
+.rail-btn.outline{background:transparent;color:var(--gold-light)}
+.rail-btn.outline:hover{background:var(--gold-grad);color:var(--navy)}
+.rail-btn.outline span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.rail-btn.outline.has-file{background:rgba(143,193,138,.15);border-color:#8fc18a;color:#8fc18a}
+.rail-btn svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2}
+.rail-or{text-align:center;font-size:.62rem;font-weight:800;color:var(--gold-light);letter-spacing:.14em;margin:.55rem 0}
+.rail-note{font-size:.62rem;color:#fff;font-weight:600;text-align:center;margin-top:.6rem}
+.rail-q{background:linear-gradient(160deg,#123063,#0b2251);border:1.5px solid var(--gold);box-shadow:var(--shadow-sm)}
+.rail-q.burg{background:linear-gradient(160deg,#5c1522,#7a2334)}
+.rail-q .rp-h{display:flex;gap:.7rem;align-items:center;font-weight:800;font-size:.74rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-light);margin-bottom:.7rem}
+.rail-q p{font-size:.72rem;color:#fff;font-weight:600;line-height:1.55;margin:0 0 .7rem}
+.rail-mail{display:inline-flex;gap:.45rem;align-items:center;background:var(--gold-grad);color:var(--navy);font-weight:800;font-size:.66rem;padding:.5rem .8rem;border-radius:6px;transition:.3s}
+.rail-mail:hover{filter:brightness(1.08)}
+.rail-mail svg{width:13px;height:13px;stroke:currentColor;fill:none;stroke-width:2}
+.rail-q .fine{font-size:.62rem;color:#fff;font-weight:600;margin:.6rem 0 0}
+.rail-q a.more{font-weight:800;font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:var(--gold-light)}
+.faq4{display:grid;grid-template-columns:repeat(4,1fr);gap:1rem}
+.faq4-item{background:#fff;border:1.5px solid var(--gold);border-radius:12px;padding:1.1rem;display:flex;gap:.8rem;align-items:flex-start;box-shadow:var(--shadow-sm)}
+.faq4-item .fic{flex:none;width:42px;height:42px;border-radius:50%;background:var(--navy);display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(201,163,65,.5)}
+.faq4-item .fic svg{width:19px;height:19px;stroke:var(--gold-2);fill:none;stroke-width:1.7}
+.faq4-item h4{font-size:.76rem;font-weight:800;color:var(--navy);margin-bottom:.35rem;line-height:1.35}
+.faq4-item p{font-size:.68rem;color:var(--muted);line-height:1.5;margin:0}
+.next-band{background:linear-gradient(135deg,#5c1522,#7a2334);padding:clamp(1.8rem,3.4vw,2.6rem) 0;border-top:3px solid var(--gold)}
+.next-inner{display:grid;grid-template-columns:260px 1fr auto;gap:1.6rem;align-items:center;max-width:900px;margin:0 auto}
+.next-img{border-radius:12px;overflow:hidden;border:1px solid rgba(201,163,65,.4)}
+.next-img .ph{aspect-ratio:16/9}
+.next-txt h2{font-family:var(--serif);font-size:clamp(20px,2.2vw,30px);background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;margin-bottom:.35rem}
+.next-txt p{color:#c3cee2;font-size:.86rem;margin:0;line-height:1.55}
+.next-cta{text-align:center}
+.next-cta .btn{padding:.9rem 1.5rem;font-size:.72rem}
+.next-cta .alt{display:block;margin-top:.7rem;font-size:.74rem;color:#c3cee2}
+.next-cta .alt a{color:var(--gold-light);text-decoration:underline;text-underline-offset:3px}
+@media(max-width:1200px){.app-shell{grid-template-columns:210px 1fr}.app-rail{grid-column:1/-1;display:grid;grid-template-columns:repeat(3,1fr);gap:1rem}.app-rail>div{margin-bottom:0}}
+@media(max-width:1024px){
+  .ah-grid{grid-template-columns:1fr}
+  .facts4{grid-template-columns:repeat(2,1fr);gap:1.2rem .4rem;padding:1.2rem .8rem}
+  .f4-item:nth-child(2)::after{display:none}
+  .proc-grid{grid-template-columns:1fr;gap:1.1rem}
+  .proc-chev{display:none}
+  .app-shell{grid-template-columns:1fr}
+  .app-side{display:flex;flex-wrap:wrap;gap:.3rem;align-items:center}
+  .app-side .as-h{width:100%;margin-bottom:.5rem}
+  .step-item{margin-bottom:0}
+  .step-item span.sl{display:none}
+  .step-item.active span.sl{display:inline}
+  .app-side .as-crest{display:none}
+  .app-rail{grid-template-columns:1fr}
+  .faq4{grid-template-columns:repeat(2,1fr)}
+  .next-inner{grid-template-columns:1fr;text-align:center}
+  .next-img{max-width:420px;margin:0 auto}
+}
+@media(max-width:640px){
+  .fgrid{grid-template-columns:1fr}
+  .facts4{grid-template-columns:1fr}
+  .f4-item::after{display:none}
+  .faq4{grid-template-columns:1fr}
+  .ah-ctas .btn{flex:1;min-width:100%}
+  .ah-img{border-radius:18px 18px 18px 70px}
+  .af-actions{flex-direction:column-reverse}
+  .af-actions .btn{width:100%}
+}
+
+/* ---- Application form v2 (new content) ---- */
+.af-sub{display:flex;gap:.6rem;align-items:center;font-weight:800;font-size:.74rem;letter-spacing:.12em;text-transform:uppercase;color:var(--navy);margin:1.5rem 0 .8rem}
+.af-sub em{color:var(--burgundy);font-style:normal;margin-left:.1rem}
+.af-sub .sic{flex:none;width:30px;height:30px;border-radius:50%;background:var(--navy);display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(201,163,65,.5)}
+.af-sub .sic svg{width:15px;height:15px;stroke:var(--gold-2);fill:none;stroke-width:1.8}
+.af-intro{font-size:.8rem;color:var(--muted);line-height:1.6;margin:0 0 1.1rem}
+.selgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(118px,1fr));gap:.7rem;margin-bottom:.4rem}
+.selcard{border:1px solid var(--line);border-radius:10px;padding:.9rem .5rem .75rem;text-align:center;cursor:pointer;transition:.25s;display:flex;flex-direction:column;align-items:center;gap:.45rem;background:#fff}
+.selcard:hover{border-color:var(--gold)}
+.selcard svg{width:26px;height:26px;stroke:var(--gold-deep);fill:none;stroke-width:1.6}
+.selcard span{font-weight:700;font-size:.7rem;color:var(--navy);line-height:1.3}
+.selcard input{accent-color:#6E1E2C;margin-top:.1rem}
+.selcard:has(input:checked){border-color:var(--burgundy);background:#fdf7f8;box-shadow:0 0 0 1px var(--burgundy)}
+.qblock{margin-bottom:1.25rem}
+.qblock .ql{font-weight:700;font-size:.82rem;color:var(--navy);line-height:1.5;margin-bottom:.25rem}
+.qblock .ql em{color:var(--burgundy);font-style:normal}
+.qblock .qh,.fld .qh{font-size:.72rem;color:var(--muted);font-style:italic;margin:0 0 .5rem;line-height:1.5}
+.cnt{text-align:right;font-size:.64rem;color:var(--muted);margin-top:.3rem}
+.pg-box{border:1.5px solid var(--gold);border-radius:12px;background:#fdfbf5;padding:1.1rem;margin-top:1.3rem}
+.exp-note{border:1.5px solid var(--gold);border-radius:12px;background:#fdfbf5;padding:1.1rem 1.2rem;margin-bottom:1.2rem}
+.exp-note .en-t{font-weight:800;font-size:.76rem;letter-spacing:.1em;text-transform:uppercase;color:var(--burgundy);margin-bottom:.45rem}
+.exp-note p{font-size:.78rem;color:var(--ink);line-height:1.65;margin:0}
+.exp-note p b{display:block;margin-top:.6rem}
+.exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.exp-card{border:1px solid var(--line);border-radius:12px;padding:1rem 1.1rem;background:#fff}
+.exp-card .ec-t{display:flex;gap:.55rem;align-items:center;font-weight:800;font-size:.7rem;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:.6rem}
+.exp-card .ec-t svg{width:19px;height:19px;stroke:var(--gold-deep);fill:none;stroke-width:1.7;flex:none}
+.exp-card ul{margin:0;padding-left:1.05rem}
+.exp-card li{font-size:.72rem;color:var(--muted);line-height:1.55;margin-bottom:.35rem}
+.exp-card>p{font-size:.72rem;color:var(--muted);line-height:1.55;margin:0 0 .5rem}
+.ack-list{display:flex;flex-direction:column;gap:.5rem}
+.ack-list .chk{align-items:flex-start;line-height:1.5;background:#fff}
+.ack-list .chk input{margin-top:.15rem}
+.ack-list .chk.ack-missing{border-color:#c0392b;background:#fff5f4;box-shadow:inset 0 0 0 1px #c0392b}
+.ack-error{display:flex;gap:.4rem;align-items:flex-start;margin:.7rem 0 0;color:#c0392b;font-size:.76rem;font-weight:700;line-height:1.4}
+.ack-error svg{flex:none;width:16px;height:16px;margin-top:.05rem;fill:none;stroke:#c0392b;stroke-width:1.8}
+.ack-error[hidden]{display:none}
+.doc-row{display:flex;gap:.8rem;align-items:center;border:1px solid var(--line);border-radius:10px;padding:.75rem .9rem;margin-bottom:.6rem;background:#fff}
+.doc-row .dic{flex:none;width:38px;height:38px;border-radius:50%;background:var(--navy);display:grid;place-items:center;box-shadow:inset 0 0 0 1px rgba(201,163,65,.5)}
+.doc-row .dic svg{width:17px;height:17px;stroke:var(--gold-2);fill:none;stroke-width:1.7}
+.doc-row .dt{font-weight:700;font-size:.78rem;color:var(--navy);line-height:1.35}
+.doc-row .dt em{color:var(--burgundy);font-style:normal}
+.doc-row p{font-size:.7rem;color:var(--muted);margin:.15rem 0 0;line-height:1.5}
+.doc-row .req{margin-left:auto;flex:none;font-weight:800;font-size:.6rem;letter-spacing:.08em;text-transform:uppercase;color:#1c7c3c;display:flex;gap:.3rem;align-items:center;white-space:nowrap}
+.doc-row .req svg{width:14px;height:14px;stroke:#1c7c3c;fill:none;stroke-width:2}
+.rvw-edit{flex:none;border:1.5px solid var(--burgundy);background:#fff;color:var(--burgundy);font-family:var(--sans);font-weight:800;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;border-radius:8px;padding:.45rem .95rem;cursor:pointer;transition:.25s}
+.rvw-edit:hover{background:var(--burgundy);color:#fff}
+.opt-chips{display:flex;flex-wrap:wrap;gap:.45rem;margin-bottom:.4rem}
+.opt-chips span{border:1px solid var(--line);border-radius:50px;padding:.35rem .8rem;font-size:.68rem;font-weight:600;color:var(--navy);background:#fff}
+.updrop{border:2px dashed var(--gold);border-radius:12px;background:#fdfbf5;padding:1.6rem 1rem;text-align:center;margin:1rem 0}
+.updrop svg{width:30px;height:30px;stroke:var(--burgundy);fill:none;stroke-width:1.7;margin:0 auto .5rem;display:block}
+.updrop .ut{font-weight:700;font-size:.82rem;color:var(--navy)}
+.updrop .uo{font-size:.68rem;color:var(--muted);margin:.3rem 0 .6rem}
+.updrop .ub{display:inline-block;background:var(--burgundy);color:#fff;font-weight:800;font-size:.62rem;letter-spacing:.1em;text-transform:uppercase;padding:.55rem 1.2rem;border-radius:8px;cursor:pointer;transition:.3s}
+.updrop .ub:hover{background:var(--burgundy-2)}
+.updrop .un{font-size:.64rem;color:var(--muted);margin-top:.6rem}
+.updrop.dragover{background:#fbf1d6;border-style:solid;border-color:var(--burgundy)}
+.updrop-list{display:flex;flex-wrap:wrap;gap:.5rem;margin-top:1rem;text-align:left}
+.updrop-list:empty{display:none}
+.updrop-file{display:flex;align-items:center;gap:.5rem;background:#fff;border:1px solid var(--line);border-radius:8px;padding:.4rem .5rem .4rem .8rem;font-size:.7rem;color:var(--navy);font-weight:600}
+.updrop-file button{border:none;background:none;color:var(--muted);cursor:pointer;font-size:1rem;line-height:1;padding:.1rem .3rem}
+.updrop-file button:hover{color:var(--burgundy)}
+.info-note{display:flex;gap:.6rem;align-items:flex-start;border:1px solid var(--gold);border-radius:10px;background:#fdf6e3;padding:.75rem .9rem;font-size:.72rem;color:var(--ink);line-height:1.55;margin:.9rem 0 1.1rem}
+.info-note svg{flex:none;width:16px;height:16px;stroke:var(--gold-deep);fill:none;stroke-width:2;margin-top:.1rem}
+.rvw-list{margin:0 0 .4rem;padding-left:1.1rem}
+.rvw-list li{font-size:.74rem;color:var(--muted);line-height:1.6;margin-bottom:.35rem}
+.conf-hero{border:1.5px solid #9fcbaa;background:#f2f8f3;border-radius:12px;padding:1.6rem 1.2rem;text-align:center;margin-bottom:.4rem}
+.conf-hero .ck{width:62px;height:62px;border-radius:50%;border:3px solid #2e8b57;display:grid;place-items:center;margin:0 auto 1rem}
+.conf-hero .ck svg{width:30px;height:30px;stroke:#2e8b57;fill:none;stroke-width:2.6}
+.conf-hero h3{font-family:var(--serif);color:#1c7c3c;font-size:1.35rem;letter-spacing:.03em;text-transform:uppercase;margin-bottom:.5rem}
+.conf-hero p{font-size:.8rem;color:var(--ink);line-height:1.6;margin:0}
+.next4{display:grid;grid-template-columns:repeat(4,1fr);gap:.8rem}
+.next4 .n4{text-align:center;padding:.5rem .3rem}
+.next4 .nic{width:44px;height:44px;border-radius:50%;background:#eef1f7;display:grid;place-items:center;margin:0 auto .55rem}
+.next4 .nic svg{width:20px;height:20px;stroke:var(--navy);fill:none;stroke-width:1.7}
+.next4 .nt{font-weight:800;font-size:.68rem;color:var(--navy);line-height:1.35}
+.next4 p{font-size:.66rem;color:var(--muted);line-height:1.5;margin:.3rem 0 0}
+.sumgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:.8rem;border:1px solid var(--line);border-radius:10px;padding:.9rem 1rem;background:#fff}
+.sumgrid .sl{font-size:.62rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.sumgrid .sv{font-weight:700;font-size:.8rem;color:var(--navy);margin-top:.2rem}
+.sumgrid .sn2{font-size:.62rem;color:var(--muted);margin-top:.2rem;font-style:italic}
+@media(max-width:1024px){.next4{grid-template-columns:1fr 1fr}}
+@media(max-width:640px){.exp-grid,.next4,.sumgrid{grid-template-columns:1fr}.selgrid{grid-template-columns:1fr 1fr}.doc-row{flex-wrap:wrap}.doc-row .req{margin-left:calc(38px + .8rem)}}
+
+/* ---- Original-style all-caps nav ---- */
+.nav>.container{max-width:1560px}
+.navlinks{gap:.1rem}
+.navlinks>li>a:hover{color:var(--gold-deep)}
+.navlinks>li>a::after{left:.5rem!important;right:.5rem!important}
+@media(max-width:1240px){.navlinks.desktop-only{display:none!important}.hamburger{display:flex!important}}
+
+/* ============ PROGRAMS-STYLE HERO (shared design) ============ */
+.prog-hero{position:relative;background:linear-gradient(135deg,#081a3c,#0d2452);overflow:hidden;display:flex;align-items:center;min-height:440px}
+.prog-hero>.container{width:100%}
+.prog-hero .ph-media{position:absolute;top:0;right:0;bottom:0;width:58%}
+.prog-hero .ph-media .ph{height:100%}
+.prog-hero .ph-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#081a3c 0%,rgba(8,26,60,.7) 16%,transparent 55%)}
+.prog-hero .ph-content{position:relative;z-index:2;max-width:460px;padding:clamp(2.6rem,5vw,4.2rem) 0}
+.prog-hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(26px,2.9vw,42px);line-height:1.18;color:#fff}
+.prog-hero h1 span{display:block}
+.prog-hero h1 .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
+.prog-hero .ph-sub{color:#c3cee2;font-size:.92rem;max-width:40ch;margin-top:1.1rem;line-height:1.65}
+.prog-hero .ph-ctas{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.6rem}
+.prog-hero .ph-ctas .btn{padding:.7rem 1.3rem;font-size:.6rem;border-radius:8px}
+.prog-hero .btn-navy{border-color:var(--gold)}
+.prog-arc{line-height:0;background:var(--cream)}
+.prog-arc svg{display:block;width:100%;height:clamp(30px,5vw,64px)}
+@media(max-width:1024px){
+  .prog-hero .ph-media{width:100%;opacity:.3}
+  .prog-hero .ph-media::after{background:linear-gradient(90deg,#081a3c 8%,rgba(8,26,60,.62))}
+  .prog-hero .ph-content{max-width:620px}
+}
+</style>
+<link rel="stylesheet" href="assets/css/nav.css">
+</head>
+<body>
+
+<vanguard-nav></vanguard-nav>
+
+<main id="main">
+
+<!-- ============ APPLY HERO ============ -->
+<section class="prog-hero" aria-labelledby="apply-h" data-screen-label="Apply hero">
+  <div class="ph-media"><div class="ph" role="img" aria-label="Academy students studying together with laptop"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 20c0-2.8 2.2-5 5-5M22 20c0-2.8-2.2-5-5-5M9.5 17h5"/></svg><span class="phl">Students photo</span></div></div>
+  <div class="container">
+    <div class="ph-content reveal in">
+      <p class="eyebrow on-navy" style="margin-bottom:.6rem">Apply to the</p>
+      <h1 id="apply-h"><span>Vanguard</span><span class="gold">Academy</span></h1>
+      <p class="ph-sub">A selective, project-based experience for participants ready to build technical expertise, leadership, and career-ready confidence through real-world projects, executive mentorship, and industry exposure.</p>
+      <div class="ph-ctas">
+        <a href="#appform" class="btn btn-gold">Start Application &nbsp;&rarr;</a>
+        <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0nX-8h0lIqQ6FNafw8xW7OKO4EN3qah8uVsVs5Jgk-VZw1yUfQH623g1rciKaJL5SQSvn3evCw?gv=true" class="btn btn-gold" target="_blank" rel="noopener"><svg style="width:17px;height:17px;stroke:currentColor;fill:none;stroke-width:1.8" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg> Schedule an Information Call</a>
+      </div>
+    </div>
+  </div>
+</section>
+<div class="prog-arc" aria-hidden="true"><svg viewBox="0 0 1440 70" preserveAspectRatio="none"><path d="M0 0 C 480 68 960 68 1440 0 L1440 0 L0 0 Z" fill="#081a3c"/><path d="M0 3 C 480 71 960 71 1440 3" fill="none" stroke="#C9A341" stroke-width="3"/></svg></div>
+
+<!-- ============ FACTS STRIP ============ -->
+<section aria-label="Program facts" data-screen-label="Facts strip" style="background:var(--cream);padding:1.8rem 0 1.4rem">
+  <div class="container">
+    <div class="facts4 reveal">
+      <div class="f4-item"><span class="f4-ic"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 20c0-2.8 2.2-5 5-5M22 20c0-2.8-2.2-5-5-5M9.5 17h5"/></svg></span><div><div class="f4-t">Youth Academy Eligibility</div><p>Students entering grades 8&ndash;12 (including incoming seniors)</p></div></div>
+      <div class="f4-item"><span class="f4-ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="12" rx="2"/><path d="M8 21h8M12 17v4"/></svg></span><div><div class="f4-t">Format</div><p>Hybrid learning with virtual instruction, workshops, and real-world projects.</p></div></div>
+      <div class="f4-item"><span class="f4-ic"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></span><div><div class="f4-t">Admissions</div><p>Application and interview required. Limited seats available per cohort.</p></div></div>
+      <div class="f4-item"><span class="f4-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4.5"/><circle cx="12" cy="12" r="1"/></svg></span><div><div class="f4-t">Focus Areas</div><p>STEM, AI, analytics, engineering, leadership, business intelligence, and workforce readiness.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PROCESS ============ -->
+<section aria-label="The application process" data-screen-label="Application process" style="background:var(--cream);padding:0 0 1.6rem">
+  <div class="container">
+    <div class="process-card reveal">
+      <h2>The Application Process</h2>
+      <div class="proc-grid">
+        <div class="proc-step"><span class="pn">1</span><svg class="pi" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 13l2 2 4-5"/></svg><div><div class="pt">Submit Application</div><p>Complete the online student and parent information form.</p></div></div>
+        <span class="proc-chev" aria-hidden="true">&raquo;</span>
+        <div class="proc-step"><span class="pn">2</span><svg class="pi" viewBox="0 0 24 24"><circle cx="9" cy="9" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6M15 5h5M17.5 3v4M13 20c0-2.8 2.2-5 5-5s4 2.2 4 5"/><circle cx="18" cy="11.5" r="2.2"/></svg><div><div class="pt">Attend Interview</div><p>Selected applicants participate in a short student and parent interview.</p></div></div>
+        <span class="proc-chev" aria-hidden="true">&raquo;</span>
+        <div class="proc-step"><span class="pn">3</span><svg class="pi" viewBox="0 0 24 24"><path d="M3 7l9 6 9-6M3 7v12h18V7M3 7l9-4 9 4"/><path d="M9 13.5l2 2 4-4"/></svg><div><div class="pt">Receive Decision</div><p>Families receive an admissions decision and next-step instructions.</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ APPLICATION FORM ============ -->
+<section id="appform" aria-label="Application form" data-screen-label="Application form" style="background:var(--cream);padding:0 0 2rem">
+  <div class="container">
+    <div class="app-shell">
+      <aside class="app-side reveal" aria-label="Application steps">
+        <div class="as-h">Application Steps</div>
+        <div class="step-item active" data-step="1"><span class="sn">1</span><span class="sl">Applicant Information</span></div>
+        <div class="step-item" data-step="2"><span class="sn">2</span><span class="sl">Technical Readiness &amp; Relevant Experience</span></div>
+        <div class="step-item" data-step="3"><span class="sn">3</span><span class="sl">Personal Statement</span></div>
+        <div class="step-item" data-step="4"><span class="sn">4</span><span class="sl">Program Expectations &amp; Commitment</span></div>
+        <div class="step-item" data-step="5"><span class="sn">5</span><span class="sl">Supporting Documents</span></div>
+        <div class="step-item" data-step="6"><span class="sn">6</span><span class="sl">Review &amp; Submit</span></div>
+        <div class="step-item" data-step="7"><span class="sn">7</span><span class="sl">Confirmation</span></div>
+        <div class="as-crest"><div class="crest-badge"><img src="assets/images/vanguard-logo-transparent.png" alt=""></div></div>
+      </aside>
+
+      <div class="app-form reveal d1">
+        <div class="af-top"><h2 id="afTitle">Applicant Information</h2><span class="af-step" id="afStep">STEP 1 OF 7</span></div>
+        <div class="af-dots" id="afDots" aria-hidden="true"></div>
+
+        <form onsubmit="return false" id="afForm">
+        <div class="fstep on" data-panel="1">
+          <div class="af-sub"><span class="sic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></span>Who are you applying as? <em>*</em></div>
+          <div class="selgrid">
+            <label class="selcard"><svg viewBox="0 0 24 24"><path d="M22 9L12 4 2 9l10 5 10-5z"/><path d="M6 11v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg><span>High School Student</span><input type="radio" name="aptype" value="High School Student"></label>
+            <label class="selcard"><svg viewBox="0 0 24 24"><path d="M4 21V9l8-5 8 5v12M9 21v-6h6v6M4 21h16"/></svg><span>College Student</span><input type="radio" name="aptype" value="College Student"></label>
+            <label class="selcard"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg><span>Adult Learner</span><input type="radio" name="aptype" value="Adult Learner"></label>
+            <label class="selcard"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M9 7V5a2 2 0 012-2h2a2 2 0 012 2v2M3 12h18"/></svg><span>Working Professional</span><input type="radio" name="aptype" value="Working Professional"></label>
+          </div>
+          <div class="af-sub"><span class="sic"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4.5"/></svg></span>Which Vanguard Academy are you applying to? <em>*</em></div>
+          <div class="selgrid">
+            <label class="selcard"><svg viewBox="0 0 24 24"><path d="M12 6c-2-1.5-5-2-8-2v14c3 0 6 .5 8 2 2-1.5 5-2 8-2V4c-3 0-6 .5-8 2z"/><path d="M12 6v14"/></svg><span>Youth STEM Academy</span><input type="radio" name="acad" value="Youth STEM Academy"></label>
+            <label class="selcard"><svg viewBox="0 0 24 24"><path d="M5 20v-6M11 20V8M17 20v-10M3 20h18"/></svg><span>Business Intelligence Academy</span><input type="radio" name="acad" value="Business Intelligence Academy"></label>
+            <label class="selcard"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 4v3M12 17v3M4 12h3M17 12h3M6.3 6.3l2.1 2.1M15.6 15.6l2.1 2.1M17.7 6.3l-2.1 2.1M8.4 15.6l-2.1 2.1"/></svg><span>AI Innovation Academy</span><input type="radio" name="acad" value="AI Innovation Academy"></label>
+            <label class="selcard"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.5"/><path d="M2 20c0-3.9 3.1-7 7-7M14 16.5l2.5 2.5L21 14"/></svg><span>Executive Leadership Academy</span><input type="radio" name="acad" value="Executive Leadership Academy"></label>
+            <label class="selcard"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.5 3.8 5.6 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.6-3.8-9S9.5 5.5 12 3z"/></svg><span>International Consulting Academy</span><input type="radio" name="acad" value="International Consulting Academy"></label>
+          </div>
+          <div class="fgrid" id="intlTrackWrap" hidden>
+            <div class="fld full"><label>International Consulting Project Preference <em>*</em></label><select name="intlTrack"><option value="">Select a track</option><option>Engineering Systems &amp; Infrastructure Consulting Experience</option><option>Educational Innovation &amp; Policy Consulting Experience</option><option>No Preference &mdash; assign me based on program needs</option></select></div>
+          </div>
+          <div class="af-sub"><span class="sic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></span>Personal Information</div>
+          <div class="fgrid">
+            <div class="fld"><label>First Name <em>*</em></label><input type="text" name="firstName" placeholder="Enter first name"></div>
+            <div class="fld"><label>Last Name <em>*</em></label><input type="text" name="lastName" placeholder="Enter last name"></div>
+            <div class="fld"><label>Preferred Name (Optional)</label><input type="text" name="preferredName" placeholder="Enter preferred name"></div>
+            <div class="fld"><label>Date of Birth <em>*</em></label><input type="text" name="dob" placeholder="MM / DD / YYYY"></div>
+            <div class="fld"><label>Gender <em>*</em></label><select name="gender"><option value="">Select gender</option><option>Female</option><option>Male</option><option>Prefer not to say</option></select></div>
+            <div class="fld"><label>Phone Number <em>*</em></label><input type="tel" name="phone" placeholder="(609) 123-4567"></div>
+            <div class="fld full"><label>Email Address <em>*</em></label><input type="email" name="email" placeholder="Enter email address"></div>
+            <div class="fld"><label>City <em>*</em></label><input type="text" name="city" placeholder="Enter city"></div>
+            <div class="fld"><label>State <em>*</em></label><input type="text" name="state" placeholder="Enter state"></div>
+            <div class="fld"><label>ZIP Code <em>*</em></label><input type="text" name="zip" placeholder="Enter ZIP code"></div>
+          </div>
+          <div class="af-sub"><span class="sic"><svg viewBox="0 0 24 24"><path d="M22 9L12 4 2 9l10 5 10-5z"/><path d="M6 11v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg></span>Academic / Professional Information</div>
+          <p class="af-intro" style="margin:-.3rem 0 .9rem">Please provide your current academic or professional information.</p>
+          <div class="fgrid">
+            <div class="fld full"><label>Current School / College / Employer <em>*</em></label><input type="text" name="school" placeholder="Enter school, college, or employer name"></div>
+            <div class="fld"><label>Current Grade Level (High School Students Only) <em>*</em></label><select name="gradeLevel"><option value="">Select grade level</option><option>8th</option><option>9th</option><option>10th</option><option>11th</option><option>12th</option><option>Not applicable</option></select></div>
+            <div class="fld"><label>Current GPA (Optional)</label><input type="text" name="gpa" placeholder="e.g. 3.8"></div>
+            <div class="fld"><label>Expected Graduation Year (Optional)</label><input type="text" name="gradYear" inputmode="numeric" maxlength="4" placeholder="YYYY"></div>
+            <div class="fld"><label>How did you hear about Vanguard STEM Academy? <em>*</em></label><select name="hearAbout"><option value="">Select an option</option><option>School counselor / teacher</option><option>Family or friend</option><option>Community organization</option><option>Employer</option><option>Social media</option><option>News / press</option><option>Other</option></select></div>
+          </div>
+          <div class="pg-box">
+            <div class="af-sub" style="margin-top:0"><span class="sic"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c0-3 2.7-5 6-5s6 2 6 5M14 15.4c2.9.4 5 2.2 5 4.6h3"/></svg></span>Parent / Guardian Information</div>
+            <p class="qh">This section is only required if you selected &ldquo;High School Student&rdquo; above.</p>
+            <div class="fgrid">
+              <div class="fld"><label>Parent / Guardian First Name <em>*</em></label><input type="text" name="guardianFirstName" placeholder="Enter first name"></div>
+              <div class="fld"><label>Parent / Guardian Last Name <em>*</em></label><input type="text" name="guardianLastName" placeholder="Enter last name"></div>
+              <div class="fld"><label>Relationship to Student <em>*</em></label><select name="guardianRelationship"><option value="">Select relationship</option><option>Parent</option><option>Guardian</option><option>Grandparent</option><option>Other</option></select></div>
+              <div class="fld"><label>Phone Number <em>*</em></label><input type="tel" name="guardianPhone" placeholder="(609) 123-4567"></div>
+              <div class="fld"><label>Email Address <em>*</em></label><input type="email" name="guardianEmail" placeholder="Enter email address"></div>
+              <div class="fld"><label>Preferred Contact Method <em>*</em></label><select name="guardianContactMethod"><option value="">Select contact method</option><option>Email</option><option>Phone</option><option>Text</option></select></div>
+            </div>
+          </div>
+        </div>
+        <div class="fstep" data-panel="2">
+          <p class="af-intro">This section helps us understand your current experience so we can best support your learning. Prior experience is not required for admission.</p>
+          <div class="qblock">
+            <div class="ql">1. Have you previously participated in any STEM, technology, engineering, coding, artificial intelligence, robotics, business intelligence, or related courses, programs, or projects? <em>*</em></div>
+            <div class="chkrow"><label class="chk"><input type="radio" name="q2exp" value="Yes">Yes</label><label class="chk"><input type="radio" name="q2exp" value="No">No</label></div>
+          </div>
+          <div class="qblock">
+            <div class="ql">If yes, please briefly describe your experience.</div>
+            <div class="fld"><textarea name="experienceDescription" maxlength="1000" placeholder="Type your response here..."></textarea><div class="cnt">0 / 1000</div></div>
+          </div>
+          <div class="qblock"><div class="ql">2. Please list any technical skills, programming languages, software, platforms, certifications, or AI tools you have experience using.</div><p class="qh">Examples: Python, SQL, JavaScript, HTML/CSS, Excel, Tableau, Power BI, ChatGPT, Claude, Gemini, GitHub, VS Code, Google Colab, Replit, Jupyter Notebook, etc.</p><div class="fld"><textarea name="technicalSkills" maxlength="1000" placeholder="Type your response here..."></textarea><div class="cnt">0 / 1000</div></div></div>
+          <div class="qblock"><div class="ql">3. Tell us about any technical, leadership, research, consulting, engineering, or professional experience that you believe would help you succeed at Vanguard STEM Academy.</div><div class="fld"><textarea name="relevantExperience" maxlength="1000" placeholder="Type your response here..."></textarea><div class="cnt">0 / 1000</div></div></div>
+          <div class="qblock"><div class="ql">4. Is there a specific technical skill or technology you hope to learn during your time at Vanguard STEM Academy?</div><div class="fld"><textarea name="skillToLearn" maxlength="1000" placeholder="Type your response here..."></textarea><div class="cnt">0 / 1000</div></div></div>
+        </div>
+        <div class="fstep" data-panel="3">
+          <p class="af-intro">Help us learn more about you, your goals, and why you want to be part of Vanguard STEM Academy.</p>
+          <div class="qblock"><div class="ql">1. Why are you interested in joining Vanguard STEM Academy? <em>*</em></div><p class="qh">Share what excites you about our programs and community.</p><div class="fld"><textarea name="whyInterested" maxlength="1000" placeholder="Type your response here..."></textarea><div class="cnt">0 / 1000</div></div></div>
+          <div class="qblock"><div class="ql">2. What are your academic, career, or personal goals? <em>*</em></div><p class="qh">Tell us what you hope to achieve in the short term and long term.</p><div class="fld"><textarea name="goals" maxlength="1000" placeholder="Type your response here..."></textarea><div class="cnt">0 / 1000</div></div></div>
+          <div class="qblock"><div class="ql">3. Describe a challenge you have faced and how you overcame it. What did you learn from the experience? <em>*</em></div><p class="qh">This can be from school, work, a project, or your personal life.</p><div class="fld"><textarea name="challenge" maxlength="1000" placeholder="Type your response here..."></textarea><div class="cnt">0 / 1000</div></div></div>
+          <div class="qblock"><div class="ql">4. How do you contribute to your school, community, or team? <em>*</em></div><p class="qh">Share any leadership, volunteer, or extracurricular activities.</p><div class="fld"><textarea name="contribution" maxlength="1000" placeholder="Type your response here..."></textarea><div class="cnt">0 / 1000</div></div></div>
+          <div class="qblock"><div class="ql">5. Is there anything else you would like us to know about you?</div><p class="qh">This is your opportunity to share anything important that we haven&rsquo;t asked.</p><div class="fld"><textarea name="additionalInfo" maxlength="1000" placeholder="Type your response here..."></textarea><div class="cnt">0 / 1000</div></div></div>
+        </div>
+        <div class="fstep" data-panel="4">
+          <div class="exp-note">
+            <div class="en-t">Welcome to the Vanguard Experience</div>
+            <p>Vanguard STEM Academy is not a traditional classroom. Our programs are designed to mirror real-world engineering, consulting, technology, and professional environments. Participants work on authentic projects, collaborate with industry professionals, and are expected to demonstrate professionalism, accountability, initiative, and a commitment to excellence throughout the program.<b>Before submitting your application, please carefully review the expectations below.</b></p>
+          </div>
+          <div class="exp-grid">
+            <div class="exp-card"><div class="ec-t"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>Attendance &amp; Participation</div><ul><li>Attendance is expected for all scheduled classes, workshops, meetings, presentations, and required activities.</li><li>Programs may include virtual sessions, in-person experiences, guest speakers, executive fireside chats, and presentations.</li><li>Participants are expected to be present, engaged, and on time.</li><li>Excessive absences, repeated tardiness, or failure to communicate may result in probation or dismissal from the program.</li></ul></div>
+            <div class="exp-card"><div class="ec-t"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg>Academic Expectations</div><ul><li>Complete all assignments by the established deadlines.</li><li>Participate actively in discussions, workshops, and team projects.</li><li>Present your work professionally.</li><li>Accept and apply feedback.</li><li>Demonstrate honesty and academic integrity in all work.</li><li>Participants should expect to dedicate approximately 9&ndash;11 hours per week to classes, assignments, independent learning, research, collaboration, and project development.</li></ul></div>
+            <div class="exp-card"><div class="ec-t"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Professional Conduct</div><ul><li>Treat classmates, instructors, mentors, partners, and guest speakers with respect.</li><li>Communicate professionally both online and in person.</li><li>Work collaboratively and value diverse perspectives.</li><li>Maintain a positive attitude and demonstrate leadership.</li><li>Follow all Vanguard policies and Code of Conduct.</li></ul></div>
+            <div class="exp-card"><div class="ec-t"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M8 21h8M12 16v5"/></svg>Technology &amp; Transportation</div><ul><li>Participants are responsible for ensuring they have reliable internet access.</li><li>Access to a laptop or desktop computer capable of completing coursework.</li><li>Ability to install required software and access online learning platforms.</li><li>Reliable transportation to any required in-person sessions, presentations, site visits, or partner events.</li></ul></div>
+            <div class="exp-card" style="grid-column:1/-1"><div class="ec-t"><svg viewBox="0 0 24 24"><path d="M8 4h8v5a4 4 0 01-8 0zM8 5H4c0 3 1.5 5 4 5M16 5h4c0 3-1.5 5-4 5M12 13v4M8 21h8M10 17h4"/></svg>Program Outcomes</div><p>Participants who successfully complete Vanguard programs will benefit from:</p><ul style="columns:2;column-gap:1.6rem"><li>Building resume-ready and portfolio-ready projects.</li><li>Presenting their work to executives and community leaders.</li><li>Earning a certificate of completion.</li><li>Receiving mentorship from industry professionals.</li><li>Participating in real consulting and engineering projects.</li><li>Strengthening technical, leadership, and professional skills.</li><li>Gaining meaningful, real-world learning experiences.</li></ul></div>
+          </div>
+          <div class="pg-box">
+            <div class="af-sub" style="margin-top:0"><span class="sic"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4a3 3 0 016 0M9 11h6M9 15h6"/></svg></span>Applicant Acknowledgement</div>
+            <p class="af-intro" style="margin-bottom:.8rem">By submitting this application, I acknowledge that:</p>
+            <div class="ack-list">
+              <label class="chk"><input type="checkbox" name="programAck" value="Read Program Expectations">I have carefully read and understand the Vanguard STEM Academy Program Expectations.</label>
+              <label class="chk"><input type="checkbox" name="programAck" value="Attendance Agreement">I understand the attendance requirements and agree to attend all required sessions and activities.</label>
+              <label class="chk"><input type="checkbox" name="programAck" value="Time Commitment Agreement">I understand the expected weekly time commitment (approximately 9&ndash;11 hours per week) and agree to complete assignments and projects by established deadlines.</label>
+              <label class="chk"><input type="checkbox" name="programAck" value="Tech/Transportation Responsibility">I understand that I am responsible for maintaining reliable technology access and transportation to required in-person activities.</label>
+              <label class="chk"><input type="checkbox" name="programAck" value="Professional Conduct Agreement">I understand that professionalism, teamwork, integrity, and respectful conduct are required throughout the program.</label>
+              <label class="chk"><input type="checkbox" name="programAck" value="Dismissal Policy Acknowledged">I understand that failure to meet program expectations may result in probation, dismissal, or removal from the program.</label>
+              <label class="chk"><input type="checkbox" name="programAck" value="Information Accuracy Certified">I certify that all information provided in this application is accurate and complete.</label>
+            </div>
+            <p class="ack-error" id="programAckErr" role="alert" hidden><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.2"/></svg><span>You must check <strong>all</strong> boxes above to continue. Each acknowledgement is required.</span></p>
+          </div>
+        </div>
+        <div class="fstep" data-panel="5">
+          <p class="af-intro">Upload the documents that apply to you. These help our admissions committee learn more about your academic and professional background.<br><b>Accepted file types:</b> PDF, DOC, DOCX, JPG, PNG &nbsp;|&nbsp; <b>Max file size:</b> 20MB per file</p>
+          <div class="af-sub"><span class="sic"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></span>Required Documents</div>
+          <div class="doc-row"><span class="dic"><svg viewBox="0 0 24 24"><path d="M22 9L12 4 2 9l10 5 10-5z"/><path d="M6 11v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg></span><div><div class="dt">Transcript / Report Card <em>*</em></div><p>Upload your most recent official or unofficial transcript or report card. Examples: High School Transcript, College Transcript.</p></div><span class="req"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg> Required</span></div>
+          <div class="doc-row"><span class="dic"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></span><div><div class="dt">Resume or CV (if applicable) <em>*</em></div><p>Upload your current resume or CV. Applies to College Students, Adult Learners, and Working Professionals.</p></div><span class="req"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg> Required</span></div>
+          <div class="af-sub"><span class="sic"><svg viewBox="0 0 24 24"><path d="M3 6h6l2 2h10v12H3z"/></svg></span>Optional Documents</div>
+          <p class="af-intro" style="margin-bottom:.7rem">Upload any additional documents that help showcase your achievements, experience, and potential. Examples include:</p>
+          <div class="opt-chips"><span>Portfolio</span><span>Certifications</span><span>GitHub Repository</span><span>Letters of Recommendation</span><span>Awards &amp; Honors</span><span>LinkedIn Profile</span><span>Project Samples</span><span>Research Papers</span><span>Other Supporting Materials</span></div>
+          <div class="updrop" id="docDrop"><svg viewBox="0 0 24 24"><path d="M7 17a5 5 0 01-.9-9.9A6 6 0 0118 8.5 4.5 4.5 0 0117.5 17"/><path d="M12 12v8M9 15l3-3 3 3"/></svg><div class="ut">Drag &amp; drop your files here</div><div class="uo">or</div><label class="ub" for="docFiles">Browse Files</label><input type="file" id="docFiles" multiple accept=".pdf,.doc,.docx,.jpg,.jpeg,.png" style="display:none"><div class="un">You can upload multiple files at once &middot; up to 10 files &middot; max 20MB per file.</div><div class="updrop-list" id="docFileList"></div></div>
+          <div class="info-note"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.5"/></svg><span>Make sure all uploaded documents are clear and readable. Incomplete or unclear submissions may delay the review of your application.</span></div>
+          <div class="fld"><label>Additional Links (Optional)</label><p class="qh">If you have a portfolio, GitHub repository, LinkedIn profile, personal website, or other online work you&rsquo;d like us to review, please provide the link below.</p><input type="url" name="additionalLinks" placeholder="https:// (e.g., linkedin.com/in/yourprofile, github.com/username, yourportfolio.com)"></div>
+        </div>
+        <div class="fstep" data-panel="6">
+          <p class="af-intro"><b style="color:var(--burgundy)">Almost there!</b> Please review your application carefully before submitting. Once submitted, you will receive a confirmation email.</p>
+          <div class="af-sub"><span class="sic"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><circle cx="12" cy="13" r="2.6"/><path d="M14 15l2.5 2.5"/></svg></span>Application Sections</div>
+          <div class="doc-row"><span class="dic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"/><path d="M5 20c0-3.9 3.1-7 7-7s7 3.1 7 7"/></svg></span><div><div class="dt">Applicant Information</div><p>Personal details and contact information</p></div><span class="req"><svg style="width:14px;height:14px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg> Complete</span><button class="rvw-edit" type="button" data-goto="1">Edit</button></div>
+          <div class="doc-row"><span class="dic"><svg viewBox="0 0 24 24"><rect x="4" y="5" width="16" height="11" rx="1.5"/><path d="M2 19h20"/></svg></span><div><div class="dt">Technical Readiness &amp; Relevant Experience</div><p>Skills, tools, experience, and readiness</p></div><span class="req"><svg style="width:14px;height:14px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg> Complete</span><button class="rvw-edit" type="button" data-goto="2">Edit</button></div>
+          <div class="doc-row"><span class="dic"><svg viewBox="0 0 24 24"><path d="M4 20l1-4L16 5l3 3L8 19zM14 7l3 3"/></svg></span><div><div class="dt">Personal Statement</div><p>Your goals, motivation, and interests</p></div><span class="req"><svg style="width:14px;height:14px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg> Complete</span><button class="rvw-edit" type="button" data-goto="3">Edit</button></div>
+          <div class="doc-row"><span class="dic"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4a3 3 0 016 0M9 11h6M9 15h6"/></svg></span><div><div class="dt">Program Expectations &amp; Commitment</div><p>You have reviewed and agreed to the program expectations</p></div><span class="req"><svg style="width:14px;height:14px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg> Complete</span><button class="rvw-edit" type="button" data-goto="4">Edit</button></div>
+          <div class="doc-row"><span class="dic"><svg viewBox="0 0 24 24"><path d="M3 6h6l2 2h10v12H3z"/></svg></span><div><div class="dt">Supporting Documents</div><p>Documents you uploaded</p></div><span class="req"><svg style="width:14px;height:14px" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg> Complete</span><button class="rvw-edit" type="button" data-goto="5">Edit</button></div>
+          <div class="af-sub"><span class="sic"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4.5"/></svg></span>Before you submit, please remember:</div>
+          <ul class="rvw-list">
+            <li>All information provided is accurate and complete to the best of your knowledge.</li>
+            <li>You have reviewed all sections of your application.</li>
+            <li>You understand that incomplete applications may not be considered.</li>
+            <li>Submitting this application does not guarantee acceptance into the program.</li>
+          </ul>
+          <div class="pg-box">
+            <div class="af-sub" style="margin-top:0"><span class="sic"><svg viewBox="0 0 24 24"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4a3 3 0 016 0M9 11h6M9 15h6"/></svg></span>Acknowledgement &amp; Certification</div>
+            <p class="af-intro" style="margin-bottom:.8rem">By checking the boxes below, you acknowledge that:</p>
+            <div class="ack-list">
+              <label class="chk"><input type="checkbox" name="finalAck" value="Reviewed &amp; Accurate">I have reviewed my entire application and all information is accurate and complete.</label>
+              <label class="chk"><input type="checkbox" name="finalAck" value="Disqualification Risk Acknowledged">I understand that any false or misleading information may result in disqualification.</label>
+              <label class="chk"><input type="checkbox" name="finalAck" value="Code of Conduct Agreement">I have read and agree to the program expectations and the Code of Conduct.</label>
+              <label class="chk"><input type="checkbox" name="finalAck" value="No Guarantee Acknowledged">I understand that submitting this application does not guarantee acceptance.</label>
+              <label class="chk"><input type="checkbox" name="finalAck" value="Data Use Consent">I consent to Vanguard STEM Academy using my information for admissions purposes.</label>
+            </div>
+            <p class="ack-error" id="finalAckErr" role="alert" hidden><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 8v5M12 16v.2"/></svg><span>You must check <strong>all</strong> boxes above before submitting. Each certification is required.</span></p>
+          </div>
+          <p class="qh" style="text-align:center;margin-top:1rem">You will not be able to make changes after submission.</p>
+        </div>
+        <div class="fstep" data-panel="7">
+          <div class="conf-hero">
+            <div class="ck"><svg viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg></div>
+            <h3>Application Submitted!</h3>
+            <p><b>Thank you for applying to Vanguard STEM Academy.</b><br>We have received your application. A confirmation email with a copy of your responses will be sent to the email address you provided.</p>
+          </div>
+          <div class="af-sub"><span class="sic"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.7 6.3.8-4.6 4.3 1.2 6.2-5.6-3-5.6 3 1.2-6.2L3 9.5l6.3-.8z"/></svg></span>What Happens Next?</div>
+          <div class="next4">
+            <div class="n4"><span class="nic"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4"/><circle cx="12" cy="13" r="2.6"/><path d="M14 15l2.5 2.5"/></svg></span><div class="nt">1. Application Review</div><p>Our admissions team will carefully review your application and supporting documents.</p></div>
+            <div class="n4"><span class="nic"><svg viewBox="0 0 24 24"><circle cx="8" cy="9" r="3"/><circle cx="16" cy="9" r="3"/><path d="M2 20c0-3 2.7-5 6-5s6 2 6 5M14 15.4c2.9.4 5 2.2 5 4.6h3"/></svg></span><div class="nt">2. Committee Evaluation</div><p>Your application will be evaluated by our admissions committee.</p></div>
+            <div class="n4"><span class="nic"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg></span><div class="nt">3. Decision Notification</div><p>You will be notified of our decision via email. Please check your inbox (and spam folder).</p></div>
+            <div class="n4"><span class="nic"><svg viewBox="0 0 24 24"><path d="M12 3l2.7 5.7 6.3.8-4.6 4.3 1.2 6.2-5.6-3-5.6 3 1.2-6.2L3 9.5l6.3-.8z"/></svg></span><div class="nt">4. Next Steps</div><p>If accepted, you will receive information about the next steps and program onboarding.</p></div>
+          </div>
+          <div class="af-sub"><span class="sic"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></span>Application Summary</div>
+          <div class="sumgrid">
+            <div><div class="sl">Date Submitted</div><div class="sv" id="confDate">&mdash;</div></div>
+            <div><div class="sl">Program Applying For</div><div class="sv">Vanguard Programs</div></div>
+            <div><div class="sl">Application ID</div><div class="sv" id="confId">&mdash;</div><div class="sn2">Please save for your records.</div></div>
+          </div>
+          <div class="af-sub"><span class="sic"><svg viewBox="0 0 24 24"><path d="M6 16v-5a6 6 0 0112 0v5l2 3H4zM10 21h4"/></svg></span>Important Reminders</div>
+          <ul class="rvw-list">
+            <li>Incomplete or inaccurate applications may delay the review process.</li>
+            <li>You may be contacted if additional information is needed.</li>
+            <li>Admission decisions are based on program capacity, holistic review, and alignment with program goals.</li>
+            <li>Submission of this application does not guarantee acceptance into the program.</li>
+            <li>Only completed applications will be considered.</li>
+          </ul>
+          <div class="info-note"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 11v5M12 7.5v.5"/></svg><span><b>Need to make a change?</b> If you need to update your application or have questions about the admissions process, please contact the Vanguard STEM Academy Admissions Team at <a href="mailto:admissions@vstemacad.org" style="font-weight:700">admissions@vstemacad.org</a>.</span></div>
+          <div class="af-actions" style="margin-top:1.2rem">
+            <button class="btn btn-back" type="button" onclick="window.print()">Print Summary</button>
+            <a class="btn btn-gold" href="/home">Return to Home &nbsp;&rarr;</a>
+          </div>
+        </div>
+        </form>
+
+        <div class="af-actions" id="afActions">
+          <button class="btn btn-back" id="afBack" type="button" style="visibility:hidden">&larr; &nbsp;Back</button>
+          <button class="btn btn-gold" id="afNext" type="button">Save &amp; Continue &nbsp;&rarr;</button>
+        </div>
+      </div>
+
+      <aside class="app-rail reveal d2" aria-label="Application help">
+        <div class="rail-paper">
+          <div class="rp-h"><span class="rail-ic"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></span>Prefer to apply on paper?</div>
+          <p>Download the application, complete it, and upload it here.</p>
+          <a href="assets/docs/VSA-Programs-Application-Form-2027.pdf" download="VSA Programs Application Form 2027.pdf" class="rail-btn"><svg viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 21h16"/></svg>Download Application</a>
+          <div class="rail-or">OR</div>
+          <label class="rail-btn outline" id="rpUploadZone"><svg viewBox="0 0 24 24"><path d="M12 15V3M7 8l5-5 5 5M4 21h16"/></svg><span id="rpUploadText">Upload Completed Form</span>
+            <input type="file" id="rpUpload" accept=".pdf,.doc,.docx" style="display:none">
+          </label>
+          <div class="rail-note">Accepted formats: PDF, DOC, DOCX</div>
+          <button type="button" class="rail-btn" id="rpSubmit" style="margin-top:.7rem;cursor:pointer;opacity:.55;pointer-events:none" disabled><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg>Submit Application</button>
+          <p class="rail-note" id="rpStatus" hidden style="margin-top:.6rem"></p>
+        </div>
+        <div class="rail-q">
+          <div class="rp-h"><span class="rail-ic"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg></span>Have Questions?</div>
+          <p>Our admissions team is here to help you every step of the way.</p>
+          <a href="mailto:admissions@vstemacad.org" class="rail-mail"><svg viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/><path d="M4 6l8 6 8-6"/></svg>admissions@vstemacad.org</a>
+          <p class="fine">We typically respond within 1&ndash;2 business days.</p>
+        </div>
+        <div class="rail-q burg">
+          <div class="rp-h"><span class="rail-ic"><svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg></span>Tuition &amp; Financial Assistance</div>
+          <p>Tuition and scholarship information will be provided during the admissions process. Sponsored seats may be available for eligible students.</p>
+          <a href="mailto:admissions@vstemacad.org" class="more">Learn more about financial assistance &rarr;</a>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section aria-label="Frequently asked questions" data-screen-label="Application FAQ" style="background:var(--cream);padding:0 0 2.4rem">
+  <div class="container">
+    <h2 class="reveal" style="text-align:center;font-family:var(--serif);font-size:clamp(18px,1.9vw,24px);color:var(--navy);margin-bottom:1.4rem">Frequently Asked Questions</h2>
+    <div class="faq4 reveal d1">
+      <div class="faq4-item"><span class="fic"><svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg></span><div><h4>Who is eligible to apply?</h4><p>Vanguard STEM Academy offers programs for high school students, college students, working professionals, and adult learners. Eligibility varies by program and academy.</p></div></div>
+      <div class="faq4-item"><span class="fic"><svg viewBox="0 0 24 24"><path d="M8 8l-4 4 4 4M16 8l4 4-4 4M13 5l-2 14"/></svg></span><div><h4>Is prior technical experience required?</h4><p>No. We welcome students of all experience levels who are curious, committed, and ready to grow in a supportive environment.</p></div></div>
+      <div class="faq4-item"><span class="fic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg></span><div><h4>What is the time commitment?</h4><p>Participants typically spend 9&ndash;11 hours per week, depending on their pace and project requirements.</p></div></div>
+      <div class="faq4-item"><span class="fic"><svg viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7z"/><path d="M14 3v4h4M10 12h5M10 16h5"/></svg></span><div><h4>What happens after I submit my application?</h4><p>You will receive a confirmation email. Our admissions team will review your application and contact you about the next steps.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEXT STEP CTA ============ -->
+<section class="next-band" aria-label="Ready to take the next step" data-screen-label="Next step CTA">
+  <div class="container next-inner reveal">
+    <div class="next-img"><div class="ph" role="img" aria-label="Graduates in caps and gowns"><svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg><span class="phl">Graduates photo</span></div></div>
+    <div class="next-txt">
+      <h2>Ready to Take the Next Step?</h2>
+      <p>Join a community of future innovators, problem solvers, and leaders creating real impact.</p>
+    </div>
+    <div class="next-cta">
+      <a href="#appform" class="btn btn-gold">Start Your Application &nbsp;&rarr;</a>
+      <span class="alt">or <a href="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0nX-8h0lIqQ6FNafw8xW7OKO4EN3qah8uVsVs5Jgk-VZw1yUfQH623g1rciKaJL5SQSvn3evCw?gv=true" target="_blank" rel="noopener">Schedule an Information Call</a></span>
+    </div>
+  </div>
+</section>
+
+<script src="assets/js/nav-component.js"></script>
+<script>
+const VANGUARD_FORM_ENDPOINT='https://script.google.com/a/macros/vstemacad.org/s/AKfycbzl8v21P2ecIc_Sd_P1CpfDqcGrB4ZU2-fgEZvLflk8XYhKbdxWjQKTvvBGmr6Y19te/exec';
+/* Shared store so the file uploaders (defined in separate scripts below) can hand
+   their selected files to the submit function at submit time. */
+window.VANGUARD_UPLOADS=window.VANGUARD_UPLOADS||{docs:[],paper:[]};
+/* Read a File into a base64 payload the Apps Script backend can decode and attach. */
+function vanguardReadFile(file){
+  return new Promise(function(resolve){
+    var r=new FileReader();
+    r.onload=function(){
+      var res=String(r.result||''),comma=res.indexOf(',');
+      resolve({name:file.name,type:file.type||'application/octet-stream',size:file.size,data:comma>=0?res.slice(comma+1):res});
+    };
+    r.onerror=function(){resolve(null);};
+    r.readAsDataURL(file);
+  });
+}
+function vanguardSubmitForm(formType,formEl,extraFields,files){
+  var fd=formEl?new FormData(formEl):new FormData(),fields={};
+  fd.forEach(function(value,key){
+    if(value instanceof File)return; /* files are sent separately, base64-encoded */
+    if(fields[key]!==undefined){fields[key]=(Array.isArray(fields[key])?fields[key]:[fields[key]]).concat(value)}
+    else{fields[key]=value}
+  });
+  Object.keys(fields).forEach(function(k){if(Array.isArray(fields[k]))fields[k]=fields[k].join(', ')});
+  if(extraFields)Object.assign(fields,extraFields);
+  var list=files&&files.length?Array.prototype.slice.call(files):[];
+  return Promise.all(list.map(vanguardReadFile)).then(function(encoded){
+    return fetch(VANGUARD_FORM_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:formType,fields:fields,files:encoded.filter(Boolean)})});
+  }).catch(function(err){console.error('Vanguard form submit failed',err)});
+}
+(function(){
+  /* Show the International Consulting Academy track picker only when that academy is selected. */
+  var wrap=document.getElementById('intlTrackWrap');
+  if(!wrap)return;
+  var select=wrap.querySelector('select[name="intlTrack"]');
+  function sync(){
+    var checked=document.querySelector('input[name="acad"]:checked');
+    var show=!!checked&&checked.value==='International Consulting Academy';
+    wrap.hidden=!show;
+    if(select)select.required=show;
+  }
+  document.querySelectorAll('input[name="acad"]').forEach(function(r){r.addEventListener('change',sync)});
+  sync();
+})();
+(function(){
+  const TOTAL=7, titles=['','Applicant Information','Technical Readiness & Relevant Experience','Personal Statement','Program Expectations & Commitment','Supporting Documents','Review & Submit','Confirmation'];
+  let cur=1, submitted=false;
+  /* ---- Required acknowledgements (legal gate: all boxes must be checked) ---- */
+  const ackGroups=[{name:'programAck',step:4},{name:'finalAck',step:6}];
+  const ackBoxes=name=>[...document.querySelectorAll('#afForm input[name="'+name+'"]')];
+  const ackComplete=name=>ackBoxes(name).every(b=>b.checked);
+  function ackReveal(name,show){
+    const err=document.getElementById(name+'Err');
+    if(err)err.hidden=!show||ackComplete(name);
+    ackBoxes(name).forEach(b=>{const w=b.closest('.chk');if(w)w.classList.toggle('ack-missing',show&&!b.checked);});
+  }
+  function ackFocusMissing(name){
+    const b=ackBoxes(name).find(x=>!x.checked);
+    if(b){const w=b.closest('.chk')||b;w.scrollIntoView({behavior:'smooth',block:'center'});}
+  }
+  const dots=document.getElementById('afDots');
+  for(let i=1;i<=TOTAL;i++){const d=document.createElement('i');if(i===1)d.classList.add('on');dots.appendChild(d);if(i<TOTAL){const b=document.createElement('b');dots.appendChild(b);}}
+  const dotEls=[...dots.querySelectorAll('i')];
+  const backBtn=document.getElementById('afBack'), nextBtn=document.getElementById('afNext'), actions=document.getElementById('afActions');
+  function go(n){
+    if(n<1||n>TOTAL)return;
+    /* Block moving forward past an acknowledgement step until its boxes are all checked. */
+    const leaving=ackGroups.find(g=>cur===g.step&&n>cur&&!ackComplete(g.name));
+    if(leaving){ackReveal(leaving.name,true);ackFocusMissing(leaving.name);return;}
+    /* Hard legal gate: never reach the submit/confirmation step with any box unchecked,
+       no matter how the user navigated (side steps, review "Edit" jumps, etc.). */
+    if(n===TOTAL&&!submitted){
+      const miss=ackGroups.find(g=>!ackComplete(g.name));
+      if(miss){go(miss.step);ackReveal(miss.name,true);ackFocusMissing(miss.name);return;}
+    }
+    cur=n;
+    document.querySelectorAll('.fstep').forEach(p=>p.classList.toggle('on',+p.dataset.panel===n));
+    document.querySelectorAll('.step-item').forEach(s=>{const k=+s.dataset.step;s.classList.toggle('active',k===n);s.classList.toggle('done',k<n);});
+    dotEls.forEach((d,i)=>d.classList.toggle('on',i<n));
+    document.getElementById('afTitle').textContent=titles[n];
+    document.getElementById('afStep').textContent='STEP '+n+' OF '+TOTAL;
+    actions.style.display=n===TOTAL?'none':'flex';
+    backBtn.style.visibility=n===1?'hidden':'visible';
+    nextBtn.innerHTML=n===6?'Submit Application &nbsp;&rarr;':'Save &amp; Continue &nbsp;&rarr;';
+    if(n===TOTAL){
+      const now=new Date();
+      const el=document.getElementById('confDate');
+      if(el)el.textContent=now.toLocaleDateString('en-US',{month:'long',day:'numeric',year:'numeric'})+' | '+now.toLocaleTimeString('en-US',{hour:'numeric',minute:'2-digit'});
+      const idEl=document.getElementById('confId');
+      if(idEl&&idEl.textContent.trim()==='\u2014')idEl.textContent='VSA-'+now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0')+'-'+String(Math.floor(1000+Math.random()*9000));
+      if(!submitted){
+        submitted=true;
+        vanguardSubmitForm('apply',document.getElementById('afForm'),{applicationId:idEl?idEl.textContent.trim():''},window.VANGUARD_UPLOADS.docs);
+      }
+    }
+    const form=document.getElementById('appform');
+    const y=form.getBoundingClientRect().top+window.scrollY-120;
+    if(Math.abs(window.scrollY-y)>200)window.scrollTo({top:y,behavior:'smooth'});
+  }
+  document.querySelectorAll('.step-item').forEach(s=>s.addEventListener('click',()=>go(+s.dataset.step)));
+  document.querySelectorAll('.rvw-edit[data-goto]').forEach(b=>b.addEventListener('click',()=>go(+b.dataset.goto)));
+  backBtn.addEventListener('click',()=>go(cur-1));
+  nextBtn.addEventListener('click',()=>go(cur+1));
+  document.querySelectorAll('#afForm textarea[maxlength]').forEach(t=>{
+    const c=t.parentElement.querySelector('.cnt');
+    if(c)t.addEventListener('input',()=>c.textContent=t.value.length+' / '+t.getAttribute('maxlength'));
+  });
+  /* Once we've flagged a group, keep the highlight/message in sync as boxes are checked. */
+  ackGroups.forEach(g=>ackBoxes(g.name).forEach(b=>b.addEventListener('change',()=>{
+    const err=document.getElementById(g.name+'Err');
+    if(ackComplete(g.name))ackReveal(g.name,false);
+    else if(err&&!err.hidden)ackReveal(g.name,true);
+  })));
+})();
+</script>
+<script>
+/* paper-application upload filename display */
+(function(){
+  var zone=document.getElementById('rpUploadZone');
+  if(!zone)return;
+  var input=document.getElementById('rpUpload');
+  var text=document.getElementById('rpUploadText');
+  var submit=document.getElementById('rpSubmit');
+  var status=document.getElementById('rpStatus');
+  function setStatus(msg){if(status){status.hidden=!msg;status.textContent=msg||'';}}
+  function enableSubmit(on){
+    if(!submit)return;
+    submit.disabled=!on;
+    submit.style.opacity=on?'1':'.55';
+    submit.style.pointerEvents=on?'auto':'none';
+  }
+  input.addEventListener('change',function(){
+    if(input.files&&input.files.length){
+      zone.classList.add('has-file');
+      text.textContent=input.files[0].name;
+      window.VANGUARD_UPLOADS.paper=[input.files[0]];
+      enableSubmit(true);
+      setStatus('');
+    }
+  });
+  if(submit)submit.addEventListener('click',function(){
+    var f=window.VANGUARD_UPLOADS.paper;
+    if(!f||!f.length){setStatus('Please choose your completed form first.');return;}
+    enableSubmit(false);
+    submit.textContent='Submitting…';
+    var now=new Date();
+    var appId='VSA-'+now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0')+String(now.getDate()).padStart(2,'0')+'-'+String(Math.floor(1000+Math.random()*9000));
+    vanguardSubmitForm('apply-paper',null,{applicationId:appId,submittedVia:'Paper application upload'},f).then(function(){
+      submit.textContent='Application Submitted ✓';
+      setStatus('Thank you — your completed form was submitted. Application ID: '+appId);
+    }).catch(function(){
+      enableSubmit(true);
+      submit.textContent='Submit Application';
+      setStatus('Something went wrong. Please try again or email admissions@vstemacad.org.');
+    });
+  });
+})();
+</script>
+<script>
+/* application document upload: browse + drag & drop, multi-file, capped */
+(function(){
+  var drop=document.getElementById('docDrop');
+  if(!drop)return;
+  var input=document.getElementById('docFiles');
+  var list=document.getElementById('docFileList');
+  var MAX_FILES=10, MAX_SIZE=20*1024*1024, MAX_TOTAL=25*1024*1024;
+  var files=window.VANGUARD_UPLOADS.docs;
+
+  function render(){
+    list.innerHTML='';
+    files.forEach(function(f,i){
+      var chip=document.createElement('span');
+      chip.className='updrop-file';
+      var name=document.createElement('span');
+      name.textContent=f.name;
+      var rm=document.createElement('button');
+      rm.type='button';
+      rm.setAttribute('aria-label','Remove '+f.name);
+      rm.textContent='×';
+      rm.addEventListener('click',function(e){
+        e.preventDefault();
+        files.splice(i,1);
+        render();
+      });
+      chip.appendChild(name);
+      chip.appendChild(rm);
+      list.appendChild(chip);
+    });
+  }
+
+  function addFiles(fileList){
+    var rejected=[];
+    Array.prototype.forEach.call(fileList,function(f){
+      if(files.length>=MAX_FILES){rejected.push(f.name+' (limit of '+MAX_FILES+' files reached)');return}
+      if(f.size>MAX_SIZE){rejected.push(f.name+' (exceeds 20MB)');return}
+      var total=files.reduce(function(s,x){return s+x.size},0);
+      if(total+f.size>MAX_TOTAL){rejected.push(f.name+' (total uploads would exceed 25MB)');return}
+      files.push(f);
+    });
+    if(rejected.length)alert('Some files were not added:\n'+rejected.join('\n'));
+    render();
+  }
+
+  input.addEventListener('change',function(){
+    addFiles(input.files);
+    input.value='';
+  });
+
+  ['dragenter','dragover'].forEach(function(evt){
+    drop.addEventListener(evt,function(e){
+      e.preventDefault();e.stopPropagation();
+      drop.classList.add('dragover');
+    });
+  });
+  ['dragleave','dragend','drop'].forEach(function(evt){
+    drop.addEventListener(evt,function(e){
+      e.preventDefault();e.stopPropagation();
+      drop.classList.remove('dragover');
+    });
+  });
+  drop.addEventListener('drop',function(e){
+    if(e.dataTransfer&&e.dataTransfer.files&&e.dataTransfer.files.length)addFiles(e.dataTransfer.files);
+  });
+})();
+</script>
+
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="footer-inner container">
+    <div class="footer-badge">
+      <a href="/home" aria-label="Vanguard STEM Academy home"><img src="assets/images/footer-badge.png" alt="Vanguard STEM Academy crest"></a>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h5>Compliance Policies</h5>
+        <ul>
+          <li><a href="/legal">Privacy</a></li>
+          <li><a href="/legal">Copyright Infringement</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Address</h5>
+        <p class="faddr">Vanguard STEM Academy<br>99 Wall Street Suite 3329<br>New York, NY 10005</p>
+      </div>
+      <div>
+        <h5>Contact Us</h5>
+        <ul>
+          <li><a href="/home">General Information</a></li>
+          <li><a href="mailto:admissions@vstemacad.org">Admissions</a></li>
+          <li><a href="mailto:careers@vstemacad.org">Careers</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom-row">
+      <div class="footer-copy" style="display:flex;flex-direction:column;gap:.35rem;max-width:64ch">
+        <span style="font-family:var(--serif);font-weight:600;font-size:1rem;letter-spacing:.01em;color:#e7edf6">&copy; 2016&ndash;2026 Vanguard STEM Academy. All Rights Reserved.</span>
+        <span style="font-family:var(--sans);font-weight:400;font-size:.8rem;line-height:1.5;color:#9fb0c6">Unauthorized reproduction or distribution of any content, curriculum, or intellectual property is strictly prohibited.</span>
+      </div>
+      <div class="fsocial">
+        <a href="https://www.instagram.com/vstemacad/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="17" cy="7" r="1.4"/></svg></a>
+        <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V8c0-.6.4-1 1-1z"/></svg></a>
+        <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M3 3l7.5 9.5L3.5 21H6l6-6.7L17 21h4l-8-10 7-8h-2.5L13 8.5 8 3z"/></svg></a>
+        <a href="https://www.youtube.com/channel/UCQhTJAYMKgtvEDZnjvGesVw/featured" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><rect x="2" y="5" width="20" height="14" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10 9l5 3-5 3z"/></svg></a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ FLOATING PILL + BACK TO TOP ============ -->
+<a href="/apply" class="apply-pill" id="applyPill"><svg viewBox="0 0 24 24"><path d="M12 5v14M5 12h14"/></svg>Apply to the Academy</a>
+<button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="M12 19V5M5 12l7-7 7 7"/></svg></button>
+
+<script>
+/* Back-to-top button (nav shadow, mobile menu & search handled by <vanguard-nav>) */
+const toTop=document.getElementById('toTop');
+if(toTop)toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
+
+/* ============ GENERIC CAROUSEL ============ */
+function makeCarousel(root,{slideSel,dotsSel,interval=5500,arrows=false}){
+  const slides=[...root.querySelectorAll(slideSel)];
+  if(!slides.length)return;
+  const dotsWrap=dotsSel?root.parentElement.querySelector(dotsSel)||root.querySelector(dotsSel):null;
+  let i=slides.findIndex(s=>s.classList.contains('active'));if(i<0)i=0;
+  let timer=null;
+  const dots=[];
+  if(dotsWrap){slides.forEach((_,idx)=>{const b=document.createElement('button');b.setAttribute('role','tab');b.setAttribute('aria-label','Go to slide '+(idx+1));b.addEventListener('click',()=>{go(idx);restart()});dotsWrap.appendChild(b);dots.push(b)})}
+  function go(n){slides[i].classList.remove('active');dots[i]&&dots[i].classList.remove('active');i=(n+slides.length)%slides.length;slides[i].classList.add('active');dots[i]&&dots[i].classList.add('active')}
+  function next(){go(i+1)}function prev(){go(i-1)}
+  function start(){timer=setInterval(next,interval)}function stop(){clearInterval(timer)}
+  function restart(){stop();start()}
+  dots[i]&&dots[i].classList.add('active');
+  if(arrows){const p=root.querySelector('.hc-arrow.prev'),n=root.querySelector('.hc-arrow.next');p&&p.addEventListener('click',()=>{prev();restart()});n&&n.addEventListener('click',()=>{next();restart()})}
+  root.addEventListener('mouseenter',stop);root.addEventListener('mouseleave',start);
+  /* swipe */
+  let sx=0;root.addEventListener('touchstart',e=>{sx=e.touches[0].clientX;stop()},{passive:true});
+  root.addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-sx;if(Math.abs(dx)>40){dx<0?next():prev()}start()},{passive:true});
+  start();
+  return{go,next,prev};
+}
+/* ============ TESTIMONIAL DOTS ============ */
+(function(){
+  const slides=[...document.querySelectorAll('#t2Slides .t2-slide')];
+  const dotsWrap=document.getElementById('t2Dots');
+  if(!slides.length||!dotsWrap)return;
+  let i=0,timer=null;const dots=[];
+  slides.forEach((_,idx)=>{const b=document.createElement('button');b.setAttribute('role','tab');b.setAttribute('aria-label','Testimonial '+(idx+1));b.addEventListener('click',()=>{go(idx);restart()});dotsWrap.appendChild(b);dots.push(b)});
+  function go(n){slides[i].classList.remove('active');dots[i].classList.remove('active');i=(n+slides.length)%slides.length;slides[i].classList.add('active');dots[i].classList.add('active')}
+  function start(){timer=setInterval(()=>go(i+1),6000)}function restart(){clearInterval(timer);start()}
+  dots[0].classList.add('active');start();
+})();
+
+/* ============ TESTIMONIAL CAROUSEL ============ */
+/* ============ COUNT-UP ============ */
+function animateCount(el){
+  const target=+el.dataset.count;const suffix=el.dataset.suffix||'';const dur=1800;const t0=performance.now();
+  function tick(now){
+    const p=Math.min((now-t0)/dur,1);const eased=1-Math.pow(1-p,3);
+    let val=Math.floor(eased*target);
+    el.textContent=val.toLocaleString()+ (p===1?suffix:'');
+    if(p<1)requestAnimationFrame(tick);else el.textContent=target.toLocaleString()+suffix;
+  }requestAnimationFrame(tick);
+}
+const countObs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){animateCount(e.target);countObs.unobserve(e.target)}})},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>countObs.observe(el));
+
+/* ============ SCROLL REVEAL ============ */
+const revObs=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revObs.unobserve(e.target)}})},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>revObs.observe(el));
+
+/* ============ NEWSLETTER ============ */
+function handleSubscribe(form){
+  const msg=form.parentElement.querySelector('#nlMsg');
+  if(msg){msg.style.display='block';form.reset();setTimeout(()=>msg.style.display='none',4000);}
+  else{form.reset();const b=form.querySelector('button');const t=b.textContent;b.textContent='Subscribed ✓';setTimeout(()=>b.textContent=t,3000);}
+  return false;
+}
+
+/* ============ MISSION / VISION AUTO-FIT ============ */
+(function(){
+  const cards=[...document.querySelectorAll('#mvGrid .mv-card')];
+  if(!cards.length)return;
+  function fitOne(card){
+    const wrap=card.querySelector('.mv-fit');
+    const p=card.querySelector('p');
+    if(!wrap||!p)return;
+    const avail=wrap.clientHeight;
+    let size=25.5*(card.clientWidth/426);
+    p.style.fontSize=size+'px';
+    let guard=60;
+    while(p.scrollHeight>avail&&size>9&&guard-->0){size-=0.5;p.style.fontSize=size+'px';}
+  }
+  function fitAll(){cards.forEach(fitOne);}
+  const ro=new ResizeObserver(fitAll);
+  cards.forEach(c=>{
+    ro.observe(c);
+    new MutationObserver(()=>fitOne(c)).observe(c.querySelector('p'),{characterData:true,subtree:true,childList:true});
+  });
+  fitAll();
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(fitAll);
+})();
+</script>
+</body>
+</html>

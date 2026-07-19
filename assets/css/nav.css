@@ -1,0 +1,453 @@
+/* ================================================================
+   VANGUARD STEM ACADEMY — SHARED NAV STYLESHEET
+   Single source of truth for the top utility bar + main navbar.
+   Loaded LAST in every page so it always wins over inline styles.
+   DO NOT duplicate any of these rules inside page <style> tags.
+   ================================================================ */
+
+/* ----------------------------------------------------------
+   UTILITY BAR (top dark strip)
+   ---------------------------------------------------------- */
+.utilbar {
+  background: #06163a;
+  color: #cdd6e4;
+  position: relative;
+  z-index: 60;
+  border-bottom: 1px solid rgba(201,163,65,.25);
+}
+.utilbar .container {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: .2rem;
+  height: 40px;
+}
+.utilbar a {
+  color: #cdd6e4;
+  font-size: .76rem;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: .4rem .95rem;
+  position: relative;
+}
+.utilbar a:not(:last-child)::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 12px;
+  width: 1px;
+  background: rgba(201,163,65,.35);
+}
+.utilbar a:hover { color: var(--gold-light); }
+.utilbar a.donate { color: var(--gold-light); }
+
+/* ----------------------------------------------------------
+   MAIN NAV WRAPPER
+   ---------------------------------------------------------- */
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 55;
+  background: rgba(255,255,255,.86);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid var(--line);
+  transition: box-shadow .3s, background .3s;
+}
+.nav.scrolled {
+  box-shadow: 0 6px 26px rgba(2,25,52,.12);
+  background: rgba(255,255,255,.95);
+}
+
+/* Nav inner container — fixed 104 px tall, capped wide */
+.nav > .container,
+.nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 104px;
+  gap: 1.5rem;
+  max-width: 1560px;
+}
+
+/* ----------------------------------------------------------
+   BRAND / LOGO
+   ---------------------------------------------------------- */
+.brand {
+  display: flex;
+  align-items: center;
+  line-height: 1;
+  text-decoration: none;
+  flex: none;
+}
+/* Lock logo to exactly 94 px tall so it never squishes */
+.brand img {
+  height: 94px;
+  width: auto;
+  display: block;
+  flex-shrink: 0;
+}
+
+/* ----------------------------------------------------------
+   NAV LINKS (desktop)
+   ---------------------------------------------------------- */
+.navlinks {
+  display: flex;
+  align-items: center;
+  /* fluid gap: 0 at narrow, max .4 rem at wide — never overflows */
+  gap: clamp(0px, .35vw, .4rem);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.navlinks > li { position: relative; }
+
+.navlinks > li > a,
+.navlinks > li > button {
+  font-family: 'Oswald', sans-serif;
+  font-weight: 600;
+  /* px-anchored clamp: never smaller than 12px, never larger than 15px */
+  font-size: clamp(12px, .85vw, 15px);
+  text-transform: uppercase;
+  color: #000;
+  padding: .55rem .5rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .35rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  letter-spacing: .01em;
+  position: relative;
+  white-space: nowrap;
+}
+
+/* Active page link */
+.navlinks > li > a[aria-current],
+.navlinks > li > a[aria-current="page"] {
+  color: var(--gold-deep);
+}
+.navlinks > li > a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+/* Hover underline animation */
+.navlinks > li > a::after {
+  content: "";
+  position: absolute;
+  left: .5rem;
+  right: .5rem;
+  bottom: .3rem;
+  height: 2px;
+  background: var(--gold-grad);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform .3s var(--ease);
+}
+.navlinks > li > a:hover { color: #000; }
+.navlinks > li > a:hover::after { transform: scaleX(1); }
+
+/* Dropdown caret */
+.navlinks .caret {
+  width: 9px;
+  height: 9px;
+  stroke: var(--gold-deep);
+  stroke-width: 2.4;
+  fill: none;
+  transition: transform .3s;
+}
+.navlinks li:hover .caret { transform: rotate(180deg); }
+
+/* ----------------------------------------------------------
+   NAV CTA BUTTON
+   ---------------------------------------------------------- */
+.nav-cta {
+  border: 1.5px solid var(--gold) !important;
+  border-radius: 2px;
+  color: var(--navy) !important;
+  padding: .55rem 1.15rem !important;
+  font-weight: 700 !important;
+  transition: all .3s;
+  will-change: transform;
+}
+.nav-cta:hover {
+  background: var(--gold-grad);
+  box-shadow: 0 6px 18px rgba(201,163,65,.35);
+  transform: translateY(-1px);
+}
+
+/* ----------------------------------------------------------
+   SEARCH BUTTON
+   ---------------------------------------------------------- */
+.search-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: 1.5px solid var(--line);
+  background: #fff;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: all .3s;
+  will-change: transform;
+  flex-shrink: 0;
+}
+.search-btn:hover {
+  border-color: var(--gold);
+  box-shadow: 0 6px 16px rgba(201,163,65,.25);
+}
+.search-btn svg {
+  width: 18px;
+  height: 18px;
+  stroke: var(--navy);
+  fill: none;
+  stroke-width: 2;
+}
+
+/* ----------------------------------------------------------
+   DROPDOWN PANELS
+   ---------------------------------------------------------- */
+.dropdown {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(10px);
+  min-width: 320px;
+  max-width: 360px;
+  max-height: 74vh;
+  overflow-y: auto;
+  background: #fff;
+  border: 1px solid rgba(11,34,81,.12);
+  border-radius: 14px;
+  padding: .6rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all .3s var(--ease);
+  box-shadow: var(--shadow-lg);
+  z-index: 60;
+}
+.dropdown::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 50%;
+  transform: translateX(-50%) rotate(45deg);
+  width: 12px;
+  height: 12px;
+  background: #fff;
+  border-left: 1px solid rgba(11,34,81,.12);
+  border-top: 1px solid rgba(11,34,81,.12);
+}
+.navlinks > li:hover .dropdown,
+.navlinks > li:focus-within .dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+.dropdown a {
+  display: flex;
+  align-items: flex-start;
+  gap: .7rem;
+  padding: .65rem .85rem;
+  border-radius: 8px;
+  color: var(--navy);
+  transition: all .25s;
+  border-left: 2px solid transparent;
+}
+.dropdown a .di { width: 20px; height: 20px; flex: none; margin-top: 2px; stroke: var(--gold); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.dropdown a .dtx { display: flex; flex-direction: column; gap: 2px; min-width: 0; }
+.dropdown a strong { font-weight: 600; font-size: .88rem; color: var(--navy); font-family: var(--sans); }
+.dropdown a span   { font-size: .74rem; color: #6b7688; line-height: 1.4; }
+.dropdown a:hover  { background: rgba(201,163,65,.12); border-left-color: var(--gold); padding-left: 1.0rem; }
+.dropdown a:hover strong { color: var(--navy); }
+
+/* ----------------------------------------------------------
+   HAMBURGER (hidden by default, shown via media query)
+   ---------------------------------------------------------- */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 46px;
+  height: 46px;
+  border: 1.5px solid var(--line);
+  border-radius: 4px;
+  background: #fff;
+  cursor: pointer;
+  padding: 0;
+  flex-shrink: 0;
+}
+.hamburger span {
+  width: 22px;
+  height: 2px;
+  background: var(--navy);
+  margin: 0 auto;
+  transition: all .3s;
+  border-radius: 2px;
+}
+.hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.hamburger.open span:nth-child(2) { opacity: 0; }
+.hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ----------------------------------------------------------
+   MOBILE SLIDE PANEL (white background, black text)
+   ---------------------------------------------------------- */
+/* The panel is position:fixed and parked off-screen via translateX(100%).
+   A fixed element's overflow is governed by <html>, not <body>, so the
+   pages' body{overflow-x:hidden} can't clip it — it adds ~50px of sideways
+   scroll (the white strip on the right). Clip it at the root. `clip` (not
+   `hidden`) is deliberate: hidden would make the other axis compute to auto,
+   turning <html> into a scroll container and breaking the sticky nav. */
+html { overflow-x: clip; }
+
+.mobile-panel {
+  position: fixed;
+  inset: 0 0 0 auto;
+  width: min(92vw, 420px);
+  background: #fff;
+  z-index: 80;
+  transform: translateX(100%);
+  transition: transform .4s var(--ease);
+  overflow-y: auto;
+  padding: 1.5rem 1.3rem 2.4rem;
+  box-shadow: var(--shadow-lg);
+  border-left: 4px solid var(--gold);
+}
+.mobile-panel.open { transform: translateX(0); }
+.mobile-panel .mp-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: .8rem;
+  padding-bottom: 1.1rem;
+  margin-bottom: .4rem;
+  border-bottom: 1px solid var(--line);
+}
+.mp-brand { display: flex; align-items: center; gap: .7rem; min-width: 0; }
+.mp-crest {
+  width: 48px; height: 48px; flex: none; border-radius: 50%;
+  background: #fff; display: grid; place-items: center; position: relative;
+  box-shadow: inset 0 0 0 1.5px var(--gold);
+  overflow: hidden;
+}
+.mp-crest img { width: 100%; height: 100%; object-fit: cover; }
+.mp-brand .t1 { font-family: var(--serif); font-weight: 800; font-size: 1.22rem; letter-spacing: .02em; color: #000; line-height: 1.05; }
+.mp-brand .t2 { font-family: var(--sans); font-weight: 700; font-size: .7rem; letter-spacing: .16em; color: var(--gold-deep); line-height: 1.35; text-transform: uppercase; margin-top: 2px; }
+.mp-close {
+  width: 42px; height: 42px; flex: none; border: 1.5px solid var(--line); background: #fff;
+  border-radius: 50%; color: #000; cursor: pointer; display: grid; place-items: center; transition: .3s var(--ease);
+}
+.mp-close svg { width: 18px; height: 18px; stroke: currentColor; stroke-width: 2.2; fill: none; stroke-linecap: round; }
+.mp-close:hover { background: var(--cream); border-color: var(--gold); }
+
+.mp-links { list-style: none; margin: .35rem 0 0; padding: 0; }
+.mp-links > li { border-bottom: 1px solid var(--line); }
+.mp-links > li > a,
+.mp-links > li > button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: .9rem;
+  padding: .95rem .2rem;
+  color: #000;
+  font-family: var(--sans);
+  font-weight: 600;
+  font-size: 1rem;
+  background: none;
+  border: none;
+  text-align: left;
+  cursor: pointer;
+  text-decoration: none;
+  transition: color .25s;
+  min-height: 48px;
+}
+.mp-links > li > a:hover,
+.mp-links > li > button:hover,
+.mp-links > li > button[aria-expanded="true"] { color: var(--gold-deep); }
+.mp-links > li > a[aria-current="page"] { color: var(--gold-deep); }
+.mp-ic { width: 24px; height: 24px; flex: none; stroke: var(--gold-deep); fill: none; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.mp-links .caret {
+  width: 13px; height: 13px; stroke: var(--gold-deep); stroke-width: 2.4; fill: none;
+  stroke-linecap: round; stroke-linejoin: round; transition: transform .35s var(--ease); flex: none;
+}
+
+/* split row: label navigates, toggle only expands the submenu */
+.mp-links .msub-row { display: flex; align-items: stretch; width: 100%; }
+.mp-links .msub-row .msub-link {
+  flex: 1; min-width: 0; display: flex; align-items: center; gap: .9rem;
+  padding: .95rem .2rem; color: #000; font-family: var(--sans); font-weight: 600;
+  font-size: 1rem; text-decoration: none; transition: color .25s; min-height: 48px;
+}
+.mp-links .msub-row .msub-link:hover,
+.mp-links .msub-row .msub-link[aria-current="page"] { color: var(--gold-deep); }
+.mp-links .msub-row .msub-toggle {
+  flex: none; width: 44px; display: flex; align-items: center; justify-content: center;
+  background: none; border: none; cursor: pointer; padding: 0;
+}
+.mp-links .msub-row .msub-toggle[aria-expanded="true"] { color: var(--gold-deep); }
+.mp-links .msub-row .msub-toggle[aria-expanded="true"] .caret { transform: rotate(180deg); }
+
+/* rich accordion submenu */
+.mp-links .sub { max-height: 0; overflow: hidden; transition: max-height .42s var(--ease); }
+.sub-card {
+  margin: .1rem .1rem 1rem; border: 1px solid var(--line); border-radius: 12px;
+  background: var(--cream); overflow: hidden;
+}
+.mp-links .sub .sub-item {
+  display: flex; gap: .8rem; padding: .85rem .9rem; text-decoration: none;
+  border-left: 2px solid transparent; transition: background .25s, border-color .25s, padding-left .25s;
+  color: inherit; font-size: inherit;
+}
+.mp-links .sub .sub-item:not(:last-child) { border-bottom: 1px solid var(--line); }
+.mp-links .sub .sub-item:hover { background: #fff; border-left-color: var(--gold); padding-left: 1.1rem; }
+.si-ic { width: 22px; height: 22px; flex: none; margin-top: 2px; stroke: var(--gold-deep); fill: none; stroke-width: 1.55; stroke-linecap: round; stroke-linejoin: round; }
+.si-tx { min-width: 0; }
+.si-tx strong { display: block; font-family: var(--sans); font-weight: 700; font-size: .88rem; color: #000; line-height: 1.3; }
+.sub-item:hover .si-tx strong { color: var(--gold-deep); }
+.si-tx span { display: block; margin-top: .15rem; font-size: .74rem; color: var(--muted); line-height: 1.42; }
+
+.mp-util { margin-top: 1.4rem; display: flex; flex-direction: column; gap: .7rem; }
+.overlay-dim { position: fixed; inset: 0; background: rgba(6,17,42,.55); z-index: 75; opacity: 0; visibility: hidden; transition: .35s; backdrop-filter: blur(2px); }
+.overlay-dim.show { opacity: 1; visibility: visible; }
+
+/* ----------------------------------------------------------
+   SEARCH OVERLAY
+   ---------------------------------------------------------- */
+.search-overlay { position: fixed; inset: 0; background: rgba(9,28,68,.97); z-index: 90; display: grid; place-items: center; opacity: 0; visibility: hidden; transition: .4s; backdrop-filter: blur(6px); }
+.search-overlay.open { opacity: 1; visibility: visible; }
+.search-overlay .sc-inner { width: min(760px, 90vw); text-align: center; }
+.search-overlay .eyebrow { justify-content: center; color: var(--gold-light); }
+.search-overlay input { width: 100%; background: none; border: none; border-bottom: 2px solid var(--gold); color: #fff; font-family: var(--serif); font-size: clamp(1.6rem, 4vw, 2.6rem); padding: .6rem .2rem; text-align: center; outline: none; }
+.search-overlay input::placeholder { color: rgba(255,255,255,.35); }
+.sc-close { position: absolute; top: 2rem; right: 2rem; width: 54px; height: 54px; border-radius: 50%; border: 1px solid rgba(201,163,65,.5); background: none; color: var(--gold-light); font-size: 1.8rem; cursor: pointer; }
+.sc-suggest { margin-top: 2rem; display: flex; gap: .6rem; justify-content: center; flex-wrap: wrap; }
+.sc-suggest a { font-size: .8rem; letter-spacing: .08em; text-transform: uppercase; color: #b9c6d8; border: 1px solid rgba(201,163,65,.35); padding: .5rem 1rem; border-radius: 40px; }
+.sc-suggest a:hover { background: var(--gold-grad); color: var(--navy); border-color: transparent; }
+
+/* ----------------------------------------------------------
+   BREAKPOINTS
+   ---------------------------------------------------------- */
+
+/* Hamburger takes over at ≤1360px — links hidden, burger shown */
+@media (max-width: 1360px) {
+  .navlinks.desktop-only { display: none !important; }
+  .hamburger { display: flex !important; }
+}
+
+/* Utility bar compact on small screens */
+@media (max-width: 640px) {
+  .utilbar .container { justify-content: center; gap: 0; overflow-x: auto; }
+  .utilbar a { padding: .4rem .6rem; font-size: .68rem; white-space: nowrap; min-height: 44px; display: inline-flex; align-items: center; }
+}
+
+/* Mobile touch targets */
+@media (max-width: 640px) {
+  .search-btn { width: 44px; height: 44px; }
+  .hamburger  { width: 48px; height: 48px; }
+  .mp-close   { width: 48px; height: 48px; }
+}

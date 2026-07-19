@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portal Login | Vanguard STEM Academy</title>
+<meta name="description" content="Log in to the Vanguard STEM Academy portal for students, parents, mentors, partners, and staff.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600&family=Source+Sans+3:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+/* ============================================================
+   VANGUARD STEM ACADEMY — SHARED DESIGN SYSTEM
+   ============================================================ */
+:root{
+  --navy:#0b2251;
+  --navy-2:#123063;
+  --navy-deep:#06163a;
+  --gold:#C9A341;
+  --gold-2:#D4AF37;
+  --gold-light:#E4C874;
+  --gold-deep:#A9842E;
+  --cream:#F8F6F1;
+  --burgundy:#6E1E2C;
+  --burgundy-2:#8a2a3a;
+  --ink:#1c2530;
+  --muted:#5b6675;
+  --line:#e6e0d3;
+  --serif:'Playfair Display',Georgia,serif;
+  --sans:'Source Sans 3',system-ui,-apple-system,sans-serif;
+  --gold-grad:linear-gradient(135deg,#E4C874 0%,#C9A341 42%,#A9842E 100%);
+  --gold-sheen:linear-gradient(120deg,#A9842E 0%,#E9D089 25%,#C9A341 50%,#F0DA97 72%,#A9842E 100%);
+  --shadow-sm:0 4px 18px rgba(2,25,52,.08);
+  --shadow-md:0 14px 40px rgba(2,25,52,.14);
+  --shadow-lg:0 26px 70px rgba(2,25,52,.22);
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  margin:0;font-family:var(--sans);color:var(--ink);
+  background:var(--cream);line-height:1.55;font-size:15px;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3,h4{font-family:var(--serif);font-weight:700;line-height:1.12;margin:0;color:var(--navy)}
+p{margin:0 0 1rem}
+a{color:var(--burgundy);text-decoration:none;transition:color .25s}
+a:hover{color:var(--gold-deep)}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--gold-2);outline-offset:3px;border-radius:2px}
+
+/* Placeholder blocks (drop real photos in later) */
+.ph{position:relative;width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.4rem;color:var(--gold-light);
+  background:linear-gradient(135deg,#0d2452,#123063);overflow:hidden}
+.ph::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,rgba(255,255,255,.05) 0 2px,transparent 2px 22px)}
+.ph svg{width:22px;height:22px;stroke:var(--gold-2);fill:none;stroke-width:1.6;position:relative}
+.ph .phl{position:relative;font-family:var(--serif);font-style:italic;font-size:.62rem;text-align:center;line-height:1.35;padding:0 .4rem}
+
+/* ============================================================
+   PORTAL LAYOUT
+   ============================================================ */
+.pt-grid{display:grid;grid-template-columns:minmax(0,1.08fr) minmax(420px,600px) minmax(290px,370px);min-height:0;flex:1;background:var(--cream)}
+.pt-page{display:flex;flex-direction:column;height:100vh}
+.pt-page .pt-grid{overflow:hidden}
+@media(max-width:1360px){.pt-page{height:auto}.pt-page .pt-grid{overflow:visible}}
+
+/* ---------- LEFT HERO PANEL ---------- */
+.pt-left{position:relative;isolation:isolate;background:#081a3c;overflow:hidden;display:flex;flex-direction:column;justify-content:space-between;padding:clamp(.8rem,1.4vw,1.3rem)}
+.pt-left .pt-hero-scrim{position:absolute;inset:0;z-index:0;pointer-events:none;background:linear-gradient(112deg,rgba(6,17,42,.72) 0%,rgba(8,26,60,.45) 48%,rgba(6,17,42,.78) 100%)}
+.pt-left::after{content:"";position:absolute;top:-12%;right:-2px;bottom:-12%;width:130px;border-radius:50%;border-right:4px solid rgba(201,163,65,.75);filter:drop-shadow(0 0 14px rgba(201,163,65,.5));pointer-events:none}
+.pt-left>*{position:relative;z-index:1}
+.pt-left>.pt-hero-slot{position:absolute;inset:0;z-index:-1}
+.pt-hero-slot img{width:100%;height:100%;object-fit:cover;display:block}
+.pt-brand{display:flex;align-items:center;gap:.9rem}
+.pt-brand img{width:50px;height:50px;border-radius:12px;filter:drop-shadow(0 8px 20px rgba(0,0,0,.5))}
+.pt-brand .bt{font-family:var(--serif);font-weight:800;font-size:1.35rem;letter-spacing:.04em;color:#fff;line-height:1.1}
+.pt-brand .bt small{display:block;font-family:var(--sans);font-weight:700;font-size:.6rem;letter-spacing:.34em;color:var(--gold-light);margin-top:.25rem}
+.pt-brand .bm{font-size:.58rem;font-weight:700;letter-spacing:.22em;color:#cdd6e4;margin-top:.3rem}
+.pt-left-bottom{max-width:520px}
+.pt-left-bottom h2{font-family:var(--serif);font-weight:800;font-size:clamp(1.15rem,2vw,1.6rem);line-height:1.16;color:#fff;margin-bottom:.4rem}
+.pt-left-bottom h2 .gold{background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent}
+.pt-left-bottom .sub{border-left:3px solid var(--gold);padding-left:1rem;color:#dbe3ef;font-size:.8rem;line-height:1.5;max-width:42ch;margin-bottom:.7rem}
+.pt-stats{display:grid;grid-template-columns:repeat(4,1fr);background:rgba(6,17,42,.66);border:1px solid rgba(201,163,65,.45);border-radius:12px;backdrop-filter:blur(6px);overflow:hidden}
+.pt-stat{padding:.45rem .4rem;text-align:center}
+.pt-stat:not(:last-child){border-right:1px solid rgba(201,163,65,.3)}
+.pt-stat svg{width:19px;height:19px;stroke:var(--gold-2);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;margin-bottom:.2rem}
+.pt-stat .v{font-family:var(--serif);font-weight:800;font-size:1.02rem;color:#fff;line-height:1.1}
+.pt-stat .l{font-size:.6rem;font-weight:700;letter-spacing:.06em;color:#b9c6d8;text-transform:none;margin-top:.2rem}
+
+/* ---------- CENTER LOGIN ---------- */
+.pt-center{display:flex;align-items:center;justify-content:center;overflow-y:auto;padding:clamp(.5rem,1vw,1rem) clamp(.8rem,1.6vw,1.4rem);background:
+  radial-gradient(ellipse at 50% 0%,rgba(201,163,65,.1),transparent 55%),var(--cream)}
+.login-card{width:100%;max-width:540px;background-image:linear-gradient(#fffdf9,#fffdf9),var(--gold-sheen);background-origin:border-box;background-clip:padding-box,border-box;border:4px solid transparent;border-radius:22px;padding:clamp(.7rem,1.3vw,1.1rem) clamp(1rem,1.8vw,1.6rem);box-shadow:var(--shadow-lg)}
+.lc-head{text-align:center}
+.lc-head img{width:52px;margin:0 auto .4rem;filter:drop-shadow(0 10px 22px rgba(2,25,52,.25))}
+.lc-head .pre{font-weight:800;font-size:.72rem;letter-spacing:.3em;text-transform:uppercase;color:var(--gold-deep);margin-bottom:.35rem}
+.lc-head h1{font-family:var(--serif);font-weight:800;font-size:clamp(1.25rem,2vw,1.6rem);letter-spacing:.01em;color:var(--navy)}
+.lc-head .sub{color:var(--muted);font-size:.82rem;line-height:1.4;margin:.3rem auto 0;max-width:40ch}
+.lc-orn{display:flex;align-items:center;gap:.9rem;margin:.55rem 0 .6rem}
+.lc-orn::before,.lc-orn::after{content:"";flex:1;height:1.5px;background:var(--gold-grad)}
+.lc-orn svg{width:14px;height:14px;fill:var(--gold-2)}
+.lc-label{text-align:center;font-weight:800;font-size:.7rem;letter-spacing:.22em;text-transform:uppercase;color:var(--navy);margin-bottom:.45rem}
+.role-row{display:flex;gap:.45rem;justify-content:center;flex-wrap:wrap;margin-bottom:.65rem}
+.role-chip{flex:1;min-width:72px;max-width:92px;display:flex;flex-direction:column;align-items:center;gap:.3rem;padding:.5rem .4rem .42rem;background:#fff;border:1.5px solid var(--gold);border-radius:14px;cursor:pointer;transition:.3s var(--ease);font-family:var(--sans)}
+.role-chip svg{width:24px;height:24px;stroke:var(--gold-deep);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round;transition:.3s}
+.role-chip .rl{font-weight:800;font-size:.62rem;letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}
+.role-chip:hover{transform:translateY(-2px);box-shadow:var(--shadow-sm)}
+.role-chip.active{background:var(--gold-grad);border-color:var(--gold-deep);box-shadow:0 10px 24px rgba(201,163,65,.4)}
+.role-chip.active svg{stroke:var(--navy)}
+.form-field{display:flex;flex-direction:column;gap:.3rem;margin-bottom:.55rem}
+.form-field label{font-size:.72rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--navy)}
+.in-wrap{position:relative}
+.in-wrap>svg{position:absolute;left:.95rem;top:50%;transform:translateY(-50%);width:17px;height:17px;stroke:var(--muted);fill:none;stroke-width:1.7;pointer-events:none}
+.in-wrap input{
+  width:100%;font-family:var(--sans);font-size:.92rem;padding:.52rem 1rem .52rem 2.6rem;border:1.5px solid var(--line);
+  border-radius:10px;outline:none;background:#fff;color:var(--ink);transition:.25s;
+}
+.in-wrap input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(201,163,65,.18)}
+.pw-eye{position:absolute;right:.6rem;top:50%;transform:translateY(-50%);border:none;background:none;cursor:pointer;padding:.4rem;display:grid;place-items:center}
+.pw-eye svg{width:18px;height:18px;stroke:var(--muted);fill:none;stroke-width:1.7}
+.pw-eye:hover svg{stroke:var(--gold-deep)}
+.form-options{display:flex;justify-content:space-between;align-items:center;margin:.1rem 0 .6rem;font-size:.82rem}
+.remember{display:flex;align-items:center;gap:.55rem;color:var(--muted)}
+.remember input{accent-color:var(--gold-deep);width:16px;height:16px}
+.btn-signin{
+  width:100%;display:inline-flex;align-items:center;justify-content:center;gap:.6rem;
+  font-family:var(--sans);font-weight:800;font-size:.86rem;letter-spacing:.16em;text-transform:uppercase;
+  padding:.62rem 1.5rem;border-radius:10px;border:1.5px solid var(--gold);cursor:pointer;
+  background:linear-gradient(135deg,#0b2251,#123063);color:#fff;transition:.3s var(--ease);
+}
+.btn-signin svg{width:16px;height:16px;stroke:var(--gold-2);fill:none;stroke-width:1.8}
+.btn-signin:hover{box-shadow:0 0 0 1px var(--gold),0 14px 32px rgba(201,163,65,.4);filter:brightness(1.12)}
+.lc-foot{display:flex;align-items:center;gap:.9rem;margin-top:.65rem;color:var(--muted);font-size:.82rem;justify-content:center}
+.lc-foot::before,.lc-foot::after{content:"";flex:1;height:1px;background:var(--line)}
+.lc-foot-inner{white-space:nowrap}
+.lc-foot-inner a{font-weight:800}
+.login-success{display:none;text-align:center;padding:1.2rem 0 .4rem}
+.login-success.show{display:block}
+.login-success h3{margin-bottom:.5rem}
+
+/* ---------- RIGHT SIDEBAR ---------- */
+.pt-right{background:#fff;border-left:1px solid var(--line);padding:clamp(.6rem,1.2vw,1rem) clamp(.8rem,1.4vw,1.2rem);display:flex;flex-direction:column;gap:.7rem;justify-content:space-between;overflow-y:auto}
+.sb-head{display:flex;align-items:center;justify-content:space-between;gap:.6rem;margin-bottom:.35rem}
+.sb-head .t{display:flex;align-items:center;gap:.55rem;font-weight:800;font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--navy)}
+.sb-head .t svg{width:18px;height:18px;stroke:var(--gold-deep);fill:none;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.sb-head .t .qk{width:30px;height:30px;border-radius:50%;background:var(--burgundy);display:grid;place-items:center;flex:none}
+.sb-head .t .qk svg{width:14px;height:14px;fill:#fff;stroke:none}
+.sb-head a{font-size:.74rem;font-weight:700;color:var(--muted)}
+.sb-head a:hover{color:var(--gold-deep)}
+.ev-item{display:flex;gap:.6rem;align-items:center;padding:.4rem 0;border-top:1px solid var(--line)}
+.ev-date{flex:none;width:40px;height:40px;border:1.5px solid var(--gold);border-radius:10px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#fffdf6}
+.ev-date .m{font-size:.56rem;font-weight:800;letter-spacing:.18em;color:var(--burgundy)}
+.ev-date .d{font-family:var(--serif);font-weight:800;font-size:1.2rem;color:var(--navy);line-height:1}
+.ev-ph{flex:none;width:40px;height:40px;border-radius:50%;overflow:hidden;border:1.5px solid var(--gold)}
+.ev-body .et{font-weight:800;font-size:.82rem;color:var(--navy);line-height:1.3}
+.ev-body .es{font-size:.72rem;color:var(--muted);line-height:1.4}
+.story-card2{border:1px solid var(--line);border-radius:14px;padding:.6rem;background:#fffdf9;box-shadow:var(--shadow-sm);display:flex;gap:.7rem;align-items:flex-start}
+.story-card2 .sp{flex:none;width:48px;height:48px;border-radius:50%;overflow:hidden;border:2px solid var(--gold)}
+.story-card2 q{display:block;font-family:var(--serif);font-style:italic;font-size:.85rem;color:var(--ink);line-height:1.5;quotes:"\201C" "\201D"}
+.story-card2 .sn{font-weight:800;font-size:.76rem;color:var(--burgundy);margin-top:.45rem}
+.story-card2 .sr{font-size:.66rem;color:var(--muted);font-style:italic}
+.dots{display:flex;gap:.4rem;justify-content:center;margin-top:.5rem}
+.dots span{width:7px;height:7px;border-radius:50%;background:var(--line)}
+.dots span.on{background:var(--gold-deep)}
+.prog-item{display:flex;gap:.6rem;align-items:center;padding:.4rem .55rem;border:1px solid var(--line);border-radius:12px;transition:.3s;background:#fff}
+.prog-item+.prog-item{margin-top:.45rem}
+.prog-item:hover{border-color:var(--gold);box-shadow:var(--shadow-sm);transform:translateY(-2px)}
+.prog-ic{flex:none;width:32px;height:32px;border-radius:10px;background:linear-gradient(135deg,#0b2251,#123063);display:grid;place-items:center;border:1px solid rgba(201,163,65,.5)}
+.prog-ic svg{width:20px;height:20px;stroke:var(--gold-2);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.prog-body{flex:1;min-width:0}
+.prog-body .pt{font-weight:800;font-size:.8rem;color:var(--navy);line-height:1.3}
+.prog-body .ps{font-size:.7rem;color:var(--muted)}
+.prog-item>svg{flex:none;width:14px;height:14px;stroke:var(--gold-deep);fill:none;stroke-width:2.2}
+.sb-more{display:inline-flex;align-items:center;gap:.45rem;font-weight:800;font-size:.76rem;letter-spacing:.06em;color:var(--burgundy);margin:.6rem auto 0}
+.sb-more svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2}
+
+/* ---------- TRUST BAR ---------- */
+.trust-bar{background:linear-gradient(120deg,#081a3c,#0d2452 55%,#081a3c);border-top:3px solid var(--gold);color:#c6d2e2;padding:.5rem clamp(1rem,2.4vw,2rem)}
+.trust-inner{display:flex;align-items:center;justify-content:space-between;gap:1.6rem;flex-wrap:wrap}
+.trust-sec{display:flex;align-items:center;gap:.85rem}
+.trust-shield{flex:none;width:38px;height:38px;border-radius:50%;border:1.5px solid var(--gold);display:grid;place-items:center}
+.trust-shield svg{width:20px;height:20px;stroke:var(--gold-2);fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.trust-sec .tt{font-weight:800;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:#fff}
+.trust-sec .ts{font-size:.72rem;color:#9fb0c6;line-height:1.4}
+.trust-logos{display:flex;align-items:center;gap:clamp(1rem,2.4vw,2rem);flex-wrap:wrap}
+.trust-logos .tl-label{font-weight:800;font-size:.62rem;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-light)}
+.t-logo{font-weight:800;font-size:1.05rem;color:#fff;letter-spacing:.02em;white-space:nowrap;opacity:.95}
+.t-logo.glogo i{font-style:normal;font-weight:700;font-size:1.15rem;letter-spacing:-.02em}
+.gb{color:#7ba4f7}.gr{color:#f28b82}.gy{color:#fdd663}.gg{color:#81c995}
+.t-logo.ibm{letter-spacing:.14em;font-family:var(--serif)}
+.t-logo.deloitte small{color:#86BC25;font-size:1.3rem;line-height:0}
+.t-logo.pwc{text-transform:lowercase;font-weight:700}
+.trust-more{display:inline-flex;align-items:center;gap:.45rem;font-weight:800;font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--gold-light)}
+.trust-more svg{width:14px;height:14px;stroke:currentColor;fill:none;stroke-width:2.2}
+.trust-more:hover{color:#fff}
+.trust-powered{border-left:1px solid rgba(201,163,65,.35);padding-left:clamp(1rem,2.4vw,2rem)}
+@media(max-width:1024px){.trust-powered{border-left:none;padding-left:0}}
+
+/* ---------- FOOTER STRIP ---------- */
+.pt-footer{background:var(--navy-deep);color:#8195ac;font-size:.72rem;padding:.4rem clamp(1rem,2.4vw,2rem);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
+.pt-footer .links{display:flex;align-items:center;gap:.5rem;flex-wrap:wrap}
+.pt-footer a{color:#8195ac;font-weight:600}
+.pt-footer a:hover{color:var(--gold-light)}
+.pt-footer .sep{color:rgba(201,163,65,.5)}
+.pt-social{display:flex;gap:.55rem}
+.pt-social a{width:28px;height:28px;border-radius:50%;border:1px solid rgba(201,163,65,.45);display:grid;place-items:center;transition:.3s}
+.pt-social a svg{width:14px;height:14px;fill:#c6d2e2;stroke:none}
+.pt-social a:hover{background:var(--gold-grad);border-color:var(--gold-deep)}
+.pt-social a:hover svg{fill:var(--navy)}
+
+/* ---------- RESPONSIVE ---------- */
+@media(max-height:820px){
+  .lc-head img{width:42px}
+  .lc-head .sub,.pt-left-bottom .sub{display:none}
+  .lc-orn{margin:.6rem 0 .7rem}
+  .role-chip{padding:.5rem .4rem .45rem}
+  .story-card2 q{font-size:.8rem}
+}
+@media(max-width:1360px){
+  .pt-page{height:auto}
+  .pt-grid{grid-template-columns:minmax(0,1fr) minmax(420px,560px)}
+  .pt-right{grid-column:1 / -1;border-left:none;border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr);gap:1.5rem;align-items:start}
+}
+@media(max-width:1024px){
+  .pt-grid{grid-template-columns:1fr}
+  .pt-left{min-height:420px}
+  .pt-right{grid-template-columns:1fr}
+  .trust-inner{justify-content:center;text-align:center}
+}
+@media(max-width:640px){
+  .pt-stats{grid-template-columns:repeat(2,1fr)}
+  .pt-stat:nth-child(2){border-right:none}
+  .pt-stat:nth-child(-n+2){border-bottom:1px solid rgba(201,163,65,.3)}
+  .login-card{padding:1.5rem 1.2rem}
+  .role-chip{min-width:30%}
+  .form-options{flex-direction:column;align-items:flex-start;gap:.7rem}
+  .pt-footer{justify-content:center;text-align:center}
+}
+</style>
+</head>
+<body>
+
+<main id="main" class="pt-page">
+
+<!-- ============ PORTAL SPLIT SCREEN ============ -->
+<div class="pt-grid" data-screen-label="Portal — Login">
+
+  <!-- LEFT HERO PANEL -->
+  <aside class="pt-left" aria-label="About Vanguard">
+    <div class="pt-hero-slot"><img src="assets/images/welcome-hero.webp" alt="Vanguard STEM Academy students"></div>
+    <div class="pt-hero-scrim" aria-hidden="true"></div>
+    <a href="/home" class="pt-brand" aria-label="Vanguard STEM Academy home">
+      <img src="assets/images/footer-badge.png" alt="Vanguard STEM Academy crest">
+      <span class="bt">VANGUARD<small>STEM ACADEMY</small><span class="bm">LEARN. INNOVATE. LEAD.</span></span>
+    </a>
+    <div class="pt-left-bottom">
+      <h2>Your Journey.<br>Your Future.<br><span class="gold">Our Mission.</span></h2>
+      <p class="sub">Access world-class learning, real-world projects, and career opportunities that prepare you to lead.</p>
+    </div>
+  </aside>
+
+  <!-- CENTER LOGIN CARD -->
+  <section class="pt-center" aria-labelledby="portal-h">
+    <div class="login-card">
+      <div class="lc-head">
+        <img src="assets/images/footer-badge.png" alt="Vanguard STEM Academy crest">
+        <p class="pre">Welcome to the</p>
+        <h1 id="portal-h">Vanguard Portal</h1>
+        <p class="sub">Your gateway to learning, leadership, and limitless opportunities.</p>
+      </div>
+      <div class="lc-orn" aria-hidden="true"><svg viewBox="0 0 16 16"><path d="M8 0l2 6 6 2-6 2-2 6-2-6-6-2 6-2z"/></svg></div>
+
+      <form id="loginForm" onsubmit="return handleLogin(this)">
+        <p class="lc-label">Select Your Portal</p>
+        <div class="role-row" role="tablist" aria-label="Portal type">
+          <button type="button" class="role-chip active" role="tab" aria-selected="true"><svg viewBox="0 0 24 24"><path d="M22 9L12 4 2 9l10 5 10-5z"/><path d="M6 11v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg><span class="rl">Student</span></button>
+          <button type="button" class="role-chip" role="tab" aria-selected="false"><svg viewBox="0 0 24 24"><circle cx="8" cy="8" r="3"/><circle cx="16.5" cy="9.5" r="2.4"/><path d="M2.5 20c0-3 2.5-5.5 5.5-5.5S13.5 17 13.5 20M14.5 20c0-2.4 2-4.4 4.5-4.2"/></svg><span class="rl">Parent</span></button>
+          <button type="button" class="role-chip" role="tab" aria-selected="false"><svg viewBox="0 0 24 24"><circle cx="12" cy="7" r="3.4"/><path d="M5 21c0-3.9 3.1-7 7-7s7 3.1 7 7"/><path d="M12 12v3"/></svg><span class="rl">Mentor</span></button>
+          <button type="button" class="role-chip" role="tab" aria-selected="false"><svg viewBox="0 0 24 24"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2M3 12h18"/></svg><span class="rl">Partner</span></button>
+          <button type="button" class="role-chip" role="tab" aria-selected="false"><svg viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17.5" cy="9.5" r="2.2"/><path d="M16 14.4c2.8.3 5 2.7 5 5.6"/></svg><span class="rl">Staff</span></button>
+        </div>
+
+        <div class="form-field">
+          <label for="email">Email Address</label>
+          <div class="in-wrap">
+            <svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+            <input type="email" id="email" required placeholder="you@example.com">
+          </div>
+        </div>
+        <div class="form-field">
+          <label for="password">Password</label>
+          <div class="in-wrap">
+            <svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>
+            <input type="password" id="password" required placeholder="••••••••">
+            <button type="button" class="pw-eye" id="pwEye" aria-label="Show password"><svg viewBox="0 0 24 24"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></svg></button>
+          </div>
+        </div>
+        <div class="form-options">
+          <label class="remember"><input type="checkbox">Remember me</label>
+          <a href="/get-involved/inquire">Forgot password?</a>
+        </div>
+        <button type="submit" class="btn-signin"><svg viewBox="0 0 24 24"><rect x="4" y="10" width="16" height="10" rx="2"/><path d="M8 10V7a4 4 0 018 0v3"/></svg>Sign In</button>
+      </form>
+
+      <div class="login-success" id="loginSuccess">
+        <h3>You&rsquo;re All Set</h3>
+        <p style="color:var(--muted)">This is a demo login screen &mdash; in the live portal, you&rsquo;d land on your dashboard here.</p>
+      </div>
+
+      <div class="lc-foot"><span class="lc-foot-inner">New to Vanguard? <a href="/apply">Create an account</a> &nbsp;&rarr;</span></div>
+    </div>
+  </section>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside class="pt-right" aria-label="Highlights">
+    <div data-screen-label="Portal — Upcoming events">
+      <div class="sb-head">
+        <span class="t"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M8 3v4M16 3v4M3 10h18"/></svg>Upcoming Events</span>
+        <a href="/our-impact">View all</a>
+      </div>
+      <div class="ev-item">
+        <div class="ev-ph"><div class="ph" role="img" aria-label="Speaker headshot"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div></div>
+        <div class="ev-body"><div class="et">Executive Fireside Chat</div><div class="es">6:00 PM EST &nbsp;&bull;&nbsp; Virtual</div></div>
+      </div>
+      <div class="ev-item">
+        <div class="ev-ph"><div class="ph" role="img" aria-label="Speaker headshot"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div></div>
+        <div class="ev-body"><div class="et">AI Innovation Workshop</div><div class="es">Building the Future<br>4:00 PM EST &nbsp;&bull;&nbsp; Virtual</div></div>
+      </div>
+    </div>
+
+    <div data-screen-label="Portal — Success story">
+      <div class="sb-head">
+        <span class="t"><span class="qk"><svg viewBox="0 0 24 24"><path d="M10 7H6a2 2 0 00-2 2v4a2 2 0 002 2h2v3l4-4V9a2 2 0 00-2-2zM20 7h-4a2 2 0 00-2 2v4a2 2 0 002 2h2v3l4-4V9a2 2 0 00-2-2z"/></svg></span>Student Success Story</span>
+      </div>
+      <div class="story-card2">
+        <div class="sp"><div class="ph" role="img" aria-label="Alumni headshot"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></div></div>
+        <div>
+          <q>Vanguard gave me the skills, confidence, and network to land my dream internship at a top global firm.</q>
+          <div class="sn">&mdash; Philip Meighan Jr.</div>
+          <div class="sr">Vanguard Alumni &rsquo;25</div>
+        </div>
+      </div>
+      <div class="dots" aria-hidden="true"><span class="on"></span><span></span><span></span></div>
+    </div>
+
+    <div data-screen-label="Portal — Featured programs">
+      <div class="sb-head">
+        <span class="t"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg>Featured Programs</span>
+      </div>
+      <a class="prog-item" href="/programs/bi">
+        <span class="prog-ic"><svg viewBox="0 0 24 24"><path d="M4 20V12M10 20V6M16 20v-9M21 20H3"/></svg></span>
+        <span class="prog-body"><span class="pt">Business Intelligence Academy</span><br><span class="ps">Turn data into decisions.</span></span>
+        <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+      <a class="prog-item" href="/programs/ai">
+        <span class="prog-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4M5 5l2.8 2.8M16.2 16.2L19 19M19 5l-2.8 2.8M7.8 16.2L5 19"/></svg></span>
+        <span class="prog-body"><span class="pt">AI Innovation Academy</span><br><span class="ps">Build solutions for tomorrow.</span></span>
+        <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+      <a class="prog-item" href="/the-academy/experiences">
+        <span class="prog-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span>
+        <span class="prog-body"><span class="pt">International Consulting Academy</span><br><span class="ps">Solve real-world challenges.</span></span>
+        <svg viewBox="0 0 24 24"><path d="M9 6l6 6-6 6"/></svg>
+      </a>
+      <div style="text-align:center"><a class="sb-more" href="/programs">Explore all programs <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a></div>
+    </div>
+  </aside>
+</div>
+
+<!-- ============ TRUST BAR ============ -->
+<div class="trust-bar" data-screen-label="Portal — Trust bar">
+  <div class="trust-inner">
+    <div class="trust-sec">
+      <span class="trust-shield"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span>
+      <span><span class="tt">Your Security Is Our Priority</span><br><span class="ts">We use enterprise-grade encryption to protect your data.</span></span>
+    </div>
+    <div class="trust-sec trust-powered">
+      <span class="trust-shield"><svg viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.4 8-8 9-4.6-1-8-4-8-9V6z"/><path d="M12 8v8M9 11l3-3 3 3"/></svg></span>
+      <span><span class="tl-label">Powered By</span><br><span class="tt" style="text-transform:none;font-size:.92rem;letter-spacing:.02em">Vanguard Learning Platform</span></span>
+    </div>
+  </div>
+</div>
+
+<!-- ============ FOOTER STRIP ============ -->
+<footer class="pt-footer">
+  <span>&copy; 2026 Vanguard STEM Academy. All rights reserved.</span>
+  <span class="links">
+    <a href="#">Privacy Policy</a><span class="sep">&bull;</span>
+    <a href="#">Terms of Use</a><span class="sep">&bull;</span>
+    <a href="/get-involved/inquire">Contact Us</a>
+  </span>
+  <span class="pt-social">
+    <a href="#" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.98 3.5a2.5 2.5 0 11-.02 5 2.5 2.5 0 01.02-5zM3 9h4v12H3zM9 9h3.8v1.7h.1c.5-1 1.8-2 3.7-2 4 0 4.7 2.6 4.7 6V21h-4v-5.5c0-1.3 0-3-1.9-3s-2.2 1.4-2.2 2.9V21H9z"/></svg></a>
+    <a href="https://www.instagram.com/vstemacad/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 3.3.1 4.8 1.7 4.9 4.9.1 1.3.1 1.6.1 4.8s0 3.6-.1 4.8c-.1 3.2-1.7 4.8-4.9 4.9-1.3.1-1.6.1-4.9.1s-3.6 0-4.9-.1c-3.3-.1-4.8-1.7-4.9-4.9C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.8C2.4 4 4 2.4 7.2 2.3 8.4 2.2 8.8 2.2 12 2.2zm0 3.6a6.2 6.2 0 100 12.4 6.2 6.2 0 000-12.4zm0 2.2a4 4 0 110 8 4 4 0 010-8zm6.4-2.7a1.4 1.4 0 100 2.9 1.4 1.4 0 000-2.9z"/></svg></a>
+    <a href="https://www.youtube.com/channel/UCQhTJAYMKgtvEDZnjvGesVw/featured" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.5s-.2-1.6-.9-2.3c-.9-.9-1.9-.9-2.4-1C16.6 4 12 4 12 4s-4.6 0-7.7.2c-.5.1-1.5.1-2.4 1-.7.7-.9 2.3-.9 2.3S1 9.4 1 11.3v1.4c0 1.9.2 3.8.2 3.8s.2 1.6.9 2.3c.9.9 2 .9 2.5 1 1.8.2 7.4.2 7.4.2s4.6 0 7.7-.2c.5-.1 1.5-.1 2.4-1 .7-.7.9-2.3.9-2.3s.2-1.9.2-3.8v-1.4c0-1.9-.2-3.8-.2-3.8zM9.8 15.3V8.7l6.2 3.3z"/></svg></a>
+    <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M3 3l7.5 9.5L3.5 21H6l6-6.7L17 21h4l-8-10 7-8h-2.5L13 8.5 8 3z"/></svg></a>
+  </span>
+</footer>
+
+</main>
+
+<script>
+/* ============ ROLE CHIPS ============ */
+document.querySelectorAll('.role-chip').forEach(chip=>{
+  chip.addEventListener('click',()=>{
+    document.querySelectorAll('.role-chip').forEach(c=>{c.classList.remove('active');c.setAttribute('aria-selected','false')});
+    chip.classList.add('active');chip.setAttribute('aria-selected','true');
+  });
+});
+
+/* ============ PASSWORD VISIBILITY ============ */
+const pwEye=document.getElementById('pwEye'),pwInput=document.getElementById('password');
+pwEye.addEventListener('click',()=>{
+  const show=pwInput.type==='password';
+  pwInput.type=show?'text':'password';
+  pwEye.setAttribute('aria-label',show?'Hide password':'Show password');
+});
+
+/* ============ LOGIN FORM (demo) ============ */
+function handleLogin(form){
+  form.style.display='none';
+  document.getElementById('loginSuccess').classList.add('show');
+  return false;
+}
+</script>
+</body>
+</html>
