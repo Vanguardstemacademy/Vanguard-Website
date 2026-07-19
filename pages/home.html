@@ -802,6 +802,11 @@ section[aria-labelledby="path-h"]{border-bottom:none!important}
   .partners-row{grid-template-columns:repeat(2,minmax(0,1fr));gap:1rem .6rem}
   .p-logo{font-size:1.2rem}
   .who2-stat .ws-v{font-size:.85rem}
+  /* Award cards: 2-col was too narrow — long serif titles wrapped to 4 lines
+     with a stubby underline. Full-width single column reads clean. */
+  .who2-awards{grid-template-columns:1fr;gap:.85rem}
+  .award-card{padding:1.15rem 1.25rem}
+  .award-card svg{width:34px;height:34px}
   .hh-strip .container{grid-template-columns:repeat(2,1fr);gap:1.2rem .6rem;padding:1.4rem clamp(16px,4vw,22px) 1.5rem}
   .strip-item{flex-direction:column;gap:.55rem;padding:0 .3rem;text-align:center}
   .strip-item::after{display:none}
