@@ -1069,13 +1069,9 @@ section{position:relative}
   <div class="container gi-action-grid">
     <div class="reveal">
       <div class="gi-video">
-        <video class="gi-vid" playsinline preload="metadata">
+        <video class="gi-vid" autoplay muted loop playsinline preload="auto" aria-hidden="true">
           <source src="assets/video/landingpage.mp4" type="video/mp4">
         </video>
-        <button class="gi-playpause" type="button" aria-label="Play video" aria-pressed="false">
-          <svg class="play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg>
-          <svg class="pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg>
-        </button>
       </div>
     </div>
     <div class="reveal d1">
@@ -1301,31 +1297,6 @@ section{position:relative}
 /* ============ BACK TO TOP ============ */
 const toTop=document.getElementById('toTop');
 if(toTop)toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
-
-/* ============ IMPACT VIDEO PLAY/PAUSE ============ */
-(function(){
-  var v=document.querySelector('.gi-vid');
-  var btn=document.querySelector('.gi-playpause');
-  if(!v||!btn)return;
-  btn.addEventListener('click',function(){
-    if(v.paused){
-      v.play();
-      btn.classList.add('is-playing');
-      btn.setAttribute('aria-pressed','true');
-      btn.setAttribute('aria-label','Pause video');
-    }else{
-      v.pause();
-      btn.classList.remove('is-playing');
-      btn.setAttribute('aria-pressed','false');
-      btn.setAttribute('aria-label','Play video');
-    }
-  });
-  v.addEventListener('ended',function(){
-    btn.classList.remove('is-playing');
-    btn.setAttribute('aria-pressed','false');
-    btn.setAttribute('aria-label','Play video');
-  });
-})();
 
 /* ============ GENERIC CAROUSEL ============ */
 function makeCarousel(root,{slideSel,dotsSel,interval=5500,arrows=false}){
