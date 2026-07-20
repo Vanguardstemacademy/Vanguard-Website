@@ -1066,6 +1066,7 @@ section{position:relative}
 .prog-hero>.container{width:100%}
 .prog-hero .ph-media{position:absolute;top:0;right:0;bottom:0;width:58%}
 .prog-hero .ph-media .ph{height:100%}
+.prog-hero .ph-media img{width:100%;height:100%;object-fit:cover;object-position:center;display:block}
 .prog-hero .ph-media::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#081a3c 0%,rgba(8,26,60,.7) 16%,transparent 55%)}
 .prog-hero .ph-content{position:relative;z-index:2;max-width:460px;padding:clamp(2.6rem,5vw,4.2rem) 0}
 .prog-hero h1{font-family:var(--serif);font-weight:800;font-size:clamp(26px,2.9vw,42px);line-height:1.18;color:#fff}
@@ -1093,7 +1094,7 @@ section{position:relative}
 
 <!-- ============ APPLY HERO ============ -->
 <section class="prog-hero" aria-labelledby="apply-h" data-screen-label="Apply hero">
-  <div class="ph-media"><div class="ph" role="img" aria-label="Academy students studying together with laptop"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 20c0-2.8 2.2-5 5-5M22 20c0-2.8-2.2-5-5-5M9.5 17h5"/></svg><span class="phl">Students photo</span></div></div>
+  <div class="ph-media"><img src="assets/images/students-photo.jpg" alt="Vanguard Academy students studying together" loading="eager"></div>
   <div class="container">
     <div class="ph-content reveal in">
       <p class="eyebrow on-navy" style="margin-bottom:.6rem">Apply to the</p>
