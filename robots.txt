@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+# Low-value / non-content routes
+Disallow: /portal
+
+Sitemap: https://vstemacad.org/sitemap.xml
