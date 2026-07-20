@@ -947,6 +947,7 @@ section{position:relative}
 .wp-card:hover{transform:translateY(-5px);box-shadow:var(--shadow-lg)}
 .wp-photo{position:relative;height:150px}
 .wp-photo .ph{position:absolute;inset:0}
+.wp-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
 .wp-photo::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:34px;background:inherit;z-index:2}
 .wp-arch{position:relative;margin-top:-30px;z-index:3;text-align:center;padding:0 1rem 1.3rem;flex:1;display:flex;flex-direction:column}
 .wp-ic{width:58px;height:58px;border-radius:50%;border:2px solid var(--gold);display:grid;place-items:center;margin:0 auto .7rem;background:rgba(0,0,0,.25);backdrop-filter:blur(2px)}
@@ -1155,19 +1156,19 @@ section{position:relative}
     <div class="gold-banner-full reveal" style="margin:clamp(2rem,4vw,2.6rem) 0 1.5rem"><h2>Why Partner With Vanguard</h2></div>
     <div class="wp-grid reveal">
       <div class="wp-card wp-navy">
-        <div class="wp-photo"><div class="ph" role="img" aria-label="City skyline with handshake"><svg viewBox="0 0 24 24"><path d="M4 11l5-5 4 3 3-3 4 4-7 7-3-2-2 2-4-4z"/><path d="M2 9l2 2M20 12l2-2"/></svg><span class="phl">City skyline with handshake</span></div></div>
+        <div class="wp-photo"><img src="assets/images/partner-corporate.jpg" alt="Corporate partners shaking hands in a boardroom" loading="lazy"></div>
         <div class="wp-arch"><span class="wp-ic"><svg viewBox="0 0 24 24"><path d="M4 11l5-5 4 3 3-3 4 4-7 7-3-2-2 2-4-4z"/><path d="M2 9l2 2M20 12l2-2"/></svg></span><h3>Corporate Partners</h3><p>Invest in the next generation of talent, support student cohorts, provide mentors, and strengthen our community.</p></div>
       </div>
       <div class="wp-card wp-gold">
-        <div class="wp-photo"><div class="ph" role="img" aria-label="University campus"><svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg><span class="phl">University campus</span></div></div>
+        <div class="wp-photo"><img src="assets/images/partner-universities.jpg" alt="University students on campus" loading="lazy"></div>
         <div class="wp-arch"><span class="wp-ic"><svg viewBox="0 0 24 24"><path d="M22 10L12 5 2 10l10 5 10-5z"/><path d="M6 12v5c0 1 2.7 3 6 3s6-2 6-3v-5"/></svg></span><h3>Universities</h3><p>Create college pathways, research opportunities, scholarships, and immersive summer experiences.</p></div>
       </div>
       <div class="wp-card wp-teal">
-        <div class="wp-photo"><div class="ph" role="img" aria-label="Hands together — community"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 20c0-2.8 2.2-5 5-5M22 20c0-2.8-2.2-5-5-5M9.5 17h5"/></svg><span class="phl">Hands together — community</span></div></div>
+        <div class="wp-photo"><img src="assets/images/partner-community.jpg" alt="Community volunteers planting a tree together" loading="lazy"></div>
         <div class="wp-arch"><span class="wp-ic"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 20c0-2.8 2.2-5 5-5M22 20c0-2.8-2.2-5-5-5M9.5 17h5"/></svg></span><h3>Community Organizations</h3><p>Collaborate on programs that expand educational access and create lasting impact for local students.</p></div>
       </div>
       <div class="wp-card wp-purp">
-        <div class="wp-photo"><div class="ph" role="img" aria-label="Mentors with students"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Mentors with students</span></div></div>
+        <div class="wp-photo"><img src="assets/images/partner-individual.jpg" alt="Mentor supporting a student with her studies" loading="lazy"></div>
         <div class="wp-arch"><span class="wp-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span><h3>Individual Supporters</h3><p>Mentor students, sponsor tuition, volunteer your time, or donate to empower future innovators.</p></div>
       </div>
     </div>
