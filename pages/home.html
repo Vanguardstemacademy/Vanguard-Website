@@ -741,7 +741,7 @@ section[aria-labelledby="path-h"]{border-bottom:none!important}
 .fire2-quote .qm{font-family:var(--serif);font-size:3.8rem;line-height:.8;background:var(--gold-sheen);-webkit-background-clip:text;background-clip:text;color:transparent;flex:none}
 .fire2-quote p{color:#fff;font-weight:600;font-size:clamp(15px,1.15vw,20px);line-height:1.5;margin:0}
 .fire2-quote p .hl{color:var(--gold-light);font-weight:800}
-.exec-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:.9rem}
+.exec-grid{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:.9rem}
 .exec-card{background:#08183a;border:1px solid rgba(201,163,65,.35);border-radius:8px;overflow:hidden;text-align:center;display:flex;flex-direction:column}
 .exec-card .ph{aspect-ratio:1/1.05;padding:.7rem}
 .exec-card .ph.has-photo{aspect-ratio:1/1.12;height:auto;padding:0}
@@ -751,7 +751,7 @@ section[aria-labelledby="path-h"]{border-bottom:none!important}
 .exec-info{padding:.85rem .55rem .7rem}
 .exec-info .en{color:var(--gold-light);font-weight:800;font-size:.74rem;letter-spacing:.08em;text-transform:uppercase}
 .exec-info .er{color:#a9b8cd;font-size:.68rem;line-height:1.35;margin-top:.3rem;min-height:2.2em}
-.exec-org{background:#fff;color:#1c2530;font-weight:800;font-size:.68rem;letter-spacing:.04em;padding:.6rem .35rem;margin-top:auto;display:flex;align-items:center;justify-content:center;gap:.3rem;white-space:nowrap;overflow:hidden}
+.exec-org{background:#fff;color:#1c2530;font-weight:800;font-size:.68rem;letter-spacing:.04em;padding:.6rem .35rem;margin-top:auto;display:flex;align-items:center;justify-content:center;gap:.3rem;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .exec-org .msq{width:11px;height:11px;flex:none;background:conic-gradient(#7FBA00 0 25%,#FFB900 0 50%,#00A4EF 0 75%,#F25022 0);outline:1px solid #fff;outline-offset:-5px}
 .exec-org.ms{color:#5e5e5e}
 .exec-org.gg2 i{font-style:normal;font-weight:700;font-size:.84rem;text-transform:none;letter-spacing:-.01em}
@@ -825,7 +825,7 @@ section[aria-labelledby="path-h"]{border-bottom:none!important}
   .vdiff2-grid,.gained-grid{grid-template-columns:repeat(3,1fr);gap:1.6rem .4rem}
   .vd-item:nth-child(3)::after,.gained-item:nth-child(3)::after{display:none}
   .core-grid{grid-template-columns:repeat(3,1fr)}
-  .exec-grid{grid-template-columns:repeat(3,1fr)}
+  .exec-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
   .num2-row{grid-template-columns:repeat(3,1fr);gap:1.8rem 1rem}
   .num2-photo{grid-column:1/-1}
   .testi2-grid{grid-template-columns:1fr;gap:1.2rem}
@@ -839,7 +839,8 @@ section[aria-labelledby="path-h"]{border-bottom:none!important}
   .hh-content h1{font-size:2.1rem}
   .hh-content .hh-sub{font-size:.9rem}
   .hh-ctas .btn{flex:1;min-width:100%;padding:.9rem 1rem}
-  .vdiff2-grid,.gained-grid,.exec-grid{grid-template-columns:repeat(2,1fr)}
+  .vdiff2-grid,.gained-grid{grid-template-columns:repeat(2,1fr)}
+  .exec-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
   .core-grid{grid-template-columns:repeat(2,1fr);gap:.7rem}
   .core-card{padding:1.1rem .6rem .9rem}
   .num2-row{grid-template-columns:repeat(2,1fr)}
@@ -949,7 +950,7 @@ section[aria-labelledby="path-h"]{border-bottom:none!important}
     <div class="reveal d1">
       <p class="eyebrow">Who We Are</p>
       <h2 id="who-h" style="font-size:clamp(1.6rem,2.9vw,2.3rem);margin-bottom:1rem">An Award-Winning STEM Innovation, Consulting &amp; Workforce Development Organization</h2>
-      <p style="color:var(--muted);font-size:.93rem;margin-bottom:1rem">Vanguard STEM Academy is a 501(c)(3) nonprofit preparing high school students, college students, adult learners, and working professionals for the future of work through immersive STEM, artificial intelligence, business intelligence, executive mentorship, and real-world consulting experiences, with a commitment to expanding access and opportunity.</p>
+      <p style="color:var(--muted);font-size:.93rem;margin-bottom:1rem">Vanguard STEM Academy is a 501(c)(3) nonprofit preparing high school students, college students, adult learners, and working professionals for the future of work through immersive STEM learning, executive mentorship, and real-world consulting experiences, with a commitment to expanding access and opportunity.</p>
       <p style="color:var(--muted);font-size:.93rem;margin-bottom:1rem">Participants do more than complete traditional coursework. They work in multidisciplinary teams to investigate authentic engineering, infrastructure, education, artificial intelligence, business, and workforce challenges. Through research, systems analysis, stakeholder engagement, project management, and executive presentations, participants develop professional recommendations designed to create measurable real-world impact.</p>
       <p style="color:var(--muted);font-size:.93rem">Vanguard&rsquo;s work has earned local, national, and international recognition. Students have received official resolutions from the City of Atlantic City, presented projects to global leaders, and developed recommendations that international representatives are advancing into formal proposals for potential implementation.</p>
       <div class="who2-quote">

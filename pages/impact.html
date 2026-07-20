@@ -917,9 +917,9 @@ section{position:relative}
 .story-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
 .story-card{background:#fff;border:1px solid var(--line);border-radius:12px;padding:1rem;box-shadow:var(--shadow-sm);display:flex;flex-direction:column;gap:.9rem;align-items:stretch;transition:.3s}
 .story-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:var(--shadow-md)}
-.story-card .st-ph{flex:none;width:100%;border-radius:8px;overflow:hidden}
-.story-card .st-ph .ph{aspect-ratio:4/5}
-.story-card .st-ph img{display:block;width:100%;aspect-ratio:4/5;object-fit:cover;object-position:center 20%}
+.story-card .st-ph{flex:none;width:110px;margin:0 auto;border-radius:50%;overflow:hidden}
+.story-card .st-ph .ph{aspect-ratio:1/1}
+.story-card .st-ph img{display:block;width:100%;aspect-ratio:1/1;object-fit:cover;object-position:center 20%}
 .story-card h4{font-size:.95rem;font-weight:800;color:var(--gold-deep);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.15rem}
 .story-card .st-role{font-size:.74rem;font-weight:700;color:var(--navy);margin-bottom:.35rem}
 .story-card p{font-size:.78rem;color:var(--muted);line-height:1.5;margin:0}
@@ -992,21 +992,21 @@ section{position:relative}
 .grad-wrap{position:relative}
 .grad-row{display:flex;gap:.9rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:.4rem}
 .grad-row::-webkit-scrollbar{display:none}
-.grad-row>div{flex:0 0 clamp(200px,19%,260px);scroll-snap-align:start;border-radius:8px;overflow:hidden;border:1.5px solid var(--gold);box-shadow:var(--shadow-sm)}
+.grad-row>div{flex:0 0 clamp(260px,26%,340px);scroll-snap-align:start;border-radius:8px;overflow:hidden;border:1.5px solid var(--gold);box-shadow:var(--shadow-sm)}
 .grad-row .ph{aspect-ratio:16/11}
 .grad-row img{display:block;width:100%;aspect-ratio:16/11;object-fit:cover;object-position:center 35%}
 .testi2-band{background:linear-gradient(120deg,#4a0f1b,#5c1522 50%,#4a0f1b);border-top:2.5px solid var(--gold);padding:clamp(1.8rem,3.4vw,2.6rem) 0;position:relative;overflow:hidden}
 .testi2-band::before,.testi2-band::after{content:"";position:absolute;top:50%;transform:translateY(-50%);width:clamp(50px,6vw,110px);aspect-ratio:.62;background-image:url('assets/images/leaf-gold.png');background-size:contain;background-repeat:no-repeat;opacity:.5;pointer-events:none}
 .testi2-band::before{left:clamp(4px,1.4vw,28px)}
 .testi2-band::after{right:clamp(4px,1.4vw,28px);transform:translateY(-50%) scaleX(-1)}
-.testi2-grid{display:grid;grid-template-columns:.9fr 1.6fr;gap:clamp(1.2rem,2.6vw,2rem);align-items:center}
+.testi2-grid{display:grid;grid-template-columns:.7fr 2fr;gap:clamp(1.2rem,2.6vw,2rem);align-items:center}
 .testi2-left{display:flex;gap:1rem;align-items:center}
 .testi2-left .spot-ph{flex:none;width:110px;border-radius:8px;overflow:hidden;border:1.5px solid var(--gold);position:relative}
 .testi2-left .spot-ph .ph{aspect-ratio:1/1}
-.testi2-left .vt-label{color:var(--gold-light);font-weight:800;font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;margin-bottom:.4rem}
+.testi2-left .vt-label{color:var(--gold-light);font-weight:800;font-size:.9rem;letter-spacing:.15em;text-transform:uppercase;margin-bottom:.4rem}
 .testi2-left h3{font-family:var(--serif);color:#fff;font-size:1.05rem;margin-bottom:.3rem}
 .testi2-left p{color:#ecd3d8;font-size:.72rem;line-height:1.5;margin:0}
-.testi2-vids{display:grid;grid-template-columns:repeat(5,1fr);gap:.7rem}
+.testi2-vids{display:grid;grid-template-columns:repeat(3,1fr);gap:.9rem}
 .t2-item{position:relative;border-radius:6px;overflow:hidden;border:1px solid rgba(201,163,65,.45);cursor:pointer;transition:.3s}
 .t2-item:hover{transform:translateY(-3px);border-color:var(--gold)}
 .t2-item .ph{aspect-ratio:16/11}
@@ -1043,7 +1043,7 @@ section{position:relative}
   .rec-grid,.mile-grid{grid-template-columns:1fr}
   .imp-ctas .btn{flex:1;min-width:100%}
   .testi2-vids{grid-template-columns:repeat(2,1fr)}
-  .grad-row>div{flex-basis:74%}
+  .grad-row>div{flex-basis:88%}
 }
 
 
@@ -1087,7 +1087,7 @@ section{position:relative}
       <h1 id="imp-h"><span>Global Leadership &amp;</span><span class="gold">Strategic Partnerships</span></h1>
       <p class="ph-sub">Building meaningful relationships with government, royalty, universities, and industry leaders to create extraordinary opportunities for Vanguard students.</p>
       <div class="ph-ctas">
-        <a href="#motion" class="btn btn-navy"><svg style="width:15px;height:15px;fill:var(--gold-2);stroke:none" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg> Our Impact in Action</a>
+        <a href="#motion" class="btn btn-outline-w"><svg style="width:15px;height:15px;fill:var(--gold-2);stroke:none" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg> Our Impact in Action</a>
         <a href="/get-involved/partner" class="btn btn-gold">Partner With Us</a>
       </div>
     </div>
@@ -1223,11 +1223,11 @@ section{position:relative}
         </div>
       </div>
       <div class="testi2-vids">
-        <div class="t2-item" role="button" tabindex="0" data-video="assets/video/testimonial-1.mp4" aria-label="Play Student Perspective testimonial"><img src="assets/images/testimonials/testimonial-1.jpg" alt="Student Perspective testimonial" loading="lazy"><span class="tv-play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span><span class="tv-cap">Student Perspective</span></div>
+        <div class="t2-item" role="button" tabindex="0" data-video="assets/video/testimonial-5.mp4" aria-label="Play Guest Speakers testimonial"><img src="assets/images/testimonials/testimonial-5.jpg" alt="Guest Speakers and Leaders testimonial" loading="lazy"><span class="tv-play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span><span class="tv-cap">Guest Speakers &amp; Leaders</span></div>
         <div class="t2-item" role="button" tabindex="0" data-video="assets/video/testimonial-2.mp4" aria-label="Play Parent Perspective testimonial"><img src="assets/images/testimonials/testimonial-2.jpg" alt="Parent Perspective testimonial" loading="lazy"><span class="tv-play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span><span class="tv-cap">Parent Perspective</span></div>
         <div class="t2-item" role="button" tabindex="0" data-video="assets/video/testimonial-3.mp4" aria-label="Play Partner Testimonial"><img src="assets/images/testimonials/testimonial-3.jpg" alt="Partner testimonial" loading="lazy"><span class="tv-play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span><span class="tv-cap">Partner Testimonial</span></div>
         <div class="t2-item" role="button" tabindex="0" data-video="assets/video/testimonial-4.mp4" aria-label="Play Industry Partners testimonial"><img src="assets/images/testimonials/testimonial-4.jpg" alt="Industry Partners testimonial" loading="lazy"><span class="tv-play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span><span class="tv-cap">Industry Partners</span></div>
-        <div class="t2-item" role="button" tabindex="0" data-video="assets/video/testimonial-5.mp4" aria-label="Play Guest Speakers testimonial"><img src="assets/images/testimonials/testimonial-5.jpg" alt="Guest Speakers and Leaders testimonial" loading="lazy"><span class="tv-play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span><span class="tv-cap">Guest Speakers &amp; Leaders</span></div>
+        <div class="t2-item" role="button" tabindex="0" data-video="assets/video/testimonial-1.mp4" aria-label="Play Student Perspective testimonial"><img src="assets/images/testimonials/testimonial-1.jpg" alt="Student Perspective testimonial" loading="lazy"><span class="tv-play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span><span class="tv-cap">Student Perspective</span></div>
       </div>
     </div>
     <div class="testi2-more reveal"><a href="/get-involved" class="btn btn-gold" style="padding:.7rem 1.5rem;font-size:.64rem">See All Testimonials &nbsp;&rarr;</a></div>
