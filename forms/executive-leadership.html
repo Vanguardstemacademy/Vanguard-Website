@@ -933,7 +933,35 @@ document.querySelectorAll('textarea[data-count]').forEach(function(t){
   var max=t.getAttribute('maxlength')||500;
   t.addEventListener('input',function(){c.textContent=t.value.length+'/'+max});
 });
+var VANGUARD_FORM_ENDPOINT='https://script.google.com/a/macros/vstemacad.org/s/AKfycbzl8v21P2ecIc_Sd_P1CpfDqcGrB4ZU2-fgEZvLflk8XYhKbdxWjQKTvvBGmr6Y19te/exec';
+var VANGUARD_FORM_TYPE='executive-leadership';
+function vanguardReadFile(file){
+  return new Promise(function(resolve){
+    var r=new FileReader();
+    r.onload=function(){var res=String(r.result||''),comma=res.indexOf(',');resolve({name:file.name,type:file.type||'application/octet-stream',size:file.size,data:comma>=0?res.slice(comma+1):res});};
+    r.onerror=function(){resolve(null);};
+    r.readAsDataURL(file);
+  });
+}
+function vanguardSubmitForm(formType,formEl,extraFields,files){
+  var fd=formEl?new FormData(formEl):new FormData(),fields={};
+  fd.forEach(function(value,key){
+    if(value instanceof File)return;
+    if(fields[key]!==undefined){fields[key]=(Array.isArray(fields[key])?fields[key]:[fields[key]]).concat(value)}
+    else{fields[key]=value}
+  });
+  Object.keys(fields).forEach(function(k){if(Array.isArray(fields[k]))fields[k]=fields[k].join(', ')});
+  if(extraFields)Object.assign(fields,extraFields);
+  var list=files&&files.length?Array.prototype.slice.call(files):[];
+  return Promise.all(list.map(vanguardReadFile)).then(function(encoded){
+    return fetch(VANGUARD_FORM_ENDPOINT,{method:'POST',mode:'no-cors',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({formType:formType,fields:fields,files:encoded.filter(Boolean)})});
+  }).catch(function(err){console.error('Vanguard form submit failed',err)});
+}
 function handleInquiry(form){
+  if(form.checkValidity&&!form.checkValidity()){form.reportValidity();return false;}
+  var inputs=form.querySelectorAll('input[type=file]'),fileList=[];
+  for(var i=0;i<inputs.length;i++){if(inputs[i].files){for(var j=0;j<inputs[i].files.length;j++)fileList.push(inputs[i].files[j]);}}
+  vanguardSubmitForm(VANGUARD_FORM_TYPE,form,null,fileList);
   var msg=document.getElementById('frmMsg');
   if(msg){msg.style.display='block';}
   form.reset();
