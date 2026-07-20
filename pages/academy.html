@@ -1099,6 +1099,13 @@ section{position:relative}
         <div><div class="ph has-photo"><img src="assets/images/cohort-1.jpg" alt="Cohort working session photo" loading="lazy"></div></div>
         <div><div class="ph has-photo"><img src="assets/images/cohort-2.jpg" alt="Cohort group photo" loading="lazy"></div></div>
         <div><div class="ph has-photo"><img src="assets/images/cohort-3.jpg" alt="Robotics build session photo" loading="lazy"></div></div>
+        <div><div class="ph has-photo"><img src="assets/images/cohort-4.jpg" alt="Cohort group photo" loading="lazy"></div></div>
+        <div><div class="ph has-photo"><img src="assets/images/cohort-5.jpg" alt="Cohort group photo" loading="lazy"></div></div>
+        <div><div class="ph has-photo"><img src="assets/images/cohort-6.jpeg" alt="Cohort group photo" loading="lazy"></div></div>
+        <div><div class="ph has-photo"><img src="assets/images/cohort-7.jpg" alt="Cohort group photo" loading="lazy"></div></div>
+        <div><div class="ph has-photo"><img src="assets/images/cohort-8.jpg" alt="Cohort group photo" loading="lazy"></div></div>
+        <div><div class="ph has-photo"><img src="assets/images/cohort-9.jpg" alt="Cohort group photo" loading="lazy"></div></div>
+        <div><div class="ph has-photo"><img src="assets/images/cohort-10.jpg" alt="Cohort group photo" loading="lazy"></div></div>
       </div>
       <button class="co-arrow next" aria-label="Scroll cohorts right"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
     </div>
@@ -1373,7 +1380,7 @@ function handleSubscribe(form){
     let size=25.5*(card.clientWidth/426);
     p.style.fontSize=size+'px';
     let guard=60;
-    while(p.scrollHeight>avail&&size>9&&guard-->0){size-=0.5;p.style.fontSize=size+'px';}
+    while(p.scrollHeight>avail && size>9 && guard-- > 0) { size -= 0.5; p.style.fontSize = size + 'px'; }
   }
   function fitAll(){cards.forEach(fitOne);}
   const ro=new ResizeObserver(fitAll);
