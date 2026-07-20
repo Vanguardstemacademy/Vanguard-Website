@@ -1012,6 +1012,18 @@ section{position:relative}
 .t2-item .tv-play{position:absolute;left:50%;top:36%;transform:translate(-50%,-50%);width:30px;height:30px;border-radius:50%;background:rgba(74,15,27,.8);border:1.5px solid var(--gold);display:grid;place-items:center;z-index:3}
 .t2-item .tv-play svg{width:11px;height:11px;fill:var(--gold-2);stroke:none;margin-left:1.5px}
 .t2-item .tv-cap{position:absolute;left:0;right:0;bottom:0;background:linear-gradient(transparent,rgba(30,5,10,.95));color:#f4dfe3;font-size:.54rem;font-weight:700;letter-spacing:.05em;text-transform:uppercase;text-align:center;padding:.9rem .2rem .35rem;z-index:2;line-height:1.35}
+.t2-item img{display:block;width:100%;aspect-ratio:16/11;object-fit:cover;object-position:center 22%}
+.t2-item:focus-visible{outline:3px solid var(--gold-2);outline-offset:2px}
+/* ---- Fullscreen video testimonial lightbox ---- */
+.vmodal{position:fixed;inset:0;z-index:1000;display:none;align-items:center;justify-content:center;padding:clamp(16px,4vw,52px)}
+.vmodal.open{display:flex}
+.vmodal-backdrop{position:absolute;inset:0;background:rgba(6,16,34,.7);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.vmodal-inner{position:relative;z-index:1;display:flex}
+.vmodal video{width:auto;max-width:min(92vw,520px);max-height:84vh;border-radius:14px;border:1.5px solid var(--gold);box-shadow:0 30px 90px rgba(0,0,0,.65);background:#000;display:block}
+.vmodal-close{position:fixed;top:clamp(12px,3vw,26px);right:clamp(12px,3vw,26px);width:46px;height:46px;border-radius:50%;background:var(--navy);border:1.5px solid var(--gold);color:var(--gold-light);cursor:pointer;display:grid;place-items:center;z-index:1002;transition:.3s}
+.vmodal-close:hover{background:var(--gold-grad);color:var(--navy)}
+.vmodal-close svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.4}
+@media(max-width:640px){.vmodal{padding:14px}.vmodal video{max-width:94vw;max-height:80vh}}
 .testi2-more{text-align:center;margin-top:1.2rem}
 @media(max-width:1200px){.mile-grid{grid-template-columns:repeat(3,1fr)}}
 @media(max-width:1024px){
@@ -1067,7 +1079,7 @@ section{position:relative}
 
 <!-- ============ IMPACT HERO ============ -->
 <section class="prog-hero" aria-labelledby="imp-h" data-screen-label="Global leadership hero">
-  <div class="ph-media"><div class="ph" role="img" aria-label="Student speaking at podium before assembly"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg><span class="phl">Student speaking at podium before assembly</span></div></div>
+  <div class="ph-media"><img src="assets/images/ourimpactlanding.png" alt="Student speaking at podium before assembly" style="width: 100%; height: 100%; object-fit: cover;"></div>
   <div class="container">
     <div class="ph-content reveal in">
       <p class="eyebrow on-navy" style="margin-bottom:.6rem">Our Impact</p>
@@ -1210,11 +1222,11 @@ section{position:relative}
         </div>
       </div>
       <div class="testi2-vids">
-        <div class="t2-item"><div class="ph" role="img" aria-label="Student perspective video"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg><span class="phl">Student perspective video</span></div><span class="tv-play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span><span class="tv-cap">Student Perspective</span></div>
-        <div class="t2-item"><div class="ph" role="img" aria-label="Parent perspective video"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg><span class="phl">Parent perspective video</span></div><span class="tv-play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span><span class="tv-cap">Parent Perspective</span></div>
-        <div class="t2-item"><div class="ph" role="img" aria-label="Partner testimonial video"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg><span class="phl">Partner testimonial video</span></div><span class="tv-play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span><span class="tv-cap">Partner Testimonial</span></div>
-        <div class="t2-item"><div class="ph" role="img" aria-label="Industry partners video"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg><span class="phl">Industry partners video</span></div><span class="tv-play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span><span class="tv-cap">Industry Partners</span></div>
-        <div class="t2-item"><div class="ph" role="img" aria-label="Guest speakers video"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg><span class="phl">Guest speakers video</span></div><span class="tv-play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span><span class="tv-cap">Guest Speakers &amp; Leaders</span></div>
+        <div class="t2-item" role="button" tabindex="0" data-video="assets/video/testimonial-1.mp4" aria-label="Play Student Perspective testimonial"><img src="assets/images/testimonials/testimonial-1.jpg" alt="Student Perspective testimonial" loading="lazy"><span class="tv-play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span><span class="tv-cap">Student Perspective</span></div>
+        <div class="t2-item" role="button" tabindex="0" data-video="assets/video/testimonial-2.mp4" aria-label="Play Parent Perspective testimonial"><img src="assets/images/testimonials/testimonial-2.jpg" alt="Parent Perspective testimonial" loading="lazy"><span class="tv-play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span><span class="tv-cap">Parent Perspective</span></div>
+        <div class="t2-item" role="button" tabindex="0" data-video="assets/video/testimonial-3.mp4" aria-label="Play Partner Testimonial"><img src="assets/images/testimonials/testimonial-3.jpg" alt="Partner testimonial" loading="lazy"><span class="tv-play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span><span class="tv-cap">Partner Testimonial</span></div>
+        <div class="t2-item" role="button" tabindex="0" data-video="assets/video/testimonial-4.mp4" aria-label="Play Industry Partners testimonial"><img src="assets/images/testimonials/testimonial-4.jpg" alt="Industry Partners testimonial" loading="lazy"><span class="tv-play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span><span class="tv-cap">Industry Partners</span></div>
+        <div class="t2-item" role="button" tabindex="0" data-video="assets/video/testimonial-5.mp4" aria-label="Play Guest Speakers testimonial"><img src="assets/images/testimonials/testimonial-5.jpg" alt="Guest Speakers and Leaders testimonial" loading="lazy"><span class="tv-play"><svg viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg></span><span class="tv-cap">Guest Speakers &amp; Leaders</span></div>
       </div>
     </div>
     <div class="testi2-more reveal"><a href="/get-involved" class="btn btn-gold" style="padding:.7rem 1.5rem;font-size:.64rem">See All Testimonials &nbsp;&rarr;</a></div>
@@ -1229,7 +1241,38 @@ section{position:relative}
   document.getElementById('gradPrev').addEventListener('click',()=>row.scrollBy({left:-step(),behavior:'smooth'}));
   document.getElementById('gradNext').addEventListener('click',()=>row.scrollBy({left:step(),behavior:'smooth'}));
 })();
+/* ---- Video testimonial lightbox ---- */
+(function(){
+  const modal=document.getElementById('vgModal');
+  if(!modal)return;
+  const video=document.getElementById('vgModalVideo'),source=video.querySelector('source');
+  function openVid(src){
+    source.src=src;video.load();
+    modal.classList.add('open');document.body.style.overflow='hidden';
+    var p=video.play();if(p&&p.catch)p.catch(function(){});
+  }
+  function closeVid(){
+    modal.classList.remove('open');video.pause();source.src='';video.load();
+    document.body.style.overflow='';
+  }
+  document.querySelectorAll('.t2-item[data-video]').forEach(function(el){
+    el.addEventListener('click',function(){openVid(el.getAttribute('data-video'));});
+    el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openVid(el.getAttribute('data-video'));}});
+  });
+  modal.querySelector('.vmodal-close').addEventListener('click',closeVid);
+  modal.querySelector('.vmodal-backdrop').addEventListener('click',closeVid);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))closeVid();});
+})();
 </script>
+
+<!-- Video testimonial lightbox -->
+<div class="vmodal" id="vgModal" role="dialog" aria-modal="true" aria-label="Video testimonial">
+  <div class="vmodal-backdrop"></div>
+  <button class="vmodal-close" type="button" aria-label="Close video"><svg viewBox="0 0 24 24"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div class="vmodal-inner">
+    <video id="vgModalVideo" controls playsinline preload="metadata"><source src="" type="video/mp4"></video>
+  </div>
+</div>
 
 </main>
 
