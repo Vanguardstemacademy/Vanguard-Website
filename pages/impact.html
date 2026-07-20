@@ -1242,7 +1242,7 @@ section{position:relative}
   document.getElementById('gradNext').addEventListener('click',()=>row.scrollBy({left:step(),behavior:'smooth'}));
 })();
 /* ---- Video testimonial lightbox ---- */
-(function(){
+document.addEventListener('DOMContentLoaded',function(){
   const modal=document.getElementById('vgModal');
   if(!modal)return;
   const video=document.getElementById('vgModalVideo'),source=video.querySelector('source');
@@ -1262,7 +1262,7 @@ section{position:relative}
   modal.querySelector('.vmodal-close').addEventListener('click',closeVid);
   modal.querySelector('.vmodal-backdrop').addEventListener('click',closeVid);
   document.addEventListener('keydown',function(e){if(e.key==='Escape'&&modal.classList.contains('open'))closeVid();});
-})();
+});
 </script>
 
 <!-- Video testimonial lightbox -->
