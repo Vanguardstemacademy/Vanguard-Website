@@ -1020,7 +1020,7 @@ section{position:relative}
 .vmodal.open{display:flex}
 .vmodal-backdrop{position:absolute;inset:0;background:rgba(6,16,34,.7);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
 .vmodal-inner{position:relative;z-index:1;display:flex}
-.vmodal video{width:auto;max-width:min(92vw,520px);max-height:84vh;border-radius:14px;border:1.5px solid var(--gold);box-shadow:0 30px 90px rgba(0,0,0,.65);background:#000;display:block}
+.vmodal video{width:auto;max-width:min(92vw,960px);max-height:84vh;border-radius:14px;border:1.5px solid var(--gold);box-shadow:0 30px 90px rgba(0,0,0,.65);background:#000;display:block}
 .vmodal-close{position:fixed;top:clamp(12px,3vw,26px);right:clamp(12px,3vw,26px);width:46px;height:46px;border-radius:50%;background:var(--navy);border:1.5px solid var(--gold);color:var(--gold-light);cursor:pointer;display:grid;place-items:center;z-index:1002;transition:.3s}
 .vmodal-close:hover{background:var(--gold-grad);color:var(--navy)}
 .vmodal-close svg{width:20px;height:20px;stroke:currentColor;fill:none;stroke-width:2.4}
@@ -1108,7 +1108,7 @@ section{position:relative}
         <video class="bv-vid" playsinline preload="metadata">
           <source src="assets/video/student-example.mp4" type="video/mp4">
         </video>
-        <button class="bv-play" type="button" aria-label="Play impact video" aria-pressed="false">
+        <button class="bv-play" type="button" data-video="assets/video/student-example.mp4" aria-label="Play impact video">
           <svg class="play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg>
           <svg class="pause" viewBox="0 0 24 24"><path d="M8 5v14M16 5v14"/></svg>
         </button>
@@ -1256,7 +1256,7 @@ document.addEventListener('DOMContentLoaded',function(){
     modal.classList.remove('open');video.pause();source.src='';video.load();
     document.body.style.overflow='';
   }
-  document.querySelectorAll('.t2-item[data-video]').forEach(function(el){
+  document.querySelectorAll('[data-video]').forEach(function(el){
     el.addEventListener('click',function(){openVid(el.getAttribute('data-video'));});
     el.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();openVid(el.getAttribute('data-video'));}});
   });
@@ -1329,30 +1329,7 @@ document.addEventListener('DOMContentLoaded',function(){
 const toTop=document.getElementById('toTop');
 if(toTop)toTop.addEventListener('click',()=>window.scrollTo({top:0,behavior:'smooth'}));
 
-/* ============ IMPACT VIDEO PLAY/PAUSE ============ */
-(function(){
-  var v=document.querySelector('.bv-vid');
-  var btn=document.querySelector('.bv-play');
-  if(!v||!btn)return;
-  btn.addEventListener('click',function(){
-    if(v.paused){
-      v.play();
-      btn.classList.add('is-playing');
-      btn.setAttribute('aria-pressed','true');
-      btn.setAttribute('aria-label','Pause impact video');
-    }else{
-      v.pause();
-      btn.classList.remove('is-playing');
-      btn.setAttribute('aria-pressed','false');
-      btn.setAttribute('aria-label','Play impact video');
-    }
-  });
-  v.addEventListener('ended',function(){
-    btn.classList.remove('is-playing');
-    btn.setAttribute('aria-pressed','false');
-    btn.setAttribute('aria-label','Play impact video');
-  });
-})();
+/* Impact-in-Motion video now opens in the shared fullscreen lightbox (data-video). */
 
 /* ============ GENERIC CAROUSEL ============ */
 function makeCarousel(root,{slideSel,dotsSel,interval=5500,arrows=false}){
