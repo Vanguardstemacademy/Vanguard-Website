@@ -1038,6 +1038,10 @@ section{position:relative}
   .testi2-grid{grid-template-columns:1fr}
   .testi2-vids{grid-template-columns:repeat(3,1fr)}
   .testi2-band::before,.testi2-band::after{display:none}
+  /* stacked layout: centre the section title over the video grid */
+  .testi2-left{flex-direction:column;text-align:center;gap:.6rem}
+  .testi2-left .vt-label{font-size:1.05rem;letter-spacing:.18em;margin-bottom:.25rem}
+  .testi2-left h3{font-size:1.5rem}
 }
 @media(max-width:640px){
   .rec-grid,.mile-grid{grid-template-columns:1fr}
@@ -1087,7 +1091,7 @@ section{position:relative}
       <h1 id="imp-h"><span>Global Leadership &amp;</span><span class="gold">Strategic Partnerships</span></h1>
       <p class="ph-sub">Building meaningful relationships with government, royalty, universities, and industry leaders to create extraordinary opportunities for Vanguard students.</p>
       <div class="ph-ctas">
-        <a href="#motion" class="btn btn-outline-w"><svg style="width:15px;height:15px;fill:var(--gold-2);stroke:none" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg> Our Impact in Action</a>
+        <a href="#motion" class="btn btn-gold"><svg style="width:15px;height:15px;fill:var(--navy);stroke:none" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z"/></svg> Our Impact in Action</a>
         <a href="/get-involved/partner" class="btn btn-gold">Partner With Us</a>
       </div>
     </div>
