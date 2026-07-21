@@ -871,6 +871,8 @@ section{position:relative}
 .stevens-card{background:#fff;border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow-md);padding:clamp(1.4rem,2.6vw,2rem)}
 .stv-top{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(1.4rem,2.6vw,2.2rem);align-items:center;margin-bottom:1.6rem}
 .stv-top .ph{aspect-ratio:16/10;border-radius:10px;overflow:hidden}
+.stv-top .ph.has-photo{padding:0}
+.stv-top .ph.has-photo img{width:100%;height:100%;object-fit:cover;display:block}
 .stv-top h2{font-family:var(--serif);font-size:clamp(20px,2.2vw,30px);color:var(--navy);margin-bottom:.7rem;line-height:1.25}
 .stv-top p{font-size:.86rem;color:var(--muted);line-height:1.65;margin:0}
 .stv-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-bottom:1.6rem}
@@ -1114,7 +1116,7 @@ section{position:relative}
     <div class="gold-banner-row reveal" style="margin:clamp(2rem,4vw,2.8rem) 0 1.6rem"><span class="gold-banner">From Vanguard to Stevens Institute of Technology</span></div>
     <div class="stevens-card reveal" id="cohorts-stevens">
       <div class="stv-top">
-        <div class="ph" role="img" aria-label="Stevens Institute of Technology campus"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V9l4-2v14M9 21V11h4v10M13 21V7l4-2v16M17 21V9h3v12"/></svg><span class="phl">Stevens campus photo</span></div>
+        <div class="ph has-photo"><img src="assets/images/Stevens-Image.JPG" alt="Stevens Institute of Technology campus" loading="lazy"></div>
         <div>
           <h2>Continue the Journey at Stevens Institute of Technology</h2>
           <p>Students who successfully complete Vanguard STEM Academy may have the opportunity to continue their learning through Stevens Institute of Technology&rsquo;s pre-college programs &mdash; further strengthening their technical, leadership, and career-ready skills.</p>
