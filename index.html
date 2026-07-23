@@ -29,6 +29,7 @@
   "logo": "https://vstemacad.org/assets/images/vanguard-logo-transparent.png",
   "image": "https://vstemacad.org/assets/images/welcome-hero.webp",
   "foundingDate": "2016",
+  "nonprofitStatus": "Nonprofit501c3",
   "description": "Vanguard STEM Academy is a U.S.-based 501(c)(3) nonprofit organization headquartered in New York, preparing students, professionals, and organizations through award-winning real-world learning experiences that serve local, national, and international communities.",
   "email": "info@vstemacad.org",
   "address": {
@@ -39,6 +40,24 @@
     "postalCode": "10005",
     "addressCountry": "US"
   },
+  "areaServed": [
+    "United States",
+    "New York",
+    "New Jersey",
+    "Atlantic City",
+    "Worldwide"
+  ],
+  "knowsAbout": [
+    "Artificial Intelligence",
+    "Business Intelligence and Analytics",
+    "Engineering Design and Product Innovation",
+    "International Consulting",
+    "Executive Mentorship",
+    "Leadership Development",
+    "Career Readiness",
+    "Academic Coaching",
+    "Corporate and Workforce Training"
+  ],
   "contactPoint": [
     {
       "@type": "ContactPoint",
@@ -939,6 +958,9 @@ section[aria-labelledby="path-h"]{border-bottom:none!important}
 
 <!-- ============ LANDING VIDEO HERO ============ -->
 <section class="lp-hero" aria-label="Welcome to Vanguard STEM Academy">
+  <!-- SEO:vanguard : the landing page is video-only, so it had no heading at all.
+       This gives screen readers and crawlers the page's H1 without altering the design. -->
+  <h1 style="position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0">Vanguard STEM Academy</h1>
   <video class="lp-video" autoplay muted loop playsinline preload="auto" aria-hidden="true">
     <source src="assets/video/landingpage.mp4" type="video/mp4">
   </video>
