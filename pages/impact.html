@@ -1009,7 +1009,7 @@ section{position:relative}
 .rec-ic{position:absolute;left:50%;bottom:-17px;transform:translateX(-50%);width:38px;height:38px;border-radius:50%;background:var(--burgundy);border:2px solid var(--gold);display:grid;place-items:center;z-index:3}
 .rec-ic svg{width:17px;height:17px;stroke:var(--gold-2);fill:none;stroke-width:1.7}
 .rec-card h3{font-weight:800;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);line-height:1.4;margin-bottom:.4rem}
-.rec-card p{font-size:.78rem;color:var(--muted);line-height:1.5;margin:0;flex:1}.rec-wrap{position:relative}.rec-rail{display:flex;gap:1.3rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;padding:.6rem .2rem 1rem}.rec-rail::-webkit-scrollbar{display:none}.rec-rail>.rec-card{flex:0 0 clamp(250px,30%,310px);scroll-snap-align:start}.co-arrow:disabled{opacity:.35;cursor:default}.rec-dots{display:flex;gap:.5rem;justify-content:center;margin-top:.4rem;flex-wrap:wrap}.rec-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--gold);background:transparent;cursor:pointer;padding:0;transition:.3s}.rec-dots button.active{background:var(--gold-grad);width:24px;border-radius:5px}
+.rec-card p{font-size:.78rem;color:var(--muted);line-height:1.5;margin:0;flex:1}.co-arrow:disabled{opacity:.35;cursor:default}.recgal-wrap{position:relative;margin-top:1.8rem}.recgal-rail{display:flex;gap:1rem;overflow-x:auto;scroll-behavior:smooth;scrollbar-width:none;-ms-overflow-style:none;padding:.4rem .2rem}.recgal-rail::-webkit-scrollbar{display:none}.recgal-rail>img{flex:none;width:clamp(260px,42%,440px);aspect-ratio:4/3;object-fit:cover;border-radius:12px;border:1.5px solid var(--gold);box-shadow:var(--shadow-sm);display:block}.recgal-dots{display:flex;gap:.5rem;justify-content:center;margin-top:.9rem;flex-wrap:wrap}.recgal-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--gold);background:transparent;cursor:pointer;padding:0;transition:.3s}.recgal-dots button.active{background:var(--gold-grad);width:24px;border-radius:5px}
 .ghost-more{display:flex;justify-content:center;margin-top:1.3rem}
 .ghost-more .btn{padding:.65rem 1.5rem;font-size:.64rem}
 .mile-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
@@ -1157,9 +1157,7 @@ section{position:relative}
 <section id="recognition" aria-label="Strategic recognitions and invitations" data-screen-label="Recognitions" style="background:var(--cream);padding-bottom:1rem">
   <div class="container">
     <div class="burg-banner reveal" style="margin:clamp(2rem,4vw,2.6rem) 0 1.5rem"><h2>Strategic Recognitions &amp; Invitations</h2></div>
-    <div class="rec-wrap reveal">
-      <button class="co-arrow prev" id="recPrev" type="button" aria-label="Scroll recognitions left"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
-      <div class="rec-rail" id="recRail">
+    <div class="rec-grid reveal">
       <div class="rec-card"><div class="rec-ph"><img src="assets/images/recognitions/rec-state.jpg" alt="Vanguard leadership engaging with state leaders" loading="lazy" style="object-position:center 40%"><span class="rec-ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10h14v11M12 3L3 8h18z"/></svg></span></div><h3>State Leadership Engagement</h3><p>Engaging with state leaders to explore opportunities that strengthen education, workforce development, and student success.</p></div>
       <div class="rec-card"><div class="rec-ph"><img src="assets/images/recognitions/rec-royal.jpg" alt="Royal invitation recognizing Vanguard's mission" loading="lazy"><span class="rec-ic"><svg viewBox="0 0 24 24"><path d="M4 18h16M4 18l-1.5-9L8 12l4-7 4 7 5.5-3L20 18"/></svg></span></div><h3>Royal Invitation</h3><p>Official invitation from the Kingdom of Uganda recognizing Vanguard&rsquo;s mission and leadership.</p></div>
       <div class="rec-card"><div class="rec-ph"><img src="assets/images/recognitions/rec-workshop.jpg" alt="Vanguard-led careers and skills workshop session" loading="lazy"><span class="rec-ic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3M8 21h8"/></svg></span></div><h3>Speaker &amp; Workshop Leadership</h3><p>Leading sessions and empowering students through leadership, insight, and skill-building.</p></div>
@@ -1172,10 +1170,28 @@ section{position:relative}
       <div class="rec-card"><div class="rec-ph"><img src="assets/images/recognitions/rec-cultural.jpg" alt="International cultural recognition gathering" loading="lazy"><span class="rec-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span></div><h3>Educational Leadership Recognition</h3><p>Honored through invitations to lead career workshops, inspire students, and engage alongside accomplished leaders.</p></div>
       <div class="rec-card"><div class="rec-ph"><img src="assets/images/recognitions/rec-naacp.jpg" alt="Vanguard leaders at the NAACP gala" loading="lazy"><span class="rec-ic"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 20c0-2.8 2.2-5 5-5M22 20c0-2.8-2.2-5-5-5M9.5 17h5"/></svg></span></div><h3>NAACP Partnership</h3><p>Working together to expand educational access and leadership development for students.</p></div>
       <div class="rec-card"><div class="rec-ph"><img src="assets/images/NewFiresideChat_Image.JPG" alt="Executive Fireside Chat featured industry leaders" loading="lazy"><span class="rec-ic"><svg viewBox="0 0 24 24"><path d="M12 3c1 3 4 4.5 4 8a4 4 0 11-8 0c0-1.5.5-2.5 1.5-4 .5 1 1.5 1.5 1.5 1.5C10.5 6.5 11 4.5 12 3z"/></svg></span></div><h3>Executive Fireside Chat Series</h3><p>Bringing world-class leaders for inspiring conversations with students and professionals.</p></div>
-      </div>
-      <button class="co-arrow next" id="recNext" type="button" aria-label="Scroll recognitions right"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
     </div>
-    <div class="rec-dots" id="recDots" aria-label="Recognition slides"></div>
+    <div class="recgal-wrap reveal">
+      <button class="co-arrow prev" id="recGalPrev" type="button" aria-label="Scroll photos left"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="recgal-rail" id="recGalRail">
+        <img src="assets/images/recognitions/gallery/gallery-1.jpg" alt="Vanguard recognition highlight photo" loading="lazy">
+        <img src="assets/images/recognitions/gallery/gallery-2.jpg" alt="Vanguard recognition highlight photo" loading="lazy">
+        <img src="assets/images/recognitions/gallery/gallery-3.jpg" alt="Vanguard recognition highlight photo" loading="lazy">
+        <img src="assets/images/recognitions/gallery/gallery-4.jpg" alt="Vanguard recognition highlight photo" loading="lazy">
+        <img src="assets/images/recognitions/gallery/gallery-5.jpg" alt="Vanguard recognition highlight photo" loading="lazy">
+        <img src="assets/images/recognitions/gallery/gallery-6.jpg" alt="Vanguard recognition highlight photo" loading="lazy">
+        <img src="assets/images/recognitions/gallery/gallery-7.jpg" alt="Vanguard recognition highlight photo" loading="lazy">
+        <img src="assets/images/recognitions/gallery/gallery-8.jpg" alt="Vanguard recognition highlight photo" loading="lazy">
+        <img src="assets/images/recognitions/gallery/gallery-9.jpg" alt="Vanguard recognition highlight photo" loading="lazy">
+        <img src="assets/images/recognitions/gallery/gallery-10.jpg" alt="Vanguard recognition highlight photo" loading="lazy">
+        <img src="assets/images/recognitions/gallery/gallery-11.jpg" alt="Vanguard recognition highlight photo" loading="lazy">
+        <img src="assets/images/recognitions/gallery/gallery-12.jpg" alt="Vanguard recognition highlight photo" loading="lazy">
+        <img src="assets/images/recognitions/gallery/gallery-13.jpg" alt="Vanguard recognition highlight photo" loading="lazy">
+        <img src="assets/images/recognitions/gallery/gallery-14.jpg" alt="Vanguard recognition highlight photo" loading="lazy">
+      </div>
+      <button class="co-arrow next" id="recGalNext" type="button" aria-label="Scroll photos right"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
+    </div>
+    <div class="recgal-dots" id="recGalDots" aria-label="Recognition photos"></div>
     <div class="ghost-more reveal"><a href="/get-involved/partner" class="btn btn-primary">View More Recognitions &nbsp;&rarr;</a></div>
   </div>
 </section>
@@ -1284,12 +1300,12 @@ section{position:relative}
   document.getElementById('gradNext').addEventListener('click',()=>row.scrollBy({left:step(),behavior:'smooth'}));
 })();
 (function(){
-  var rail=document.getElementById('recRail'); if(!rail) return;
-  var prev=document.getElementById('recPrev'), next=document.getElementById('recNext'), dots=document.getElementById('recDots');
-  var page=function(){return Math.max(rail.clientWidth*0.85,220);};
+  var rail=document.getElementById('recGalRail'); if(!rail) return;
+  var prev=document.getElementById('recGalPrev'), next=document.getElementById('recGalNext'), dots=document.getElementById('recGalDots');
+  var page=function(){return Math.max(rail.clientWidth*0.9,220);};
   prev.addEventListener('click',function(){rail.scrollBy({left:-page(),behavior:'smooth'});});
   next.addEventListener('click',function(){rail.scrollBy({left:page(),behavior:'smooth'});});
-  function build(){dots.innerHTML='';var n=Math.max(1,Math.ceil((rail.scrollWidth-rail.clientWidth-1)/page())+1);for(var i=0;i<n;i++){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Go to recognitions slide '+(i+1));(function(idx){b.addEventListener('click',function(){rail.scrollTo({left:idx*page(),behavior:'smooth'});});})(i);dots.appendChild(b);}sync();}
+  function build(){dots.innerHTML='';var n=Math.max(1,Math.ceil((rail.scrollWidth-rail.clientWidth-1)/page())+1);for(var i=0;i<n;i++){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Go to photo '+(i+1));(function(idx){b.addEventListener('click',function(){rail.scrollTo({left:idx*page(),behavior:'smooth'});});})(i);dots.appendChild(b);}sync();}
   function sync(){var i=Math.round(rail.scrollLeft/page());[].forEach.call(dots.children,function(d,idx){d.classList.toggle('active',idx===i);});prev.disabled=rail.scrollLeft<=2;next.disabled=rail.scrollLeft>=rail.scrollWidth-rail.clientWidth-2;}
   rail.addEventListener('scroll',function(){requestAnimationFrame(sync);});
   window.addEventListener('resize',build);
