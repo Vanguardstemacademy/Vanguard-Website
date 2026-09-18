@@ -52,7 +52,6 @@
     { "source": "/privacy-policy", "destination": "/pages/legal" },
     { "source": "/copyright-infringement", "destination": "/pages/legal" },
 
-    { "source": "/video-landing", "destination": "/pages/video-landing" },
 
     { "source": "/form-careers", "destination": "/forms/careers" },
     { "source": "/form-consultation", "destination": "/forms/consultation" },

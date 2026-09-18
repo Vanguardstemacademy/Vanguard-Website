@@ -449,7 +449,7 @@ section{position:relative}
 .footer-inner{max-width:940px;margin:0 auto;position:relative;z-index:1}
 .footer-badge{display:flex;justify-content:center;margin-bottom:.4rem}
 .footer-badge img{width:clamp(108px,14vw,146px);height:auto;filter:drop-shadow(0 12px 26px rgba(0,0,0,.45))}
-.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;padding:2rem 0;border-top:1px solid rgba(201,163,65,.22);text-align:center;margin-top:1.4rem}
+.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;padding:2rem 0;text-align:center;margin-top:1.4rem}
 .footer-cols>div{display:flex;flex-direction:column;align-items:center}
 .footer h5{color:#fff;font-family:var(--serif);font-weight:700;font-size:1.05rem;letter-spacing:.02em;margin:0 0 1.1rem}
 .footer ul{list-style:none;margin:0;padding:0}
@@ -925,7 +925,7 @@ section{position:relative}
 .ach-item{display:flex;gap:.9rem;align-items:flex-start;background:#fff;border:1px solid var(--line);border-radius:12px;padding:.9rem;box-shadow:var(--shadow-sm);transition:.3s}
 .ach-item:hover{border-color:var(--gold);box-shadow:var(--shadow-md);transform:translateY(-3px)}
 .ach-img{flex:none;width:120px;position:relative;border-radius:8px;overflow:hidden}
-.ach-img .ph{aspect-ratio:1/.85}
+.ach-img .ph{aspect-ratio:1/.85}.ach-img .ach-badge{width:100%;height:auto;aspect-ratio:auto;object-fit:contain;display:block}
 .ach-img img{display:block;width:100%;aspect-ratio:1/.85;object-fit:cover}
 .ach-img .ai-ic{position:absolute;right:6px;bottom:6px;width:34px;height:34px;border-radius:50%;background:var(--gold-grad);display:grid;place-items:center;z-index:2}
 .ach-img .ai-ic svg{width:16px;height:16px;stroke:var(--navy);fill:none;stroke-width:2}
@@ -1172,12 +1172,12 @@ section{position:relative}
 
     <div class="gold-banner-row reveal" style="margin:clamp(2rem,4vw,2.8rem) 0 1.6rem"><span class="gold-banner">Achievements &amp; Recognition</span></div>
     <div class="ach-grid reveal">
-      <div class="ach-item"><div class="ach-img"><img src="assets/images/achievements/ach-1.jpg" alt="Vanguard students receiving an official Resolution from the City of Atlantic City" loading="lazy"><span class="ai-ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10h14v11M12 3L3 8h18z"/></svg></span></div><div class="ach-body"><h4>Official Recognition from the City of Atlantic City</h4><p>Each student received an official Resolution recognizing their achievements and impact in the community.</p></div></div>
-      <div class="ach-item"><div class="ach-img"><img src="assets/images/achievements/ach-2.jpg" alt="Global leaders and delegates at the Vanguard graduation ceremony" loading="lazy"><span class="ai-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span></div><div class="ach-body"><h4>Global Leaders in Attendance</h4><p>Members of the Presidential Palace of Somaliland attended our graduation ceremony.</p></div></div>
-      <div class="ach-item"><div class="ach-img"><img src="assets/images/achievements/ach-3.jpg" alt="Vanguard student presenting to executives and CEOs in a boardroom" loading="lazy"><span class="ai-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-4 3.6-7 8-7s8 3 8 7"/></svg></span></div><div class="ach-body"><h4>Executive-Level Experience</h4><p>Students led meetings and presented to executives and CEOs of multi-billion dollar companies.</p></div></div>
-      <div class="ach-item"><div class="ach-img"><img src="assets/images/achievements/ach-4.jpg" alt="Vanguard STEM Academy accepting the Top Academy of 2026 award" loading="lazy"><span class="ai-ic"><svg viewBox="0 0 24 24"><path d="M12 3l2.5 5.2 5.7.8-4.1 4 1 5.7-5.1-2.7-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg></span></div><div class="ach-body"><h4>Top Academy of 2026 by Insider Education Magazine</h4><p>Vanguard STEM Academy was voted Top Academy of 2026.</p></div></div>
-      <div class="ach-item"><div class="ach-img"><img src="assets/images/achievements/ach-5.jpg" alt="Vanguard students reviewing project plans and proposals" loading="lazy"><span class="ai-ic"><svg viewBox="0 0 24 24"><path d="M4 20V12M10 20V6M16 20v-9M21 20H3"/></svg></span></div><div class="ach-body"><h4>Projects Turning Into Proposals</h4><p>Student projects address real challenges with proposals for multi-million and multi-billion dollar impact.</p></div></div>
-      <div class="ach-item"><div class="ach-img"><img src="assets/images/achievements/ach-6.jpg" alt="Vanguard, Stockton University, and Atlantic City partnership signing" loading="lazy"><span class="ai-ic"><svg viewBox="0 0 24 24"><path d="M12 10c1.5-2.5 5.5-2.2 6 .8.4 2.4-2.5 4.6-6 7.2-3.5-2.6-6.4-4.8-6-7.2.5-3 4.5-3.3 6-.8z"/></svg></span></div><div class="ach-body"><h4>Community &amp; Industry Partnerships</h4><p>Strong partnerships with universities, organizations, and industry leaders.</p></div></div>
+      <div class="ach-item"><div class="ach-img"><img class="ach-badge" src="assets/images/achievements/badge-city.jpg" alt="Official City of Atlantic City recognition badge"></div><div class="ach-body"><h4>Official Recognition from the City of Atlantic City</h4><p>Each student received an official Resolution recognizing their achievements and impact in the community.</p></div></div>
+      <div class="ach-item"><div class="ach-img"><img class="ach-badge" src="assets/images/achievements/badge-international.jpg" alt="International recognition badge"></div><div class="ach-body"><h4>Global Leaders in Attendance</h4><p>Members of the Presidential Palace of Somaliland attended our graduation ceremony.</p></div></div>
+      <div class="ach-item"><div class="ach-img"><img class="ach-badge" src="assets/images/achievements/badge-executive.jpg" alt="Executive-level experience badge"></div><div class="ach-body"><h4>Executive-Level Experience</h4><p>Students led meetings and presented to executives and CEOs of multi-billion dollar companies.</p></div></div>
+      <div class="ach-item"><div class="ach-img"><img class="ach-badge" src="assets/images/achievements/badge-topacademy.jpg" alt="Top Academy 2026 badge"></div><div class="ach-body"><h4>Top Academy of 2026 by Insider Education Magazine</h4><p>Vanguard STEM Academy was voted Top Academy of 2026.</p></div></div>
+      <div class="ach-item"><div class="ach-img"><img class="ach-badge" src="assets/images/achievements/badge-project.jpg" alt="From project to proposal badge"></div><div class="ach-body"><h4>Projects Turning Into Proposals</h4><p>Student projects address real challenges with proposals for multi-million and multi-billion dollar impact.</p></div></div>
+      <div class="ach-item"><div class="ach-img"><img class="ach-badge" src="assets/images/achievements/badge-strategic.jpg" alt="Strategic partnerships badge"></div><div class="ach-body"><h4>Community &amp; Industry Partnerships</h4><p>Strong partnerships with universities, organizations, and industry leaders.</p></div></div>
     </div>
 
     <div class="gold-banner-row reveal" style="margin:clamp(2rem,4vw,2.8rem) 0 1.6rem"><span class="gold-banner">Trusted by Industry Leaders &amp; Partners</span></div>
@@ -1308,6 +1308,7 @@ section{position:relative}
       </div>
       <div class="fsocial">
         <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V8c0-.6.4-1 1-1z"/></svg></a>
+        <a href="https://www.instagram.com/vstemacad/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 1.8.25 2.2.42.6.22 1 .48 1.4.9.4.4.7.8.9 1.4.17.4.36 1 .42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 1.8-.42 2.2-.22.6-.48 1-.9 1.4-.4.4-.8.7-1.4.9-.4.17-1 .36-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-1.8-.25-2.2-.42-.6-.22-1-.48-1.4-.9-.4-.4-.7-.8-.9-1.4-.17-.4-.36-1-.42-2.2-.07-1.3-.07-1.7-.07-4.9s0-3.6.07-4.9c.06-1.2.25-1.8.42-2.2.22-.6.48-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.17 1-.36 2.2-.42 1.3-.07 1.7-.07 4.9-.07zm0 1.8c-3.1 0-3.5 0-4.7.07-.9.04-1.4.2-1.7.3-.4.17-.7.36-1 .66-.3.3-.5.6-.66 1-.1.3-.26.8-.3 1.7-.07 1.2-.07 1.6-.07 4.7s0 3.5.07 4.7c.04.9.2 1.4.3 1.7.17.4.36.7.66 1 .3.3.6.5 1 .66.3.1.8.26 1.7.3 1.2.07 1.6.07 4.7.07s3.5 0 4.7-.07c.9-.04 1.4-.2 1.7-.3.4-.17.7-.36 1-.66.3-.3.5-.6.66-1 .1-.3.26-.8.3-1.7.07-1.2.07-1.6.07-4.7s0-3.5-.07-4.7c-.04-.9-.2-1.4-.3-1.7-.17-.4-.36-.7-.66-1-.3-.3-.6-.5-1-.66-.3-.1-.8-.26-1.7-.3-1.2-.07-1.6-.07-4.7-.07zm0 3.1a4.9 4.9 0 100 9.8 4.9 4.9 0 000-9.8zm0 1.8a3.1 3.1 0 110 6.2 3.1 3.1 0 010-6.2zm5.1-.9a1.15 1.15 0 100 2.3 1.15 1.15 0 000-2.3z"/></svg></a>
         <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M3 3l7.5 9.5L3.5 21H6l6-6.7L17 21h4l-8-10 7-8h-2.5L13 8.5 8 3z"/></svg></a>
       </div>
     </div>

@@ -536,7 +536,7 @@ section{position:relative}
 .footer-inner{max-width:940px;margin:0 auto;position:relative;z-index:1}
 .footer-badge{display:flex;justify-content:center;margin-bottom:.4rem}
 .footer-badge img{width:clamp(108px,14vw,146px);height:auto;filter:drop-shadow(0 12px 26px rgba(0,0,0,.45))}
-.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;padding:2rem 0;border-top:1px solid rgba(201,163,65,.22);text-align:center;margin-top:1.4rem}
+.footer-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:2.5rem;padding:2rem 0;text-align:center;margin-top:1.4rem}
 .footer-cols>div{display:flex;flex-direction:column;align-items:center}
 .footer h5{color:#fff;font-family:var(--serif);font-weight:700;font-size:1.05rem;letter-spacing:.02em;margin:0 0 1.1rem}
 .footer ul{list-style:none;margin:0;padding:0}
@@ -1009,14 +1009,14 @@ section{position:relative}
 .rec-ic{position:absolute;left:50%;bottom:-17px;transform:translateX(-50%);width:38px;height:38px;border-radius:50%;background:var(--burgundy);border:2px solid var(--gold);display:grid;place-items:center;z-index:3}
 .rec-ic svg{width:17px;height:17px;stroke:var(--gold-2);fill:none;stroke-width:1.7}
 .rec-card h3{font-weight:800;font-size:.82rem;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);line-height:1.4;margin-bottom:.4rem}
-.rec-card p{font-size:.78rem;color:var(--muted);line-height:1.5;margin:0;flex:1}
+.rec-card p{font-size:.78rem;color:var(--muted);line-height:1.5;margin:0;flex:1}.rec-wrap{position:relative}.rec-rail{display:flex;gap:1.3rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-ms-overflow-style:none;padding:.6rem .2rem 1rem}.rec-rail::-webkit-scrollbar{display:none}.rec-rail>.rec-card{flex:0 0 clamp(250px,30%,310px);scroll-snap-align:start}.co-arrow:disabled{opacity:.35;cursor:default}.rec-dots{display:flex;gap:.5rem;justify-content:center;margin-top:.4rem;flex-wrap:wrap}.rec-dots button{width:9px;height:9px;border-radius:50%;border:1px solid var(--gold);background:transparent;cursor:pointer;padding:0;transition:.3s}.rec-dots button.active{background:var(--gold-grad);width:24px;border-radius:5px}
 .ghost-more{display:flex;justify-content:center;margin-top:1.3rem}
 .ghost-more .btn{padding:.65rem 1.5rem;font-size:.64rem}
 .mile-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:1rem}
 .mile-card{background:#fff;border:1px solid var(--line);border-radius:10px;padding:.8rem .8rem 1.1rem;text-align:center;box-shadow:var(--shadow-sm);transition:.3s;display:flex;flex-direction:column}
 .mile-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:var(--shadow-md)}
 .mile-ph{border-radius:6px;overflow:hidden;margin-bottom:.8rem}
-.mile-ph .ph{aspect-ratio:9/8}
+.mile-ph .ph{aspect-ratio:9/8}.mile-card .mile-ph img{aspect-ratio:auto;height:140px;width:auto;max-width:100%;object-fit:contain;margin:0 auto}
 .mile-ph img{display:block;width:100%;aspect-ratio:9/8;object-fit:cover}
 .mile-card h3{font-weight:800;font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--burgundy);margin-bottom:.4rem;line-height:1.4}
 .mile-card p{font-size:.64rem;color:var(--muted);line-height:1.5;margin:0;flex:1}
@@ -1157,7 +1157,9 @@ section{position:relative}
 <section id="recognition" aria-label="Strategic recognitions and invitations" data-screen-label="Recognitions" style="background:var(--cream);padding-bottom:1rem">
   <div class="container">
     <div class="burg-banner reveal" style="margin:clamp(2rem,4vw,2.6rem) 0 1.5rem"><h2>Strategic Recognitions &amp; Invitations</h2></div>
-    <div class="rec-grid reveal">
+    <div class="rec-wrap reveal">
+      <button class="co-arrow prev" id="recPrev" type="button" aria-label="Scroll recognitions left"><svg viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6"/></svg></button>
+      <div class="rec-rail" id="recRail">
       <div class="rec-card"><div class="rec-ph"><img src="assets/images/recognitions/rec-state.jpg" alt="Vanguard leadership engaging with state leaders" loading="lazy" style="object-position:center 25%"><span class="rec-ic"><svg viewBox="0 0 24 24"><path d="M3 21h18M5 21V10h14v11M12 3L3 8h18z"/></svg></span></div><h3>State Leadership Engagement</h3><p>Engaging with state leaders to explore opportunities that strengthen education, workforce development, and student success.</p></div>
       <div class="rec-card"><div class="rec-ph"><img src="assets/images/recognitions/rec-royal.jpg" alt="Royal invitation recognizing Vanguard's mission" loading="lazy"><span class="rec-ic"><svg viewBox="0 0 24 24"><path d="M4 18h16M4 18l-1.5-9L8 12l4-7 4 7 5.5-3L20 18"/></svg></span></div><h3>Royal Invitation</h3><p>Official invitation from the Kingdom of Uganda recognizing Vanguard&rsquo;s mission and leadership.</p></div>
       <div class="rec-card"><div class="rec-ph"><img src="assets/images/recognitions/rec-workshop.jpg" alt="Vanguard-led careers and skills workshop session" loading="lazy"><span class="rec-ic"><svg viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3"/><path d="M5 11a7 7 0 0014 0M12 18v3M8 21h8"/></svg></span></div><h3>Speaker &amp; Workshop Leadership</h3><p>Leading sessions and empowering students through leadership, insight, and skill-building.</p></div>
@@ -1170,7 +1172,10 @@ section{position:relative}
       <div class="rec-card"><div class="rec-ph"><img src="assets/images/recognitions/rec-cultural.jpg" alt="International cultural recognition gathering" loading="lazy"><span class="rec-ic"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3 3 15 0 18M12 3c-3 3-3 15 0 18"/></svg></span></div><h3>Educational Leadership Recognition</h3><p>Honored through invitations to lead career workshops, inspire students, and engage alongside accomplished leaders.</p></div>
       <div class="rec-card"><div class="rec-ph"><img src="assets/images/recognitions/rec-naacp.jpg" alt="Vanguard leaders at the NAACP gala" loading="lazy"><span class="rec-ic"><svg viewBox="0 0 24 24"><circle cx="7" cy="8" r="3"/><circle cx="17" cy="8" r="3"/><path d="M2 20c0-2.8 2.2-5 5-5M22 20c0-2.8-2.2-5-5-5M9.5 17h5"/></svg></span></div><h3>NAACP Partnership</h3><p>Working together to expand educational access and leadership development for students.</p></div>
       <div class="rec-card"><div class="rec-ph"><img src="assets/images/NewFiresideChat_Image.JPG" alt="Executive Fireside Chat featured industry leaders" loading="lazy"><span class="rec-ic"><svg viewBox="0 0 24 24"><path d="M12 3c1 3 4 4.5 4 8a4 4 0 11-8 0c0-1.5.5-2.5 1.5-4 .5 1 1.5 1.5 1.5 1.5C10.5 6.5 11 4.5 12 3z"/></svg></span></div><h3>Executive Fireside Chat Series</h3><p>Bringing world-class leaders for inspiring conversations with students and professionals.</p></div>
+      </div>
+      <button class="co-arrow next" id="recNext" type="button" aria-label="Scroll recognitions right"><svg viewBox="0 0 24 24"><path d="M9 18l6-6-6-6"/></svg></button>
     </div>
+    <div class="rec-dots" id="recDots" aria-label="Recognition slides"></div>
     <div class="ghost-more reveal"><a href="/get-involved/partner" class="btn btn-primary">View More Recognitions &nbsp;&rarr;</a></div>
   </div>
 </section>
@@ -1199,11 +1204,11 @@ section{position:relative}
   <div class="container">
     <div class="burg-banner reveal" style="margin:clamp(2rem,4vw,2.6rem) 0 1.5rem"><h2>Our Recognitions &amp; Milestones</h2></div>
     <div class="mile-grid reveal">
-      <div class="mile-card"><div style="padding:1rem 0 .9rem"><div class="ins">insider<small>Education</small></div></div><h3>Top 2026 Academy</h3><p>Recognized by Insider Education Magazine as a Top 2026 STEM Academy.</p></div>
-      <div class="mile-card"><div class="mile-ph"><img src="assets/images/unitedstates.png" alt="Municipal resolution honoring Vanguard STEM Academy" loading="lazy"></div><h3>Municipal Resolution</h3><p>Official Municipal Resolution from Atlantic City Council honoring Vanguard.</p></div>
-      <div class="mile-card"><div class="mile-ph"><img src="assets/images/milestones/mile-projects.jpg" alt="Port and infrastructure project at sunset" loading="lazy"></div><h3>Student Projects = Real Impact</h3><p>Student projects are being developed into proposals for multi-million and multi-billion dollar initiatives.</p></div>
-      <div class="mile-card"><div class="mile-ph"><img src="assets/images/milestones/mile-advisors.jpg" alt="Presidential palace interior where advisors attended" loading="lazy" style="object-position:center 22%"></div><h3>Presidential Advisors in Attendance</h3><p>Advisors connected to the Presidential Palace of Somaliland attended our graduation.</p></div>
-      <div class="mile-card"><div class="mile-ph"><img src="assets/images/milestones/mile-graduation.jpg" alt="Guests seated at the Vanguard graduation ceremony" loading="lazy" style="object-position:center 58%"></div><h3>Global Graduation Recognition</h3><p>Celebrated by community leaders, international guests, and family from around the world.</p></div>
+      <div class="mile-card"><div class="mile-ph"><img src="assets/images/milestones/badge-insider.png" alt="Insider Education Top 2026 Academy"></div><h3>Top 2026 Academy</h3><p>Recognized by Insider Education Magazine as a Top 2026 STEM Academy.</p></div>
+      <div class="mile-card"><div class="mile-ph"><img src="assets/images/milestones/badge-municipal.png" alt="Official Municipal Resolution from Atlantic City Council"></div><h3>Municipal Resolution</h3><p>Official Municipal Resolution from Atlantic City Council honoring Vanguard.</p></div>
+      <div class="mile-card"><div class="mile-ph"><img src="assets/images/milestones/badge-student.png" alt="Student projects turning into real impact"></div><h3>Student Projects = Real Impact</h3><p>Student projects are being developed into proposals for multi-million and multi-billion dollar initiatives.</p></div>
+      <div class="mile-card"><div class="mile-ph"><img src="assets/images/milestones/badge-presidential.png" alt="Presidential advisors in attendance"></div><h3>Presidential Advisors in Attendance</h3><p>Advisors connected to the Presidential Palace of Somaliland attended our graduation.</p></div>
+      <div class="mile-card"><div class="mile-ph"><img src="assets/images/milestones/badge-graduation.png" alt="Global graduation recognition"></div><h3>Global Graduation Recognition</h3><p>Celebrated by community leaders, international guests, and family from around the world.</p></div>
     </div>
   </div>
 </section>
@@ -1277,6 +1282,18 @@ section{position:relative}
   const step=()=>row.querySelector('div').getBoundingClientRect().width+14;
   document.getElementById('gradPrev').addEventListener('click',()=>row.scrollBy({left:-step(),behavior:'smooth'}));
   document.getElementById('gradNext').addEventListener('click',()=>row.scrollBy({left:step(),behavior:'smooth'}));
+})();
+(function(){
+  var rail=document.getElementById('recRail'); if(!rail) return;
+  var prev=document.getElementById('recPrev'), next=document.getElementById('recNext'), dots=document.getElementById('recDots');
+  var page=function(){return Math.max(rail.clientWidth*0.85,220);};
+  prev.addEventListener('click',function(){rail.scrollBy({left:-page(),behavior:'smooth'});});
+  next.addEventListener('click',function(){rail.scrollBy({left:page(),behavior:'smooth'});});
+  function build(){dots.innerHTML='';var n=Math.max(1,Math.ceil((rail.scrollWidth-rail.clientWidth-1)/page())+1);for(var i=0;i<n;i++){var b=document.createElement('button');b.type='button';b.setAttribute('aria-label','Go to recognitions slide '+(i+1));(function(idx){b.addEventListener('click',function(){rail.scrollTo({left:idx*page(),behavior:'smooth'});});})(i);dots.appendChild(b);}sync();}
+  function sync(){var i=Math.round(rail.scrollLeft/page());[].forEach.call(dots.children,function(d,idx){d.classList.toggle('active',idx===i);});prev.disabled=rail.scrollLeft<=2;next.disabled=rail.scrollLeft>=rail.scrollWidth-rail.clientWidth-2;}
+  rail.addEventListener('scroll',function(){requestAnimationFrame(sync);});
+  window.addEventListener('resize',build);
+  build();
 })();
 /* ---- Video testimonial lightbox ---- */
 document.addEventListener('DOMContentLoaded',function(){
@@ -1356,6 +1373,7 @@ document.addEventListener('DOMContentLoaded',function(){
       </div>
       <div class="fsocial">
         <a href="https://www.facebook.com/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.2 0-4 1.8-4 4v2H7v4h3v6h4v-6h3l1-4h-4V8c0-.6.4-1 1-1z"/></svg></a>
+        <a href="https://www.instagram.com/vstemacad/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.2c3.2 0 3.6 0 4.9.07 1.2.06 1.8.25 2.2.42.6.22 1 .48 1.4.9.4.4.7.8.9 1.4.17.4.36 1 .42 2.2.06 1.3.07 1.7.07 4.9s0 3.6-.07 4.9c-.06 1.2-.25 1.8-.42 2.2-.22.6-.48 1-.9 1.4-.4.4-.8.7-1.4.9-.4.17-1 .36-2.2.42-1.3.06-1.7.07-4.9.07s-3.6 0-4.9-.07c-1.2-.06-1.8-.25-2.2-.42-.6-.22-1-.48-1.4-.9-.4-.4-.7-.8-.9-1.4-.17-.4-.36-1-.42-2.2-.07-1.3-.07-1.7-.07-4.9s0-3.6.07-4.9c.06-1.2.25-1.8.42-2.2.22-.6.48-1 .9-1.4.4-.4.8-.7 1.4-.9.4-.17 1-.36 2.2-.42 1.3-.07 1.7-.07 4.9-.07zm0 1.8c-3.1 0-3.5 0-4.7.07-.9.04-1.4.2-1.7.3-.4.17-.7.36-1 .66-.3.3-.5.6-.66 1-.1.3-.26.8-.3 1.7-.07 1.2-.07 1.6-.07 4.7s0 3.5.07 4.7c.04.9.2 1.4.3 1.7.17.4.36.7.66 1 .3.3.6.5 1 .66.3.1.8.26 1.7.3 1.2.07 1.6.07 4.7.07s3.5 0 4.7-.07c.9-.04 1.4-.2 1.7-.3.4-.17.7-.36 1-.66.3-.3.5-.6.66-1 .1-.3.26-.8.3-1.7.07-1.2.07-1.6.07-4.7s0-3.5-.07-4.7c-.04-.9-.2-1.4-.3-1.7-.17-.4-.36-.7-.66-1-.3-.3-.6-.5-1-.66-.3-.1-.8-.26-1.7-.3-1.2-.07-1.6-.07-4.7-.07zm0 3.1a4.9 4.9 0 100 9.8 4.9 4.9 0 000-9.8zm0 1.8a3.1 3.1 0 110 6.2 3.1 3.1 0 010-6.2zm5.1-.9a1.15 1.15 0 100 2.3 1.15 1.15 0 000-2.3z"/></svg></a>
         <a href="https://x.com/" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24"><path d="M3 3l7.5 9.5L3.5 21H6l6-6.7L17 21h4l-8-10 7-8h-2.5L13 8.5 8 3z"/></svg></a>
       </div>
     </div>
