@@ -1025,7 +1025,7 @@ section{position:relative}
 .grad-wrap{position:relative}
 .grad-row{display:flex;gap:.9rem;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding-bottom:.4rem}
 .grad-row::-webkit-scrollbar{display:none}
-.grad-row>div{flex:0 0 clamp(260px,26%,340px);scroll-snap-align:start;border-radius:8px;overflow:hidden;border:1.5px solid var(--gold);box-shadow:var(--shadow-sm)}
+.grad-row>div{flex:0 0 clamp(320px,36%,460px);scroll-snap-align:start;border-radius:8px;overflow:hidden;border:1.5px solid var(--gold);box-shadow:var(--shadow-sm)}
 .grad-row .ph{aspect-ratio:16/11}
 .grad-row img{display:block;width:100%;aspect-ratio:16/11;object-fit:cover;object-position:center 35%}
 .testi2-band{background:linear-gradient(120deg,#4a0f1b,#5c1522 50%,#4a0f1b);border-top:2.5px solid var(--gold);padding:clamp(1.8rem,3.4vw,2.6rem) 0;position:relative;overflow:hidden}
@@ -1076,7 +1076,12 @@ section{position:relative}
   .testi2-left h3{font-size:1.5rem}
 }
 @media(max-width:640px){
-  .rec-grid,.mile-grid{grid-template-columns:1fr}
+  .rec-grid{grid-template-columns:1fr}
+  .mile-grid{grid-template-columns:repeat(2,1fr);gap:.7rem}
+  .mile-card{padding:.6rem .45rem .8rem}
+  .mile-card .mile-ph img{height:80px}
+  .mile-card h3{font-size:.6rem}
+  .mile-card p{font-size:.58rem}
   .imp-ctas .btn{flex:1;min-width:100%}
   .testi2-vids{grid-template-columns:repeat(2,1fr)}
   .grad-row>div{flex-basis:88%}
